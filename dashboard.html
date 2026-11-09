@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TRINITY BANK SHIELD - Comando</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#000;color:#fff;padding:15px}
+.top{display:flex;justify-content:space-between;align-items:center}
+.top h1{font-size:18px}
+.top h1 span{color:#a855f7}
+.live{color:#00ff88;font-size:12px}
+.stats{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;margin:15px 0}
+.stat{background:#0a0a14;border:1px solid #222;border-radius:14px;padding:12px;text-align:center}
+.stat b{font-size:20px;color:#a855f7}
+.stat p{font-size:11px;color:#aaa}
+h2{font-size:14px;margin:15px 0 10px;color:#a855f7}
+.card{background:#0a0a14;border:1px solid #222;border-radius:14px;padding:12px;margin-bottom:10px;display:flex;justify-content:space-between;align-items:center}
+.card p{font-size:11px;color:#aaa}
+.btn{padding:8px 14px;border:none;border-radius:20px;font-weight:bold;cursor:pointer;background:#333;color:#fff}
+.btn.on{background:#00ff88;color:#000}
+.map{background:#0a0a14;border:1px solid #7b2ff7;border-radius:14px;padding:15px;text-align:center;margin:10px 0}
+</style>
+</head>
+<body>
+<div class="top"><h1>TRINITY <span>BANK SHIELD</span></h1><div class="live">● LIVE SOC</div></div>
+<div class="map">🗺️ MAPA MUNDIAL<br><span style="font-size:12px;color:#aaa">Tegucigalpa - Honduras - PROTEGIDO<br>1,247 Amenazas Bloqueadas Hoy</span></div>
+<div class="stats">
+<div class="stat"><b>1,247</b><p>Bloqueados</p></div>
+<div class="stat"><b>98.9%</b><p>Proteccion</p></div>
+<div class="stat"><b>24/7</b><p>Activo</p></div>
+</div>
+<h2>6 AGENTES IA</h2>
+<div id="agentes"></div>
+<h2>4 HERRAMIENTAS</h2>
+<div id="tools"></div>
+<script>
+let agentes=["Centinela - Vigilancia","Guardián - Fraude","Cazador - Hackers","Oráculo - Prediccion","Escudo - Defensa","Voz - Alertas"];
+let tools=["Bloqueo IP","Escaneo Deep Web","Anti-Phishing","Modo Panico"];
+let ag=document.getElementById('agentes');
+agentes.forEach((n,i)=>{
+ag.innerHTML+=`<div class="card"><div><b>${n}</b><p>Agente 0${i+1} - Listo</p></div><button class="btn" onclick="this.classList.toggle('on');this.innerText=this.classList.contains('on')?'ACTIVATED - ON':'OFF'">OFF</button></div>`;
+});
+let tl=document.getElementById('tools');
+tools.forEach((n)=>{
+tl.innerHTML+=`<div class="card"><div><b>${n}</b><p>Herramienta SHIELD</p></div><button class="btn" onclick="this.classList.toggle('on');this.innerText=this.classList.contains('on')?'ACTIVATED - ON':'OFF'">OFF</button></div>`;
+});
+</script>
+</body>
+</html>
