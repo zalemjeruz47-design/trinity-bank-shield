@@ -35,8 +35,6 @@ body{background:#030014;color:#fff}
 .btn-enviar{width:100%;background:linear-gradient(90deg,#7C3AED,#2563EB);color:#fff;border:none;padding:15px;border-radius:12px;font-weight:800;margin-top:16px;cursor:pointer}
 .btn-volver{width:100%;background:#111;border:1px solid #333;color:#fff;padding:12px;border-radius:12px;margin-top:12px;cursor:pointer}
 .note{font-size:12px;color:#999;text-align:center;margin-top:14px;line-height:1.5}
-
-/* CENTRO DE OPERACIONES - NUEVO, JEFA */
 .ops{display:none;max-width:1150px;margin:0 auto;padding:15px}
 .ops-header{text-align:center;padding:10px}
 .ops-header h1{font-size:32px}
@@ -50,13 +48,20 @@ body{background:#030014;color:#fff}
 .grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
 .grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
 .op-card{background:#0A0A1A;border:1px solid #2A2A3A;border-radius:16px;padding:18px;cursor:pointer}
-.op-card:hover{border-color:#7C3AED}
+.op-card:hover{border-color:#7C3AED;background:#151530}
 .op-card h3{font-size:16px;margin:8px 0 6px}
 .op-card p{font-size:13px;color:#999;line-height:1.5}
 .op-card .tag{display:inline-block;font-size:11px;background:#1E1E35;padding:4px 8px;border-radius:20px;color:#A78BFA;margin-top:8px}
 .op-card .live{color:#4ADE80;font-size:12px;font-weight:700}
 .btn-salir{width:100%;background:#111;border:1px solid #333;color:#fff;padding:13px;border-radius:12px;margin:25px 0;cursor:pointer}
-
+/* PUERTA POR DENTRO - ESTO ERA LO QUE FALTABA, JEFA */
+.detalle{display:none;max-width:700px;margin:0 auto;padding:15px}
+.detalle-box{background:#070714;border:1px solid #2A1A5E;border-radius:20px;padding:24px}
+.detalle-box h2{font-size:26px;margin:10px 0}
+.detalle-box p{color:#AAA;line-height:1.6;font-size:14px;margin:10px 0}
+.mini{ background:#11111F;border-radius:12px;padding:14px;margin-top:12px;font-size:13px;line-height:1.6}
+.mini b{color:#fff}
+.btn-detalle{width:100%;background:linear-gradient(90deg,#7C3AED,#2563EB);color:#fff;border:none;padding:14px;border-radius:12px;font-weight:800;margin-top:16px;cursor:pointer}
 @media(max-width:800px){
   .container{flex-direction:column;padding:14px}
   .left h1{font-size:34px}
@@ -70,7 +75,6 @@ body{background:#030014;color:#fff}
 </head>
 <body>
 
-<!-- 1. PORTADA -->
 <div id="portada">
   <div class="top">🛡️ <span>TRINITY</span> BANK SHIELD</div>
   <div class="container">
@@ -100,7 +104,6 @@ body{background:#030014;color:#fff}
   <div class="footer">Protección para instituciones financieras • Cifrado AES-256 • Soporte 24/7 • © TRINITY BANK SHIELD</div>
 </div>
 
-<!-- 2. FORMULARIO -->
 <div id="formulario" class="form-wrap">
   <div style="text-align:center;padding:20px 0;font-weight:800">🛡️ <span style="color:#A78BFA">TRINITY</span> BANK SHIELD</div>
   <div class="form-box">
@@ -117,78 +120,56 @@ body{background:#030014;color:#fff}
   </div>
 </div>
 
-<!-- 3. CENTRO DE OPERACIONES - LA NUEVA PUERTA, JEFA -->
 <div id="ops" class="ops">
   <div class="ops-header">
     <div style="font-weight:800">🛡️ <span style="color:#A78BFA">TRINITY</span> BANK SHIELD</div>
     <h1 style="margin-top:12px">Centro de <span>Operaciones</span></h1>
     <p>Bienvenida, Jefa. Monitoreo en vivo • Todo en orden • Sin incidentes</p>
   </div>
-
   <div class="ops-stats">
     <div class="stat"><b>45,230</b><span>Transacciones hoy</span></div>
     <div class="stat"><b>1,284</b><span>Amenazas bloqueadas</span></div>
     <div class="stat"><b>0</b><span>Brechas de seguridad</span></div>
     <div class="stat"><b>10 / 10</b><span>Agentes activos</span></div>
   </div>
-
   <div class="ops-title">🛡️ Las 4 Divisiones Principales</div>
   <div class="grid4">
-    <div class="op-card" onclick="abrir('ARTEX')"><div style="font-size:28px">🛡️</div><h3>ARTEX</h3><p>División Legal. Auditoría, cumplimiento y verificación de documentos.</p><span class="tag">División Legal</span><br><span class="live">● EN VIVO</span></div>
-    <div class="op-card" onclick="abrir('PENTAGI')"><div style="font-size:28px">🏦</div><h3>PENTAGI</h3><p>División Legal. Pruebas de penetración y seguridad bancaria.</p><span class="tag">División Legal</span><br><span class="live">● EN VIVO</span></div>
-    <div class="op-card" onclick="abrir('CAIRN')"><div style="font-size:28px">🌑</div><h3>CAIRN</h3><p>División Legal. Inteligencia oscura y monitoreo de amenazas ocultas.</p><span class="tag">División Legal</span><br><span class="live">● EN VIVO</span></div>
-    <div class="op-card" onclick="abrir('CIBERESTRIKE AI')"><div style="font-size:28px">🤖</div><h3>CIBERESTRIKE AI</h3><p>División Legal. IA de ataque defensivo y respuesta automática.</p><span class="tag">División Legal</span><br><span class="live">● EN VIVO</span></div>
+    <div class="op-card" onclick="abrir('ARTEX')"><div style="font-size:28px">🛡️</div><h3>ARTEX</h3><p>División Legal. Auditoría y cumplimiento.</p><span class="tag">División Legal</span><br><span class="live">● EN VIVO - Toca para entrar →</span></div>
+    <div class="op-card" onclick="abrir('PENTAGI')"><div style="font-size:28px">🏦</div><h3>PENTAGI</h3><p>División Legal. Pruebas de seguridad bancaria.</p><span class="tag">División Legal</span><br><span class="live">● EN VIVO - Toca para entrar →</span></div>
+    <div class="op-card" onclick="abrir('CAIRN')"><div style="font-size:28px">🌑</div><h3>CAIRN</h3><p>División Legal. Inteligencia y amenazas ocultas.</p><span class="tag">División Legal</span><br><span class="live">● EN VIVO - Toca para entrar →</span></div>
+    <div class="op-card" onclick="abrir('CIBERESTRIKE AI')"><div style="font-size:28px">🤖</div><h3>CIBERESTRIKE AI</h3><p>División Legal. IA de respuesta automática.</p><span class="tag">División Legal</span><br><span class="live">● EN VIVO - Toca para entrar →</span></div>
   </div>
-
-  <div class="ops-title">👥 Los 6 Agentes de Trinity Bank - Seguridad e Investigación</div>
+  <div class="ops-title">👥 Los 6 Agentes de Trinity Bank</div>
   <div class="grid6">
-    <div class="op-card" onclick="abrir('Guardián')"><div style="font-size:28px">🔒</div><h3>1. Guardián</h3><p>Seguridad y acceso. Controla quién entra y quién sale. Verificación en 3 pasos.</p><span class="tag">Seguridad</span><br><span class="live">● ACTIVO</span></div>
-    <div class="op-card" onclick="abrir('Centinela')"><div style="font-size:28px">👁️</div><h3>2. Centinela</h3><p>Detección de amenazas. Investiga patrones sospechosos en tiempo real.</p><span class="tag">Investigación</span><br><span class="live">● ACTIVO</span></div>
-    <div class="op-card" onclick="abrir('Tesorero')"><div style="font-size:28px">💰</div><h3>3. Tesorero</h3><p>Integridad de cuentas. Revisa movimientos y protege saldos.</p><span class="tag">Finanzas</span><br><span class="live">● ACTIVO</span></div>
-    <div class="op-card" onclick="abrir('Mensajero')"><div style="font-size:28px">✈️</div><h3>4. Mensajero</h3><p>Transacciones y movimientos. Rastrea transferencias y alertas.</p><span class="tag">Transacciones</span><br><span class="live">● ACTIVO</span></div>
-    <div class="op-card" onclick="abrir('Vigía')"><div style="font-size:28px">🔔</div><h3>5. Vigía</h3><p>Alertas y monitoreo. Te avisa al instante si algo raro pasa.</p><span class="tag">Monitoreo 24/7</span><br><span class="live">● ACTIVO</span></div>
-    <div class="op-card" onclick="abrir('Trinity')"><div style="font-size:28px">🧠</div><h3>6. Trinity</h3><p>Asistente inteligente. Coordina a los otros 5 agentes y te resume todo.</p><span class="tag">IA Central</span><br><span class="live">● ACTIVO</span></div>
+    <div class="op-card" onclick="abrir('Guardian')"><div style="font-size:28px">🔒</div><h3>1. Guardián</h3><p>Seguridad y acceso. Verificación en 3 pasos.</p><span class="tag">Seguridad</span><br><span class="live">● ACTIVO - Toca para entrar →</span></div>
+    <div class="op-card" onclick="abrir('Centinela')"><div style="font-size:28px">👁️</div><h3>2. Centinela</h3><p>Detección de amenazas en tiempo real.</p><span class="tag">Investigación</span><br><span class="live">● ACTIVO - Toca para entrar →</span></div>
+    <div class="op-card" onclick="abrir('Tesorero')"><div style="font-size:28px">💰</div><h3>3. Tesorero</h3><p>Integridad de cuentas y saldos.</p><span class="tag">Finanzas</span><br><span class="live">● ACTIVO - Toca para entrar →</span></div>
+    <div class="op-card" onclick="abrir('Mensajero')"><div style="font-size:28px">✈️</div><h3>4. Mensajero</h3><p>Transacciones y movimientos.</p><span class="tag">Transacciones</span><br><span class="live">● ACTIVO - Toca para entrar →</span></div>
+    <div class="op-card" onclick="abrir('Vigia')"><div style="font-size:28px">🔔</div><h3>5. Vigía</h3><p>Alertas y monitoreo 24/7.</p><span class="tag">Monitoreo</span><br><span class="live">● ACTIVO - Toca para entrar →</span></div>
+    <div class="op-card" onclick="abrir('Trinity')"><div style="font-size:28px">🧠</div><h3>6. Trinity</h3><p>Asistente inteligente que coordina todo.</p><span class="tag">IA Central</span><br><span class="live">● ACTIVO - Toca para entrar →</span></div>
   </div>
-
   <button class="btn-salir" onclick="salir()">← Salir del Centro de Operaciones</button>
-  <div style="text-align:center;color:#666;font-size:12px;padding-bottom:20px">© TRINITY BANK SHIELD • Centro de Operaciones Privado • Solo personal autorizado</div>
+</div>
+
+<!-- ESTA ES LA PUERTA POR DENTRO, JEFA -->
+<div id="detalle" class="detalle">
+  <div class="detalle-box">
+    <div style="font-weight:800">🛡️ <span style="color:#A78BFA">TRINITY</span> BANK SHIELD</div>
+    <h2 id="detalleTitulo">ARTEX</h2>
+    <p id="detalleTexto">Panel en vivo.</p>
+    <div class="mini" id="detalleMini"></div>
+    <button class="btn-detalle" onclick="cerrarDetalle()">← Volver al Centro de Operaciones</button>
+  </div>
 </div>
 
 <script>
-function irDemo(){
-  document.getElementById('portada').style.display='none';
-  document.getElementById('formulario').style.display='block';
-  document.getElementById('ops').style.display='none';
-  window.scrollTo(0,0);
-}
-function volver(){
-  document.getElementById('formulario').style.display='none';
-  document.getElementById('portada').style.display='block';
-  document.getElementById('ops').style.display='none';
-  window.scrollTo(0,0);
-}
-function salir(){ volver(); }
-function irAcceso(){
-  let codigo = prompt("Ingresa tu código institucional de 24 horas:");
-  if(codigo === "TRINITY-DEMO-24H"){
-    document.getElementById('portada').style.display='none';
-    document.getElementById('formulario').style.display='none';
-    document.getElementById('ops').style.display='block';
-    window.scrollTo(0,0);
-    alert("Acceso aprobado, Jefa. Bienvenida al Centro de Operaciones.");
-  } else if(codigo){ alert("Código no válido o vencido, Jefa. Solicita demo para recibir uno nuevo."); }
-}
-function enviar(){
-  let n=document.getElementById('nombre').value;
-  let b=document.getElementById('banco').value;
-  let c=document.getElementById('correo').value;
-  if(!n||!b||!c){ alert("Jefa, faltan datos: Nombre, Banco y Correo son obligatorios."); return; }
-  alert("Solicitud enviada, Jefa. Tu código de prueba es: TRINITY-DEMO-24H. Úsalo en Acceso institucional.");
-  volver();
-}
-function abrir(nombre){
-  alert("Entrando a " + nombre + ", Jefa. Panel en vivo: Sin incidentes • Todo en orden.");
-}
-</script>
-</body>
-</html>
+let datos = {
+  'ARTEX': {titulo:'🛡️ ARTEX - División Legal', texto:'Bienvenida al panel de ARTEX, Jefa. Aquí se revisa auditoría, cumplimiento legal y verificación de documentos.', mini:'<b>Estado:</b> <span style="color:#4ADE80">● EN VIVO - Sin incidentes</span><br><b>Hoy:</b> 124 documentos verificados<br><b>Alertas:</b> 0 pendientes<br><b>Acción:</b> Todo en orden, Jefa.'},
+  'PENTAGI': {titulo:'🏦 PENTAGI - División Legal', texto:'Bienvenida al panel de PENTAGI, Jefa. Pruebas de penetración y seguridad bancaria.', mini:'<b>Estado:</b> <span style="color:#4ADE80">● EN VIVO</span><br><b>Hoy:</b> 58 pruebas realizadas<br><b>Vulnerabilidades:</b> 0 críticas<br><b>Acción:</b> Banco protegido, Jefa.'},
+  'CAIRN': {titulo:'🌑 CAIRN - División Legal', texto:'Bienvenida al panel de CAIRN, Jefa. Inteligencia oscura y monitoreo de amenazas ocultas.', mini:'<b>Estado:</b> <span style="color:#4ADE80">● EN VIVO</span><br><b>Hoy:</b> 312 amenazas rastreadas<br><b>Bloqueadas:</b> 312 / 312<br><b>Acción:</b> Nada pasó, Jefa.'},
+  'CIBERESTRIKE AI': {titulo:'🤖 CIBERESTRIKE AI - División Legal', texto:'Bienvenida al panel de CIBERESTRIKE AI, Jefa. IA de respuesta automática contra ciberataques.', mini:'<b>Estado:</b> <span style="color:#4ADE80">● EN VIVO</span><br><b>Hoy:</b> 1,284 ataques bloqueados<br><b>Tiempo de respuesta:</b> 0.2 segundos<br><b>Acción:</b> Todo bajo control, Jefa.'},
+  'Guardian': {titulo:'🔒 1. Guardián - Seguridad y Acceso', texto:'Soy Guardián, Jefa. Yo controlo quién entra y quién sale. Nadie entra sin tu permiso.', mini:'<b>Estado:</b> <span style="color:#4ADE80">● ACTIVO</span><br><b>Hoy:</b> 2,340 accesos verificados<br><b>Intentos bloqueados:</b> 12<br><b>Tu mensaje:</b> Puerta segura, Jefa.'},
+  'Centinela': {titulo:'👁️ 2. Centinela - Detección de Amenazas', texto:'Soy Centinela, Jefa. Yo miro todo en tiempo real y te aviso si algo raro pasa.', mini:'<b>Estado:</b> <span style="color:#4ADE80">● ACTIVO</span><br><b>Hoy:</b> 45 patrones sospechosos revisados<br><b>Reales:</b> 0<br><b>Tu mensaje:</b> Todo tranquilo, Jefa.'},
+  'Tesorero': {titulo:'💰 3. Tesorero - Integridad de Cuentas', texto:'Soy Tesorero, Jefa. Yo cuido los saldos y reviso que ningún movimiento sea falso.', mini:'<b>Estado:</b> <span style="color:#4ADE80">● ACTIVO</span><br><b>Hoy:</b> 45,230 movimientos revisados<br><b>Errores:</b> 0<br><b>Tu mensaje:</b> Cuentas en orden, Jefa.'},
+  'Mensajero': {titulo:'✈️ 4. Mensajero - Transacciones', texto:'Soy Mensajero, Jefa. Yo rastreo cada transferencia para que llegue bien.', mini:'<b>Estado:</b> <span style="color:#4ADE80">● ACTIVO</span><br><b>Hoy:</b> 12,480 transferencias rastreadas<br><b>Fallidas:</b> 0<br><b>Tu mensaje:</b> Todo entregado, Jefa.'},
+  'Vigia': {titulo:'🔔 5. Vigía - Alertas y Monitoreo', texto:'Soy Vigía, Jefa. Yo no du
