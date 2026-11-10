@@ -1,19 +1,68 @@
-<!-- PORTADA - TRINITY BANK SHIELD -->
-<div style="background:#000; color:#fff; padding:20px; font-family:Arial;">
-  <h2>🛡️ TRINITY BANK SHIELD</h2>
-  <h1>Tu dinero protegido.<br>Tu banco seguro.</h1>
-  <p>ARTEX | PENTAGI | CAIRN | CIBERESTRIKE AI - División Legal</p>
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TRINITY BANK SHIELD</title>
+<style>
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
+body{background:#030014;color:#fff;min-height:100vh}
+.top{text-align:center;padding:25px 10px 10px;font-weight:800;letter-spacing:1px}
+.top span{color:#A78BFA}
+.container{display:flex;gap:30px;max-width:1150px;margin:0 auto;padding:20px;flex-wrap:wrap}
+.left{flex:1.2;min-width:320px;padding-top:20px}
+.left h1{font-size:52px;line-height:1.05}
+.left p.desc{color:#C7C7D1;margin:20px 0;line-height:1.6;font-size:16px}
+.boxes{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
+.box{background:#0A0A1A;border:1px solid #222;padding:14px;border-radius:12px;width:125px}
+.box small{color:#ccc}
+.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
+.btn-demo{background:linear-gradient(90deg,#8B5CF6,#3B82F6);color:#fff;border:none;padding:15px 30px;border-radius:12px;font-weight:800;cursor:pointer;flex:1}
+.btn-acceso{background:#000;color:#fff;border:1px solid #4C1D95;padding:15px 30px;border-radius:12px;font-weight:700;cursor:pointer;flex:1}
+.copy{font-size:11px;color:#777;margin-top:15px;line-height:1.5}
+.right{flex:1;min-width:320px;background:#050510;border:1px solid #1E3A8A;border-radius:20px;padding:22px}
+.right h3{margin-bottom:18px}
+.big-blue{background:linear-gradient(90deg,#7C3AED,#2563EB);border-radius:14px;padding:18px}
+.big-blue h2{font-size:36px;margin:5px 0}
+.card{background:#11111F;border-radius:14px;padding:15px;margin-top:12px}
+.card p{font-size:13px;color:#999;margin-top:4px}
+.footer{text-align:center;color:#666;font-size:12px;padding:30px 10px}
+/* FORMULARIO */
+.form-wrap{display:none;max-width:520px;margin:0 auto;padding:10px 15px 40px}
+.form-box{background:linear-gradient(180deg,#0B0B1E,#050510);border:1px solid #2E1A5E;border-radius:18px;padding:24px}
+.form-box h3{text-align:center;font-size:15px}
+.form-box p.sub{text-align:center;font-size:12px;color:#AAA;margin:5px 0 18px}
+.form-box input{width:100%;background:#1A1A2E;border:1px solid #222;padding:14px;border-radius:10px;color:#fff;margin-bottom:12px;outline:none}
+.form-box label{font-size:12px;color:#CCC;display:block;text-align:center;margin:8px 0}
+.file-row{background:#1A1A2E;border:1px solid #222;padding:10px;border-radius:10px;font-size:13px;margin-bottom:14px}
+.btn-enviar{width:100%;background:linear-gradient(90deg,#A855F7,#3B82F6);color:#fff;border:none;padding:15px;border-radius:10px;font-weight:800;cursor:pointer}
+.btn-volver{width:100%;background:transparent;color:#fff;border:1px solid #4C1D95;padding:13px;border-radius:10px;font-weight:700;cursor:pointer;margin-top:12px}
+.small{font-size:11px;color:#888;text-align:center;margin-top:12px;line-height:1.5}
+.small a{color:#A78BFA}
+@media(max-width:700px){.left h1{font-size:38px}}
+</style>
+</head>
+<body>
 
-  <button style="background:linear-gradient(90deg,#7C3AED,#2563EB); color:#fff; padding:12px 20px; border:none; border-radius:10px;">
-    Solicitar demo
-  </button>
-
-  <button style="background:#111; color:#fff; padding:12px 20px; border:1px solid #333; border-radius:10px;">
-    Acceso institucional
-  </button>
-
-  <p style="margin-top:15px;">Centro de Seguridad<br>
-  45,230 transacciones monitoreadas hoy<br>
-  1,284 amenazas bloqueadas<br>
-  Código demo: TRINITY-DEMO-24H</p>
-</div>
+<!-- PORTADA -->
+<div id="portada">
+<div class="top">🛡️ <span>TRINITY</span> BANK SHIELD</div>
+<div class="container">
+  <div class="left">
+    <h1>Tu dinero protegido.<br>Tu banco seguro.</h1>
+    <p class="desc">Protección avanzada para instituciones financieras. Monitoreo continuo, verificación reforzada y cumplimiento legal. Sin exponer cómo operamos, solo resultados.</p>
+    <div class="boxes">
+      <div class="box">🛡️<br><b>ARTEX</b><br><small>División Legal</small></div>
+      <div class="box">🏦<br><b>PENTAGI</b><br><small>División Legal</small></div>
+      <div class="box">🌑<br><b>CAIRN</b><br><small>División Legal</small></div>
+      <div class="box">🤖<br><b>CIBERESTRIKE AI</b><br><small>División Legal</small></div>
+    </div>
+    <div class="btns">
+      <button class="btn-demo" onclick="irDemo()">Solicitar demo</button>
+      <button class="btn-acceso" onclick="irAcceso()">Acceso institucional</button>
+    </div>
+    <p class="copy">© TRINITY BANK SHIELD • ARTEX • PENTAGI • CAIRN • CIBERESTRIKE AI<br>Prohibida su reproducción. Sistema privado. Acceso solo autorizado.</p>
+  </div>
+  <div class="right">
+    <h3>Centro de Seguridad</h3>
+    <div class="big-blue">Transacciones monitoreadas hoy<h2>45,230</h
