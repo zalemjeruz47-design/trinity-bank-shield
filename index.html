@@ -2,41 +2,50 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
 <title>TRINITY BANK SHIELD - Protección para Bancos</title>
 <style>
 *{box-sizing:border-box}
-body{margin:0;font-family:Arial,sans-serif;background:#05050a;color:white;background-image:radial-gradient(circle at 70% 50%,rgba(124,58,237,.35),transparent 50%),radial-gradient(circle at 20% 80%,rgba(59,130,246,.2),transparent 40%)}
-.wrap{max-width:1100px;margin:0 auto;padding:30px 20px 10px}
-.logo{font-size:28px;font-weight:bold;letter-spacing:2px}
+body{margin:0;font-family:Arial,sans-serif;background:#05050a;color:white;background-image:radial-gradient(circle at 70% 20%,rgba(124,58,237,.35),transparent 50%),radial-gradient(circle at 20% 80%,rgba(59,130,246,.2),transparent 40%)}
+.wrap{max-width:1100px;margin:0 auto;padding:20px 16px}
+.logo{font-size:22px;font-weight:bold;letter-spacing:1px;text-align:center}
 .logo span{color:#7c3aed}
-.hero{display:flex;gap:40px;align-items:center;justify-content:space-between;margin-top:35px}
-.left{flex:1;max-width:520px}
-.left h1{font-size:50px;line-height:1.05;margin:0}
-.left p.sub{color:#b0b0c0;font-size:18px;line-height:1.5;margin:20px 0}
-.features{display:flex;gap:25px;margin:30px 0}
-.features div{font-size:14px;line-height:1.3}
-.botones{display:flex;gap:15px}
-.btn{padding:15px 25px;border-radius:12px;font-weight:bold;font-size:16px;border:none;cursor:pointer;text-align:center}
+.hero{display:flex;gap:24px;align-items:flex-start;justify-content:space-between;margin-top:28px}
+.left{flex:1}
+.left h1{font-size:48px;line-height:1.05;margin:0}
+.left p.sub{color:#d0d0dd;font-size:17px;line-height:1.55;margin:18px 0}
+.features{display:flex;gap:16px;margin:22px 0;flex-wrap:wrap}
+.features div{font-size:14px;line-height:1.4;background:#141423;padding:10px 12px;border-radius:12px;border:1px solid #2a2a45}
+.botones{display:flex;gap:12px;flex-wrap:wrap}
+.btn{padding:16px 20px;border-radius:14px;font-weight:bold;font-size:16px;border:none;cursor:pointer;text-align:center;flex:1;min-width:160px}
 .btn1{background:linear-gradient(90deg,#7c3aed,#3b82f6);color:white;box-shadow:0 0 25px rgba(124,58,237,.6)}
 .btn2{background:transparent;color:white;border:1px solid #7c3aed}
-.panel{flex:1;max-width:380px;background:#0f0f1e;border:1px solid #3b82f6;border-radius:28px;padding:22px;text-align:left;box-shadow:0 0 50px rgba(59,130,246,.4)}
-.saldo-box{background:linear-gradient(135deg,#4c1d95,#3b82f6);border-radius:15px;padding:18px}
+.panel{flex:1;max-width:390px;background:#0f0f1e;border:1px solid #3b82f6;border-radius:24px;padding:20px;text-align:left;box-shadow:0 0 40px rgba(59,130,246,.35)}
+.saldo-box{background:linear-gradient(135deg,#4c1d95,#3b82f6);border-radius:14px;padding:16px}
 .saldo{font-size:26px;font-weight:bold;margin:5px 0}
-.verde{color:#4ade80;font-size:14px}
-.card{background:#1a1a2e;border-radius:12px;padding:12px;margin-top:12px;font-size:14px}
+.verde{color:#a7f3d0;font-size:13px}
+.card{background:#1a1a2e;border-radius:12px;padding:12px;margin-top:12px;font-size:14px;line-height:1.5}
 .card small{color:#aaa}
-.caja{background:#0f0f1e;border:1px solid #3b82f6;border-radius:25px;max-width:380px;margin:30px auto;padding:20px;text-align:center}
-input{width:100%;padding:14px;margin:8px 0;border-radius:12px;border:1px solid #333;background:#1a1a2e;color:white}
-.footer{font-size:12px;color:#777;text-align:center;margin:35px 0 20px}
+.caja{background:#0f0f1e;border:1px solid #3b82f6;border-radius:22px;max-width:420px;margin:24px auto;padding:20px;text-align:center;width:100%}
+input{width:100%;padding:15px;margin:8px 0;border-radius:13px;border:1px solid #333;background:#1a1a2e;color:white;font-size:16px}
+.footer{font-size:12px;color:#888;text-align:center;margin:28px 0 16px;line-height:1.5}
 .oculto{display:none}
-@media(max-width:750px){.hero{flex-direction:column}.left{text-align:center}.left h1{font-size:36px}.botones{justify-content:center}.features{justify-content:center}.panel{width:100%}}
+@media(max-width:800px){
+.wrap{padding:18px 14px}
+.hero{flex-direction:column}
+.left{text-align:left}
+.left h1{font-size:38px}
+.panel{max-width:100%;width:100%}
+.botones{flex-direction:column}
+.btn{width:100%;min-width:0}
+.caja{max-width:100%}
+.logo{font-size:20px}
+}
 </style>
 </head>
 <body>
 <div class="wrap">
 
-<!-- 1. PORTADA - PARA VENDERLE AL BANCO -->
 <div id="portada">
 <div class="logo">🛡️ <span>T</span>RINITY BANK SHIELD</div>
 <div class="hero">
@@ -44,9 +53,9 @@ input{width:100%;padding:14px;margin:8px 0;border-radius:12px;border:1px solid #
 <h1>Tu dinero protegido.<br>Tu banco seguro.</h1>
 <p class="sub">Somos el escudo que monitorea, detecta y protege cada transacción de tu banco 24/7 con ciberseguridad avanzada.</p>
 <div class="features">
-<div>🛡️<br>Cifrado de<br>nivel bancario</div>
-<div>🎯<br>Monitoreo<br>24/7</div>
-<div>📈<br>Reportes en<br>tiempo real</div>
+<div>🛡️<br><b>Cifrado</b><br>nivel bancario</div>
+<div>🎯<br><b>Monitoreo</b><br>24/7</div>
+<div>📈<br><b>Reportes</b><br>tiempo real</div>
 </div>
 <div class="botones">
 <button class="btn btn1" onclick="ir('login')">Solicitar demo</button>
@@ -57,7 +66,7 @@ input{width:100%;padding:14px;margin:8px 0;border-radius:12px;border:1px solid #
 <p style="font-weight:bold;font-size:18px;margin:0">Centro de Seguridad</p><br>
 <div class="saldo-box"><p style="margin:0;font-size:13px">Transacciones monitoreadas hoy</p><div class="saldo">45,230</div><p class="verde">↗ Todo en orden • Sin incidentes</p></div>
 <div class="card">✅ <b>Amenazas bloqueadas</b><br><span style="color:#4ade80;font-weight:bold">1,284 este mes</span><br><small>0 brechas de seguridad</small></div>
-<p style="font-weight:bold;margin:18px 0 5px">Protección activa</p>
+<p style="font-weight:bold;margin:16px 0 5px">Protección activa</p>
 <div class="card">🛡️ Bancos protegidos<br><b>12 bancos activos</b></div>
 <div class="card">⚡ Tiempo de respuesta<br><b>0.8 segundos</b></div>
 <div class="card">🛡️ Monitoreo activo<br><small>Hoy • 24/7 • Siempre vigilando</small></div>
@@ -66,17 +75,15 @@ input{width:100%;padding:14px;margin:8px 0;border-radius:12px;border:1px solid #
 <p class="footer">Protección para instituciones financieras • Cifrado AES-256 • Soporte 24/7</p>
 </div>
 
-<!-- 2. LOGIN - PARA EL BANCO -->
 <div id="login" class="oculto">
-<div style="text-align:center"><div style="font-size:50px">🛡️</div><div class="logo">TRINITY BANK SHIELD</div><p style="color:#b0b0c0">Acceso para Instituciones - Centro de Comando</p>
+<div style="text-align:center"><div style="font-size:52px">🛡️</div><div class="logo">TRINITY BANK SHIELD</div><p style="color:#c0c0d0">Acceso para Instituciones - Centro de Comando</p>
 <div class="caja"><p style="color:#a78bfa">Inicia sesión como banco</p><input type="text" placeholder="Correo corporativo del banco"><input type="password" placeholder="Contraseña"><button class="btn btn1" style="width:100%" onclick="ir('dashboard')">ENTRAR AL SHIELD</button><button class="btn btn2" style="width:100%;margin-top:10px" onclick="ir('portada')">← Volver</button></div></div>
 </div>
 
-<!-- 3. DASHBOARD - CENTRO DE COMANDO DEL BANCO -->
 <div id="dashboard" class="oculto">
-<div style="text-align:center"><div style="font-size:50px">🛡️</div><div class="logo">TRINITY BANK SHIELD</div><p style="color:#b0b0c0">Bienvenido, Banco Aliado - Centro de Comando</p>
-<div class="caja"><p style="color:#a78bfa;margin:0">Dinero protegido hoy</p><div style="font-size:32px;font-weight:bold">$2,450,000 USD</div><p style="color:#3b82f6;font-size:12px">✦ Protegido por TRINITY ✦</p>
-<p style="text-align:left;font-size:14px">🛡️ Amenazas bloqueadas hoy: <b style="color:#4ade80">47</b><br>📊 Transacciones vigiladas: <b>45,230</b><br>⚡ Estado: <b style="color:#4ade80">Todo Protegido</b></p>
+<div style="text-align:center"><div style="font-size:52px">🛡️</div><div class="logo">TRINITY BANK SHIELD</div><p style="color:#c0c0d0">Bienvenido, Banco Aliado - Centro de Comando</p>
+<div class="caja"><p style="color:#a78bfa;margin:0">Dinero protegido hoy</p><div style="font-size:32px;font-weight:bold">$2,450,000 USD</div><p style="color:#93c5fd;font-size:12px">✦ Protegido por TRINITY ✦</p>
+<p style="text-align:left;font-size:15px;line-height:1.8">🛡️ Amenazas bloqueadas hoy: <b style="color:#4ade80">47</b><br>📊 Transacciones vigiladas: <b>45,230</b><br>⚡ Estado: <b style="color:#4ade80">Todo Protegido</b></p>
 <button class="btn btn1" style="width:100%">Ver reporte de seguridad</button><button class="btn btn2" style="width:100%;margin-top:10px">Ver alertas</button><button class="btn btn2" style="width:100%;margin-top:10px">Ver bancos protegidos</button><button class="btn btn1" style="width:100%;margin-top:10px">Security Center</button><button class="btn btn2" style="width:100%;margin-top:10px" onclick="ir('portada')">← Salir</button></div></div>
 </div>
 
