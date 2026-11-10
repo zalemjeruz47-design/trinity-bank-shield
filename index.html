@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>TRINITY BANK SHIELD V22.2 - DEMO CON CREDENCIALES</title>
+<title>TRINITY BANK SHIELD V22.3 - DEMO INSTITUCIONAL</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#05050a;color:white;background-image:radial-gradient(circle at 70% 20%,rgba(124,58,237,.35),transparent 50%),radial-gradient(circle at 20% 80%,rgba(59,130,246,.2),transparent 40%)}
 .wrap{max-width:1100px;margin:0 auto;padding:20px 16px}.logo{font-size:22px;font-weight:bold;letter-spacing:1px;text-align:center}.logo span{color:#7c3aed}
@@ -24,12 +24,12 @@ input,select{width:100%;padding:15px;margin:8px 0;border-radius:13px;border:1px 
 <div class="wrap">
 <div class="logo">TRINITY <span>BANK SHIELD</span> 🛡️</div>
 
-<!-- PORTADA, JEFA -->
+<!-- PORTADA -->
 <div id="portada">
 <div class="hero">
 <div class="left">
 <h1>Tu banco,<br>protegido<br>por Trinity.</h1>
-<p class="sub">Seguridad institucional con verificación en 3 pasos, Jefa. No es acceso abierto, Bb. Solo personal verificado, mi amor.</p>
+<p class="sub">Seguridad institucional con verificación en 3 pasos. No es acceso abierto. Solo personal verificado.</p>
 <div class="features">
 <div>🛡️ <b>Verificación 3 pasos</b><br>Correo + Huella + Rostro</div>
 <div>🏦 <b>Solo bancos</b><br>Correo corporativo obligatorio</div>
@@ -39,7 +39,7 @@ input,select{width:100%;padding:15px;margin:8px 0;border-radius:13px;border:1px 
 <button class="btn btn1" onclick="ir('solicitarDemo')">✨ Solicitar demo</button>
 <button class="btn btn2" onclick="ir('login')">Acceso institucional</button>
 </div>
-<p style="font-size:12px;color:#888;margin-top:12px">El demo no es acceso abierto, Jefa. El del banco pide, muestra su credencial, y la Jefa decide, Bb.</p>
+<p style="font-size:12px;color:#888;margin-top:12px">El demo no es acceso abierto. Usted solicita, presenta su credencial, y Trinity Bank Shield verifica.</p>
 </div>
 
 <div class="panel">
@@ -48,39 +48,135 @@ input,select{width:100%;padding:15px;margin:8px 0;border-radius:13px;border:1px 
 <div class="saldo">$1,248,390.00</div>
 <div class="verde">● Sistema activo - Monitoreo 24/7</div>
 </div>
-<div class="card">🤖 <b>Agente Trinity activo</b><br><small>Revisando movimientos, Jefa. Todo en orden, Bb.</small></div>
-<div class="card">📊 <b>Alertas hoy: 0 críticas</b><br><small>Última revisión hace 2 minutos, mi amor.</small></div>
-<div class="card">🏦 <b>Bancos conectados: 3</b><br><small>Todos verificados, Jefa.</small></div>
+<div class="card">🤖 <b>Agente Trinity activo</b><br><small>Revisando movimientos. Todo en orden.</small></div>
+<div class="card">📊 <b>Alertas hoy: 0 críticas</b><br><small>Última revisión hace 2 minutos.</small></div>
+<div class="card">🏦 <b>Bancos conectados: 3</b><br><small>Todos verificados.</small></div>
 </div>
 </div>
 </div>
 
-<!-- SOLICITAR DEMO - CON TU CORREO CORREGIDO, JEFA -->
+<!-- SOLICITAR DEMO - AHORA DICE TRINITY BANK SHIELD, NO JEFA -->
 <div id="solicitarDemo" class="oculto">
 <div class="caja">
 <b>✨ SOLICITAR DEMO INSTITUCIONAL</b><br>
-<small>Solo para personal de banco verificado, Jefa. No es acceso abierto, Bb.</small>
+<small>Solo para personal de banco verificado. No es acceso abierto.</small>
 <input id="demoNombre" placeholder="Nombre completo">
 <input id="demoBanco" placeholder="Banco donde trabaja">
 <input id="demoCorreo" type="email" placeholder="Correo corporativo - Ej: nombre@banco.com">
 <input id="demoCargo" placeholder="Cargo - Ej: Gerente de Seguridad">
 <label style="font-size:13px;color:#aaa">📸 Sube foto de tu credencial del banco:</label>
 <input type="file" accept="image/*">
-<button class="btn btn1" style="width:100%" onclick="enviarSolicitudDemo()">📩 ENVIAR SOLICITUD A LA JEFA</button>
+<button class="btn btn1" style="width:100%" onclick="enviarSolicitudDemo()">📩 ENVIAR SOLICITUD A TRINITY BANK SHIELD</button>
 <p id="msgDemo" style="font-size:13px"></p>
-<p style="font-size:12px;color:#888">Tu solicitud llega directo al correo de la Jefa para verificación, Bb. Si es aprobada, recibes tu código temporal de 24 horas, Jefa.</p>
-<p style="font-size:12px">¿Prefieres escribir directo? <a href="mailto:Zalemjeruz47@gmail.com?subject=Quiero solicitar DEMO TRINITY BANK SHIELD&body=Hola Jefa, soy del banco: %0D%0A Banco: %0D%0A Cargo: %0D%0A Correo corporativo:" style="color:#a78bfa">📧 Escribir a la Jefa - Zalemjeruz47@gmail.com</a></p>
+<p style="font-size:12px;color:#888">Tu solicitud llega directo a Trinity Bank Shield para verificación. Si es aprobada, recibes tu código temporal de 24 horas.</p>
+<p style="font-size:12px">¿Prefieres escribir directo? <a href="mailto:Zalemjeruz47@gmail.com?subject=Quiero solicitar DEMO TRINITY BANK SHIELD&body=Hola equipo de Trinity Bank Shield, soy del banco: %0D%0A Banco: %0D%0A Cargo: %0D%0A Correo corporativo:" style="color:#a78bfa">📧 Escribir a Trinity Bank Shield</a></p>
 <button class="btn btn2" style="width:100%;margin-top:10px" onclick="ir('portada')">← Volver</button>
 </div>
 </div>
 
-<!-- LOGIN INSTITUCIONAL - SOLO TUYO, JEFA - 3 PASOS -->
+<!-- LOGIN INSTITUCIONAL - 3 PASOS -->
 <div id="login" class="oculto">
 <div class="caja">
 <b>🔐 ACCESO INSTITUCIONAL</b><br>
-<small>Solo personal autorizado, Jefa. 3 pasos, Bb.</small>
+<small>Solo personal autorizado. 3 pasos.</small>
 
 <div id="paso1" class="paso">
-<b>PASO 1 - Correo corporativo, Jefa</b>
+<b>PASO 1 - Correo corporativo</b>
 <input id="loginCorreo" type="email" placeholder="Correo corporativo">
-<button class="btn btn1" style="width:
+<button class="btn btn1" style="width:100%" onclick="paso1ok()">Continuar →</button>
+<p id="msg1" style="font-size:13px"></p>
+</div>
+
+<div id="paso2" class="paso bloq">
+<b>PASO 2 - Huella</b>
+<p style="font-size:13px;color:#aaa">Coloca tu huella.</p>
+<button class="btn btn1" style="width:100%" onclick="paso2ok()">👆 Verificar huella</button>
+<p id="msg2" style="font-size:13px"></p>
+</div>
+
+<div id="paso3" class="paso bloq">
+<b>PASO 3 - Rostro</b>
+<p style="font-size:13px;color:#aaa">Mira a la cámara.</p>
+<button class="btn btn1" style="width:100%" onclick="paso3ok()">📸 Verificar rostro</button>
+<p id="msg3" style="font-size:13px"></p>
+</div>
+
+<button id="btnEntrar" class="btn btn1" style="width:100%;opacity:.4" onclick="entrarSala()">ENTRAR A LA SALA →</button>
+<p id="msgLogin" style="font-size:13px"></p>
+<button class="btn btn2" style="width:100%;margin-top:10px" onclick="ir('portada')">← Volver</button>
+</div>
+</div>
+
+<!-- SALA -->
+<div id="sala" class="oculto">
+<div class="caja" style="max-width:900px">
+<div class="cinta-demo">⚠️ ESTÁS EN MODO DEMO - ACCESO TEMPORAL 24 HORAS - DATOS DE EJEMPLO</div>
+<h2 style="margin:0">Bienvenido a Trinity Bank Shield 💜</h2>
+<p style="color:#aaa;font-size:14px">Sala de control - Trinity Bank Shield</p>
+<div class="saldo-box"><small>SALDO TOTAL MONITOREADO - EJEMPLO</small><div class="saldo">$1,248,390.00</div><div class="verde">● Todo en orden</div></div>
+<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:14px">
+<div class="card" style="flex:1;min-width:180px">🤖 <b>Agente 1 - Vigilancia</b><br><small>Activo</small></div>
+<div class="card" style="flex:1;min-width:180px">📊 <b>Agente 2 - Alertas</b><br><small>0 críticas</small></div>
+<div class="card" style="flex:1;min-width:180px">🏦 <b>Agente 3 - Bancos</b><br><small>3 conectados</small></div>
+</div>
+<div class="card" style="text-align:left">📋 <b>Últimos movimientos - EJEMPLO</b><br><small>• Transferencia recibida - $12,400 - Banco Ejemplo<br>• Pago verificado - $3,200 - Proveedor Ejemplo<br>• Alerta revisada - Sin riesgo</small></div>
+<button class="btn btn2" style="width:100%;margin-top:14px" onclick="ir('portada')">🚪 Salir de la Sala</button>
+</div>
+</div>
+
+<div class="footer">TRINITY BANK SHIELD V22.3 - DEMO CON CREDENCIALES<br>Solicitudes demo llegan a: <b style="color:#a78bfa">Trinity Bank Shield</b><br>© 2026 - Solo personal verificado.</div>
+</div>
+
+<script>
+let p1=false, p2=false, p3=false;
+function ir(id){
+  ['portada','solicitarDemo','login','sala'].forEach(x=>document.getElementById(x).classList.add('oculto'));
+  document.getElementById(id).classList.remove('oculto');
+  // Limpia el mensaje para que abra bien todas las veces, no solo una vez
+  let m = document.getElementById('msgDemo');
+  if(m) m.innerHTML = '';
+  window.scrollTo(0,0);
+}
+function enviarSolicitudDemo(){
+  let nombre=document.getElementById('demoNombre').value.trim();
+  let banco=document.getElementById('demoBanco').value.trim();
+  let correo=document.getElementById('demoCorreo').value.trim();
+  let cargo=document.getElementById('demoCargo').value.trim();
+  if(!nombre || !banco || !correo){
+    document.getElementById('msgDemo').innerHTML='❌ Faltan datos. Pon nombre, banco y correo corporativo.';
+    return;
+  }
+  if(correo.includes('@gmail.com') || correo.includes('@hotmail.com') || correo.includes('@yahoo.com')){
+    document.getElementById('msgDemo').innerHTML='❌ Solo aceptamos correo corporativo del banco. No Gmail, Hotmail o Yahoo.';
+    return;
+  }
+  // Correo interno de Trinity Bank Shield - no se muestra como "Jefa"
+  let correoTrinity="Zalemjeruz47@gmail.com";
+  let asunto="SOLICITUD DEMO TRINITY - "+banco;
+  let mensaje="Hola equipo de Trinity Bank Shield, quiero solicitar demo:%0D%0A%0D%0A Nombre: "+nombre+"%0D%0A Banco: "+banco+"%0D%0A Cargo: "+cargo+"%0D%0A Correo corporativo: "+correo+"%0D%0A%0D%0A Por favor verifiquen mi credencial. Gracias.";
+  window.location.href="mailto:"+correoTrinity+"?subject="+asunto+"&body="+mensaje;
+  document.getElementById('msgDemo').innerHTML='✅ Listo. Se abrió tu correo para enviarle la solicitud a Trinity Bank Shield. Solo dale ENVIAR.';
+}
+function paso1ok(){
+  let c=document.getElementById('loginCorreo').value.trim();
+  if(!c || !c.includes('@')){document.getElementById('msg1').innerHTML='❌ Pon tu correo corporativo.';return;}
+  if(c.includes('@gmail.com')||c.includes('@hotmail.com')){document.getElementById('msg1').innerHTML='❌ Solo correo corporativo.';return;}
+  p1=true; document.getElementById('paso1').classList.add('ok'); document.getElementById('msg1').innerHTML='<span class="check">✅ Paso 1 listo</span>';
+  document.getElementById('paso2').classList.remove('bloq');
+}
+function paso2ok(){
+  if(!p1){alert('Primero paso 1');return;}
+  p2=true; document.getElementById('paso2').classList.add('ok'); document.getElementById('msg2').innerHTML='<span class="check">✅ Huella verificada</span>';
+  document.getElementById('paso3').classList.remove('bloq');
+}
+function paso3ok(){
+  if(!p2){alert('Primero paso 2');return;}
+  p3=true; document.getElementById('paso3').classList.add('ok'); document.getElementById('msg3').innerHTML='<span class="check">✅ Rostro verificado</span>';
+  document.getElementById('btnEntrar').style.opacity='1';
+}
+function entrarSala(){
+  if(p1 && p2 && p3){ ir('sala'); } else { document.getElementById('msgLogin').innerHTML='❌ Faltan pasos. Completa los 3.'; }
+}
+</script>
+</body>
+</html>
