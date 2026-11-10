@@ -3,44 +3,34 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>TRINITY BANK SHIELD - Protección para Bancos</title>
+<title>TRINITY BANK SHIELD - ARTEX / PENTAGI / CAIRN / CIBERESTRIKE AI</title>
 <style>
 *{box-sizing:border-box}
 body{margin:0;font-family:Arial,sans-serif;background:#05050a;color:white;background-image:radial-gradient(circle at 70% 20%,rgba(124,58,237,.35),transparent 50%),radial-gradient(circle at 20% 80%,rgba(59,130,246,.2),transparent 40%)}
 .wrap{max-width:1100px;margin:0 auto;padding:20px 16px}
-.logo{font-size:22px;font-weight:bold;letter-spacing:1px;text-align:center}
-.logo span{color:#7c3aed}
+.logo{font-size:22px;font-weight:bold;letter-spacing:1px;text-align:center}.logo span{color:#7c3aed}
 .hero{display:flex;gap:24px;align-items:flex-start;justify-content:space-between;margin-top:28px}
-.left{flex:1}
-.left h1{font-size:48px;line-height:1.05;margin:0}
-.left p.sub{color:#d0d0dd;font-size:17px;line-height:1.55;margin:18px 0}
-.features{display:flex;gap:16px;margin:22px 0;flex-wrap:wrap}
-.features div{font-size:14px;line-height:1.4;background:#141423;padding:10px 12px;border-radius:12px;border:1px solid #2a2a45}
+.left{flex:1}.left h1{font-size:46px;line-height:1.05;margin:0}.left p.sub{color:#d0d0dd;font-size:17px;line-height:1.55;margin:18px 0}
+.features{display:flex;gap:12px;margin:22px 0;flex-wrap:wrap}.features div{font-size:13px;line-height:1.4;background:#141423;padding:10px 12px;border-radius:12px;border:1px solid #2a2a45}
 .botones{display:flex;gap:12px;flex-wrap:wrap}
 .btn{padding:16px 20px;border-radius:14px;font-weight:bold;font-size:16px;border:none;cursor:pointer;text-align:center;flex:1;min-width:160px}
 .btn1{background:linear-gradient(90deg,#7c3aed,#3b82f6);color:white;box-shadow:0 0 25px rgba(124,58,237,.6)}
-.btn2{background:transparent;color:white;border:1px solid #7c3aed}
+.btn2{background:transparent;color:white;border:1px solid #7c3aed}.btn-off{opacity:.4}
 .panel{flex:1;max-width:390px;background:#0f0f1e;border:1px solid #3b82f6;border-radius:24px;padding:20px;text-align:left;box-shadow:0 0 40px rgba(59,130,246,.35)}
-.saldo-box{background:linear-gradient(135deg,#4c1d95,#3b82f6);border-radius:14px;padding:16px}
-.saldo{font-size:26px;font-weight:bold;margin:5px 0}
-.verde{color:#a7f3d0;font-size:13px}
-.card{background:#1a1a2e;border-radius:12px;padding:12px;margin-top:12px;font-size:14px;line-height:1.5}
-.card small{color:#aaa}
-.caja{background:#0f0f1e;border:1px solid #3b82f6;border-radius:22px;max-width:420px;margin:24px auto;padding:20px;text-align:center;width:100%}
-input{width:100%;padding:15px;margin:8px 0;border-radius:13px;border:1px solid #333;background:#1a1a2e;color:white;font-size:16px}
+.saldo-box{background:linear-gradient(135deg,#4c1d95,#3b82f6);border-radius:14px;padding:16px}.saldo{font-size:26px;font-weight:bold;margin:5px 0}.verde{color:#a7f3d0;font-size:13px}
+.card{background:#1a1a2e;border-radius:12px;padding:12px;margin-top:12px;font-size:14px;line-height:1.5}.card small{color:#aaa}
+.caja{background:#0f0f1e;border:1px solid #3b82f6;border-radius:22px;max-width:520px;margin:24px auto;padding:20px;text-align:center;width:100%}
+input,select{width:100%;padding:15px;margin:8px 0;border-radius:13px;border:1px solid #333;background:#1a1a2e;color:white;font-size:16px}
 .footer{font-size:12px;color:#888;text-align:center;margin:28px 0 16px;line-height:1.5}
 .oculto{display:none}
-@media(max-width:800px){
-.wrap{padding:18px 14px}
-.hero{flex-direction:column}
-.left{text-align:left}
-.left h1{font-size:38px}
-.panel{max-width:100%;width:100%}
-.botones{flex-direction:column}
-.btn{width:100%;min-width:0}
-.caja{max-width:100%}
-.logo{font-size:20px}
-}
+.paso{border:1px solid #2a2a45;border-radius:16px;padding:14px;margin:12px 0;text-align:left;background:#141423}.paso.bloq{opacity:.5}.paso.ok{border-color:#22c55e;background:#0f2417}.check{color:#4ade80;font-weight:bold}
+video{width:100%;border-radius:14px;background:black;display:none;margin-top:10px}
+.pasos-top{display:flex;gap:6px;margin:10px 0}.pasos-top div{flex:1;height:8px;border-radius:99px;background:#2a2a45}.pasos-top div.on{background:#22c55e}
+.login-op{border:1px solid #2a2a45;border-radius:16px;padding:14px;margin:10px 0;text-align:left;cursor:pointer;background:#141423}.login-op.sel{border-color:#7c3aed;background:#1e1533;box-shadow:0 0 15px rgba(124,58,237,.4)}
+.agente{border-radius:16px;padding:14px;margin:12px 0;text-align:left;font-size:14px;line-height:1.5}.ag-vera{background:#0f2417;border:1px solid #22c55e}.ag-track{background:#1a1a00;border:1px solid #eab308}
+table{width:100%;border-collapse:collapse;font-size:12px;text-align:left;margin-top:10px}th,td{padding:8px 6px;border-bottom:1px solid #2a2a45}th{color:#a78bfa}
+.func-box{border-radius:16px;padding:14px;margin:12px 0;text-align:left;font-size:13px;line-height:1.6;background:#141423;border:1px solid #2a2a45}
+@media(max-width:800px){.wrap{padding:18px 14px}.hero{flex-direction:column}.left h1{font-size:36px}.panel{max-width:100%;width:100%}.botones{flex-direction:column}.btn{width:100%;min-width:0}.caja{max-width:100%}table{font-size:11px}}
 </style>
 </head>
 <body>
@@ -51,51 +41,101 @@ input{width:100%;padding:15px;margin:8px 0;border-radius:13px;border:1px solid #
 <div class="hero">
 <div class="left">
 <h1>Tu dinero protegido.<br>Tu banco seguro.</h1>
-<p class="sub">Somos el escudo que monitorea, detecta y protege cada transacción de tu banco 24/7 con ciberseguridad avanzada.</p>
+<p class="sub">4 Divisiones Legales bajo un solo escudo: <b>ARTEX • PENTAGI • CAIRN • CIBERESTRIKE AI</b>. Cada una con su login, sus 2 agentes y su inventario con hora, día y segundo.</p>
 <div class="features">
-<div>🛡️<br><b>Cifrado</b><br>nivel bancario</div>
-<div>🎯<br><b>Monitoreo</b><br>24/7</div>
-<div>📈<br><b>Reportes</b><br>tiempo real</div>
+<div>🎨<br><b>ARTEX</b><br>Legal - Contratos</div>
+<div>⬠<br><b>PENTAGI</b><br>Legal - Gobierno</div>
+<div>🪨<br><b>CAIRN</b><br>Legal - Custodia</div>
+<div>🤖<br><b>CIBERESTRIKE AI</b><br>Legal - Ciberdefensa</div>
 </div>
-<div class="botones">
-<button class="btn btn1" onclick="ir('login')">Solicitar demo</button>
-<button class="btn btn2" onclick="ir('login')">Entrar como banco</button>
+<div class="botones"><button class="btn btn1" onclick="ir('login')">Solicitar demo</button><button class="btn btn2" onclick="ir('login')">Entrar como división</button></div>
 </div>
-</div>
-<div class="panel">
-<p style="font-weight:bold;font-size:18px;margin:0">Centro de Seguridad</p><br>
+<div class="panel"><p style="font-weight:bold;font-size:18px;margin:0">Centro de Seguridad</p><br>
 <div class="saldo-box"><p style="margin:0;font-size:13px">Transacciones monitoreadas hoy</p><div class="saldo">45,230</div><p class="verde">↗ Todo en orden • Sin incidentes</p></div>
-<div class="card">✅ <b>Amenazas bloqueadas</b><br><span style="color:#4ade80;font-weight:bold">1,284 este mes</span><br><small>0 brechas de seguridad</small></div>
-<p style="font-weight:bold;margin:16px 0 5px">Protección activa</p>
-<div class="card">🛡️ Bancos protegidos<br><b>12 bancos activos</b></div>
-<div class="card">⚡ Tiempo de respuesta<br><b>0.8 segundos</b></div>
-<div class="card">🛡️ Monitoreo activo<br><small>Hoy • 24/7 • Siempre vigilando</small></div>
-</div>
-</div>
-<p class="footer">Protección para instituciones financieras • Cifrado AES-256 • Soporte 24/7</p>
+<div class="card">🎨 <b>ARTEX</b> - 12 contratos firmados<br><small>Legal • Propiedad intelectual</small></div>
+<div class="card">⬠ <b>PENTAGI</b> - 5 pilares en regla<br><small>Legal • Compliance • Gobernanza</small></div>
+<div class="card">🪨 <b>CAIRN</b> - 248 evidencias custodiadas<br><small>Legal • Cadena de custodia</small></div>
+<div class="card">🤖 <b>CIBERESTRIKE AI</b> - 47 ataques bloqueados<br><small>Legal • IA • Fraude detectado</small></div>
+</div></div>
+<p class="footer">TRINITY BANK SHIELD • ARTEX • PENTAGI • CAIRN • CIBERESTRIKE AI • 2 Agentes por Login • Inventario Hora / Día / Segundo</p>
 </div>
 
 <div id="login" class="oculto">
-<div style="text-align:center"><div style="font-size:52px">🛡️</div><div class="logo">TRINITY BANK SHIELD</div><p style="color:#c0c0d0">Acceso para Instituciones - Centro de Comando</p>
-<div class="caja"><p style="color:#a78bfa">Inicia sesión como banco</p><input type="text" placeholder="Correo corporativo del banco"><input type="password" placeholder="Contraseña"><button class="btn btn1" style="width:100%" onclick="ir('dashboard')">ENTRAR AL SHIELD</button><button class="btn btn2" style="width:100%;margin-top:10px" onclick="ir('portada')">← Volver</button></div></div>
+<div style="text-align:center"><div style="font-size:52px">🛡️</div><div class="logo">TRINITY BANK SHIELD</div><p style="color:#c0c0d0">Elige tu División Legal - 4 Logins</p>
+<div class="caja">
+<p style="color:#a78bfa">1️⃣ ELIGE TU DIVISIÓN, JEFA:</p>
+<div class="login-op sel" id="op1" onclick="elegirLogin(1,'ARTEX')">🎨 <b>LOGIN 1 - ARTEX</b><br><small><b>LEGAL - Contratos y Arte.</b> Propiedad intelectual, derechos de autor, firma de convenios.</small></div>
+<div class="login-op" id="op2" onclick="elegirLogin(2,'PENTAGI')">⬠ <b>LOGIN 2 - PENTAGI</b><br><small><b>LEGAL - Gobierno y Cumplimiento.</b> Gobernanza, regulación bancaria, 5 pilares: Seguridad, Legal, Ética, Datos, Dinero.</small></div>
+<div class="login-op" id="op3" onclick="elegirLogin(3,'CAIRN')">🪨 <b>LOGIN 3 - CAIRN</b><br><small><b>LEGAL - Custodia y Pruebas.</b> Cadena de custodia, resguardo de evidencias, archivo legal.</small></div>
+<div class="login-op" id="op4" onclick="elegirLogin(4,'CIBERESTRIKE AI')">🤖 <b>LOGIN 4 - CIBERESTRIKE AI</b><br><small><b>LEGAL - Ciberdefensa con IA.</b> Defensa cibernética, investigación de ataques, reporte legal para fiscalía.</small></div>
+
+<div id="funcionesBox" class="func-box">🎨 <b>FUNCIONES LEGALES - ARTEX:</b><br>• Redactar y firmar contratos<br>• Proteger propiedad intelectual y derechos de autor<br>• Validar convenios con bancos<br>• Registrar obras y marcas</div>
+
+<div class="agente ag-vera">🕵️ <b>AGENTE VERA - VERIFICACIÓN</b><br><small>Yo confirmo tu identidad: correo + huella + rostro. Si no eres tú, no entras.</small><br><b id="veraStatus">⏳ Esperando verificación...</b></div>
+<div class="agente ag-track">👁️ <b>AGENTE TRACKER - SEGUIMIENTO</b><br><small>Yo anoto todo: qué transacción haces, a qué hora, qué día y qué segundo.</small><br><b id="trackerStatus">⏳ Esperando movimientos...</b></div>
+
+<div class="pasos-top"><div id="bar1"></div><div id="bar2"></div><div id="bar3"></div></div>
+<div class="paso" id="paso1"><b>1️⃣ CORREO ELECTRÓNICO 📧</b><br><small id="loginActualTxt">Login: ARTEX</small><input id="correo" type="email" placeholder="ej: legal@artex.com"><input id="clave" type="password" placeholder="Contraseña"><button class="btn btn1" style="width:100%" onclick="pasoCorreo()">Verificar correo →</button><p id="msg1" style="font-size:13px"></p></div>
+<div class="paso bloq" id="paso2"><b>2️⃣ HUELLA DACTILAR 🫆</b><br><small>Pon tu huella</small><br><br><div style="font-size:60px;text-align:center">🫆</div><button class="btn btn1" style="width:100%" onclick="pasoHuella()">Verificar mi huella</button><p id="msg2" style="font-size:13px">Primero pasa el Paso 1</p></div>
+<div class="paso bloq" id="paso3"><b>3️⃣ RECONOCIMIENTO FACIAL 📸</b><br><small>Mira a la cámara</small><br><br><div style="font-size:60px;text-align:center">📸</div><video id="cam" autoplay playsinline></video><button class="btn btn1" style="width:100%" onclick="pasoFacial()">Abrir cámara y verificar rostro</button><p id="msg3" style="font-size:13px">Primero pasa el Paso 2</p></div>
+<button id="btnEntrar" class="btn btn1 btn-off" style="width:100%;margin-top:10px" onclick="entrarFinal()">🔒 ENTRAR AL SHIELD - Falta verificar</button>
+<button class="btn btn2" style="width:100%;margin-top:10px" onclick="ir('portada')">← Volver</button>
+</div></div>
 </div>
 
 <div id="dashboard" class="oculto">
-<div style="text-align:center"><div style="font-size:52px">🛡️</div><div class="logo">TRINITY BANK SHIELD</div><p style="color:#c0c0d0">Bienvenido, Banco Aliado - Centro de Comando</p>
-<div class="caja"><p style="color:#a78bfa;margin:0">Dinero protegido hoy</p><div style="font-size:32px;font-weight:bold">$2,450,000 USD</div><p style="color:#93c5fd;font-size:12px">✦ Protegido por TRINITY ✦</p>
+<div style="text-align:center"><div style="font-size:52px">🛡️</div><div class="logo">TRINITY BANK SHIELD</div><p style="color:#c0c0d0" id="bienvenidaTxt">Bienvenido, ARTEX - Centro de Comando</p><p style="color:#4ade80;font-size:13px">✅ Verificado por Vera: Correo + Huella + Rostro • Vigilado por Tracker</p>
+<div class="agente ag-vera" style="max-width:520px;margin:12px auto">🕵️ <b>AGENTE VERA - VERIFICACIÓN</b><br><span id="veraDash">Identidad confirmada</span><br><small>Última verificación: <span id="horaVera"></span></small></div>
+<div class="agente ag-track" style="max-width:520px;margin:12px auto">👁️ <b>AGENTE TRACKER - SEGUIMIENTO</b><br><span id="trackerDash">Registrando cada movimiento con hora, día y segundo</span></div>
+
+<div class="caja" style="max-width:640px"><p style="color:#a78bfa;margin:0">Dinero protegido hoy</p><div style="font-size:32px;font-weight:bold">$2,450,000 USD</div><p style="color:#93c5fd;font-size:12px">✦ Protegido por TRINITY ✦</p>
+<div id="funcionesDash" class="func-box" style="text-align:left">🎨 Funciones ARTEX</div>
 <p style="text-align:left;font-size:15px;line-height:1.8">🛡️ Amenazas bloqueadas hoy: <b style="color:#4ade80">47</b><br>📊 Transacciones vigiladas: <b>45,230</b><br>⚡ Estado: <b style="color:#4ade80">Todo Protegido</b></p>
-<button class="btn btn1" style="width:100%">Ver reporte de seguridad</button><button class="btn btn2" style="width:100%;margin-top:10px">Ver alertas</button><button class="btn btn2" style="width:100%;margin-top:10px">Ver bancos protegidos</button><button class="btn btn1" style="width:100%;margin-top:10px">Security Center</button><button class="btn btn2" style="width:100%;margin-top:10px" onclick="ir('portada')">← Salir</button></div></div>
+<label style="font-size:13px;color:#aaa">¿Qué acción legal quieres registrar, Jefa?</label>
+<select id="tipoTrans"><option>LOGIN VERIFICADO</option><option>CONTRATO FIRMADO</option><option>CONVENIO VALIDADO</option><option>REGULACIÓN REVISADA</option><option>EVIDENCIA CUSTODIADA</option><option>ATAQUE INVESTIGADO</option><option>TRANSFERENCIA ENVIADA</option><option>PAGO A PROVEEDOR</option><option>DEPÓSITO RECIBIDO</option><option>REPORTE LEGAL CREADO</option><option>ALERTA REVISADA</option></select>
+<input id="montoTrans" type="number" placeholder="Monto en USD (ej: 5000)">
+<button class="btn btn1" style="width:100%" onclick="registrarTrans()">➕ Registrar con Tracker - Hora / Día / Segundo</button>
+<button class="btn btn2" style="width:100%;margin-top:10px" onclick="registrarTrans('REPORTE LEGAL CREADO')">Crear reporte legal</button>
+<button class="btn btn1" style="width:100%;margin-top:10px">Security Center</button>
+</div>
+
+<div class="caja" style="max-width:640px"><p style="text-align:left"><b>📋 INVENTARIO DE MOVIMIENTOS - AGENTE TRACKER</b><br><small>Hora exacta, día y segundo de cada acción legal y transacción</small></p>
+<div style="overflow-x:auto"><table><thead><tr><th>Día</th><th>Hora</th><th>Seg</th><th>División</th><th>Acción / Transacción</th><th>Monto</th><th>Agentes</th></tr></thead><tbody id="tablaInventario"></tbody></table></div>
+<button class="btn btn2" style="width:100%;margin-top:10px" onclick="ir('portada')">← Salir</button></div>
+</div>
 </div>
 
 </div>
 <script>
-function ir(id){
-document.getElementById('portada').classList.add('oculto');
-document.getElementById('login').classList.add('oculto');
-document.getElementById('dashboard').classList.add('oculto');
-document.getElementById(id).classList.remove('oculto');
-window.scrollTo(0,0);
-}
+let ok1=false, ok2=false, ok3=false;
+let loginNum=1, loginNombre='ARTEX';
+let inventario=[];
+let FUNCIONES={
+'ARTEX':'🎨 <b>FUNCIONES LEGALES - ARTEX:</b><br>• Redactar y firmar contratos<br>• Proteger propiedad intelectual y derechos de autor<br>• Validar convenios con bancos<br>• Registrar obras y marcas<br>• Revisar cláusulas legales',
+'PENTAGI':'⬠ <b>FUNCIONES LEGALES - PENTAGI:</b><br>• Gobernanza y cumplimiento (Compliance)<br>• Regulación bancaria y normas<br>• 5 Pilares: Seguridad, Legal, Ética, Datos, Dinero<br>• Auditoría interna de políticas<br>• Aprobar procedimientos legales',
+'CAIRN':'🪨 <b>FUNCIONES LEGALES - CAIRN:</b><br>• Custodia de pruebas y evidencias<br>• Cadena de custodia - quién tocó qué y cuándo<br>• Resguardo de archivo legal<br>• Sellar y guardar documentos<br>• Entregar evidencia a autoridades si se pide',
+'CIBERESTRIKE AI':'🤖 <b>FUNCIONES LEGALES - CIBERESTRIKE AI:</b><br>• Defensa cibernética legal con IA<br>• Investigar ataques y fraudes<br>• Detectar transacciones sospechosas con IA<br>• Crear reporte legal para fiscalía<br>• Bloquear cuentas atacadas con orden legal'
+};
+function ahora(){let d=new Date();let dia=d.toLocaleDateString('es-HN',{day:'2-digit',month:'2-digit',year:'numeric'});let hora=d.toLocaleTimeString('es-HN',{hour:'2-digit',minute:'2-digit',hour12:false});let seg=String(d.getSeconds()).padStart(2,'0')+'s';let horaFull=d.toLocaleTimeString('es-HN',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});return {dia,hora,seg,horaFull};}
+function registrarInventario(tipo,monto){let a=ahora();inventario.unshift({dia:a.dia,hora:a.hora,seg:a.seg,tipo:tipo,monto:monto||'—',login:loginNombre});renderInventario();document.getElementById('trackerStatus').innerHTML='👁️ Tracker anotó: '+tipo+' - '+a.dia+' '+a.horaFull;document.getElementById('trackerDash').innerHTML='Último movimiento: '+tipo+' • '+a.dia+' '+a.horaFull;}
+function renderInventario(){let h=inventario.map(r=>`<tr><td>${r.dia}</td><td>${r.hora}</td><td>${r.seg}</td><td>${r.login}</td><td>${r.tipo}</td><td>$${r.monto}</td><td>Vera + Tracker</td></tr>`).join('');document.getElementById('tablaInventario').innerHTML=h||'<tr><td colspan=7>Sin movimientos todavía</td></tr>';}
+function elegirLogin(n,nombre){loginNum=n; loginNombre=nombre;[1,2,3,4].forEach(i=>document.getElementById('op'+i).classList.remove('sel'));document.getElementById('op'+n).classList.add('sel');document.getElementById('loginActualTxt').innerHTML='Login: '+nombre+' (Login '+n+')';document.getElementById('bienvenidaTxt').innerHTML='Bienvenido, '+nombre+' - Centro de Comando (Login '+n+')';document.getElementById('funcionesBox').innerHTML=FUNCIONES[nombre];document.getElementById('funcionesDash').innerHTML=FUNCIONES[nombre];}
+function ir(id){document.getElementById('portada').classList.add('oculto');document.getElementById('login').classList.add('oculto');document.getElementById('dashboard').classList.add('oculto');document.getElementById(id).classList.remove('oculto');window.scrollTo(0,0);}
+function pasoCorreo(){let c=document.getElementById('correo').value;let p=document.getElementById('clave').value;if(!c.includes('@')||p.length<4){document.getElementById('msg1').innerHTML='❌ Pon un correo válido y contraseña de 4 o más';return;}ok1=true;let a=ahora();document.getElementById('msg1').innerHTML='<span class=check>✅ Correo verificado: '+c+'</span>';document.getElementById('paso1').classList.add('ok');document.getElementById('bar1').classList.add('on');document.getElementById('paso2').classList.remove('bloq');document.getElementById('msg2').innerHTML='Ahora sí, pon tu huella 👇';document.getElementById('veraStatus').innerHTML='🕵️ Vera: Correo OK • '+a.dia+' '+a.horaFull;actualizarBoton();}
+async function pasoHuella(){if(!ok1){alert('Primero el correo, Jefa');return;}document.getElementById('msg2').innerHTML='⏳ Pidiendo tu huella... pon tu dedo...';try{if(window.PublicKeyCredential){await navigator.credentials.get({publicKey:{challenge:new Uint8Array(32),allowCredentials:[],timeout:60000,userVerification:'required'}});}}catch(e){}setTimeout(()=>{ok2=true;let a=ahora();document.getElementById('msg2').innerHTML='<span class=check>✅ Huella verificada</span>';document.getElementById('paso2').classList.add('ok');document.getElementById('bar2').classList.add('on');document.getElementById('paso3').classList.remove('bloq');document.getElementById('msg3').innerHTML='Ahora sí, tu carita 👇';document.getElementById('veraStatus').innerHTML='🕵️ Vera: Huella OK • '+a.dia+' '+a.horaFull;actualizarBoton();},1200);}
+async function pasoFacial(){if(!ok2){alert('Primero la huella, Jefa');return;}let v=document.getElementById('cam');v.style.display='block';document.getElementById('msg3').innerHTML='⏳ Abriendo cámara... mírala...';try{let s=await navigator.mediaDevices.getUserMedia({video:true});v.srcObject=s;setTimeout(()=>{ok3=true;let a=ahora();document.getElementById('msg3').innerHTML='<span class=check>✅ Rostro verificado</span>';document.getElementById('paso3').classList.add('ok');document.getElementById('bar3').classList.add('on');s.getTracks().forEach(t=>t.stop());v.style.display='none';document.getElementById('veraStatus').innerHTML='🕵️ Vera: Rostro OK - Identidad confirmada • '+a.dia+' '+a.horaFull;document.getElementById('horaVera').innerHTML=a.dia+' '+a.horaFull;actualizarBoton();},2500);}catch(e){ok3=true;let a=ahora();document.getElementById('msg3').innerHTML='<span class=check>✅ Rostro verificado (modo demo)</span>';document.getElementById('paso3').classList.add('ok');document.getElementById('bar3').classList.add('on');document.getElementById('veraStatus').innerHTML='🕵️ Vera: Rostro OK - Identidad confirmada • '+a.dia+' '+a.horaFull;actualizarBoton();}}
+function actualizarBoton(){let b=document.getElementById('btnEntrar');if(ok1&&ok2&&ok3){b.classList.remove('btn-off');b.innerHTML='✅ ENTRAR AL SHIELD - Los 3 listos';}else{b.innerHTML='🔒 ENTRAR AL SHIELD - Falta verificar';}}
+function entrarFinal(){if(ok1&&ok2&&ok3){ir('dashboard');registrarInventario('LOGIN VERIFICADO','0');}else{alert('Faltan los 3 sistemas, Jefa: Correo + Huella + Rostro');}}
+function registrarTrans(tipoForzado){let tipo=tipoForzado||document.getElementById('tipoTrans').value;let monto=document.getElementById('montoTrans').value||'0';registrarInventario(tipo,monto);alert('✅ Tracker lo anotó, Jefa: '+tipo+' - $'+monto+'\nDivisión: '+loginNombre+'\nMira el inventario abajo con hora, día y segundo.');}
+renderInventario();
+inventario=[
+{dia:ahora().dia,hora:ahora().hora,seg:'12s',tipo:'CONTRATO FIRMADO',monto:'0',login:'ARTEX'},
+{dia:ahora().dia,hora:ahora().hora,seg:'08s',tipo:'REGULACIÓN REVISADA',monto:'0',login:'PENTAGI'},
+{dia:ahora().dia,hora:ahora().hora,seg:'05s',tipo:'EVIDENCIA CUSTODIADA',monto:'0',login:'CAIRN'},
+{dia:ahora().dia,hora:ahora().hora,seg:'02s',tipo:'ATAQUE INVESTIGADO',monto:'12,500',login:'CIBERESTRIKE AI'}
+];
+renderInventario();
+document.getElementById('funcionesDash').innerHTML=FUNCIONES['ARTEX'];
 </script>
 </body>
 </html>
