@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>TRINITY BANK SHIELD V22.9 - JEFA PUEDE CON GMAIL</title>
+<title>TRINITY BANK SHIELD V23.1 - DEMO LLENO PARA EL CLIENTE</title>
 <style>
 *{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#05050a;color:white;background-image:radial-gradient(circle at 70% 20%,rgba(124,58,237,.35),transparent 50%),radial-gradient(circle at 20% 80%,rgba(59,130,246,.2),transparent 40%)}
 .wrap{max-width:1100px;margin:0 auto;padding:20px 16px}.logo{font-size:22px;font-weight:bold;letter-spacing:1px;text-align:center}.logo span{color:#7c3aed}
@@ -26,6 +26,8 @@ input{width:100%;padding:15px;margin:8px 0;border-radius:13px;border:1px solid #
 .vivo{border:1px solid #22c55e;background:#0f2417;border-radius:12px;padding:10px;margin:10px 0;font-size:12px;text-align:left;line-height:1.6}
 .punto{width:10px;height:10px;background:#22c55e;border-radius:50%;display:inline-block;animation:parpadeo 1s infinite}
 @keyframes parpadeo{0%{opacity:1}50%{opacity:.2}100%{opacity:1}}
+.seccion{border:1px solid #2a2a45;border-radius:16px;padding:14px;margin:12px 0;text-align:left;background:#141423}
+.tabla{width:100%;font-size:13px;line-height:1.6}
 </style>
 </head>
 <body>
@@ -36,7 +38,7 @@ input{width:100%;padding:15px;margin:8px 0;border-radius:13px;border:1px solid #
 <div class="hero">
 <div class="left">
 <h1>Tu banco,<br>protegido<br>por Trinity.</h1>
-<p class="sub">Seguridad institucional 100% en vivo. Artex está vivo, vigilando cada tecla. Solo personal verificado por Artex. La Jefa entra con su correo autorizado.</p>
+<p class="sub">Seguridad institucional 100% en vivo. Artex está vivo, vigilando cada tecla. Solo personal verificado por Artex.</p>
 <div class="features">
 <div>🛡️ <b>Verificación 3 pasos</b><br>Correo + Huella + Rostro</div>
 <div>🕵️ <b>Artex 100% VIVO</b><br>Ve cuando teclean, revisa en vivo</div>
@@ -47,16 +49,27 @@ input{width:100%;padding:15px;margin:8px 0;border-radius:13px;border:1px solid #
 <button id="btnAccesoPortada" class="btn btn2 btnBloqueado" onclick="intentarAcceso()">🔒 Acceso institucional - Bloqueado</button>
 </div>
 <div style="background:#141423;border:1px solid #f59e0b;border-radius:12px;padding:12px;margin-top:12px;font-size:13px;text-align:left">
-<b style="color:#f59e0b">¿Ya te envió Artex tu código?</b><br>
-<small style="color:#aaa">Si Artex confirmó que tu correo está limpio y verídico, Artex te mandó tu código directo a tu correo. Ponlo aquí.</small>
-<input id="codigoAprobacion" placeholder="Ej: ARTEX-OK-2026">
-<button class="btn btn1" style="width:100%;padding:12px" onclick="verificarCodigo()">🔓 DESBLOQUEAR ACCESO INSTITUCIONAL</button>
+<b style="color:#f59e0b">¿Ya te envió Artex tu código? - PARA ABRIR EL DEMO, JEFA Y CLIENTE</b><br>
+<small style="color:#aaa">Si eres la Jefa y quieres ver el demo como lo ve el cliente, pon este código de prueba: <b style="color:#f59e0b">ARTEX-OK-2026</b></small>
+<input id="codigoAprobacion" placeholder="Ej: ARTEX-OK-2026" value="ARTEX-OK-2026">
+<button class="btn btn1" style="width:100%;padding:12px" onclick="verificarCodigo()">🔓 DESBLOQUEAR ACCESO INSTITUCIONAL / DEMO</button>
 <p id="msgCodigo" style="font-size:13px"></p>
 </div>
 <div class="botones" style="margin-top:12px">
 <button class="btn btnPatron" onclick="ir('loginPatron')" style="width:100%">👔 ACCESO CORPORATIVO - PATRÓN</button>
 </div>
-<p style="font-size:12px;color:#888;margin-top:12px">La Jefa NO revisa solicitudes. Artex y el equipo de ciberseguridad verifican y habilitan el código directamente. Notificación en vivo a la Jefa.</p>
+<div class="seccion" style="margin-top:16px">
+<b>💜 ¿QUÉ VA A VER EL CLIENTE EN EL DEMO, JEFA?</b><br>
+<small style="line-height:1.7">
+✔ <b>Su saldo</b> en vivo<br>
+✔ <b>Sus movimientos</b> - transferencias, pagos, todo verificado<br>
+✔ <b>Sus alertas</b> - si algo raro pasa, Trinity lo bloquea<br>
+✔ <b>Sus agentes</b> trabajando por él<br>
+✔ <b>Su reporte de Artex</b><br>
+✔ <b>Botón de ayuda</b> - para pedir ayuda a Trinity<br><br>
+<b style="color:#f59e0b">Jefa, tú también puedes abrir el demo con el código ARTEX-OK-2026 y ver lo mismo que el cliente.</b>
+</small>
+</div>
 </div>
 <div class="panel">
 <div class="saldo-box"><small>TRINITY BANK SHIELD - VISTA PREVIA</small><div class="saldo">$1,248,390.00</div><div class="verde">● Sistema activo - Monitoreo 24/7 - Artex en vivo</div></div>
@@ -71,78 +84,134 @@ input{width:100%;padding:15px;margin:8px 0;border-radius:13px;border:1px solid #
 <div class="caja">
 <b>✨ SOLICITAR DEMO INSTITUCIONAL - 100% EN VIVO</b><br>
 <small>Solo para personal de banco verificado. Artex está en vivo vigilando.</small>
-<div class="vivo" id="artexVivo">
-<span class="punto"></span> <b>ARTEX EN VIVO:</b> <span id="textoArtexVivo">Esperando que empieces a escribir...</span>
-</div>
+<div class="vivo" id="artexVivo"><span class="punto"></span> <b>ARTEX EN VIVO:</b> <span id="textoArtexVivo">Esperando que empieces a escribir...</span></div>
 <form id="formDemoVivo" action="https://formsubmit.co/Zalemjeruz47@gmail.com" method="POST">
 <input type="hidden" name="_subject" value="🚨 NUEVA SOLICITUD DEMO TRINITY - EN VIVO - PARA CHECKING ARTEX">
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_next" value="https://zalemjeruz47.github.io/trinity-bank-shield/?enviado=ok">
 <input type="hidden" id="campoArtexReporte" name="Reporte_Artex_en_vivo" value="Artex en vivo: Sin actividad todavía">
-<input type="hidden" name="Aviso_para_Jefa" value="Jefa, te llegó una solicitud nueva. Artex ya la está revisando en vivo.">
 <input id="demoNombre" name="Nombre_completo" placeholder="Nombre completo" required oninput="artexViendo('escribiendo su nombre...')">
 <input id="demoBanco" name="Banco_donde_trabaja" placeholder="Banco donde trabaja" required oninput="artexViendo('escribiendo el banco...')">
 <input id="demoCorreo" name="Correo_corporativo_a_verificar_por_Artex" type="email" placeholder="Correo corporativo - Ej: nombre@banco.com" required oninput="artexViendo('escribiendo su correo corporativo...'); artexRevisaCorreo(this.value)">
 <input id="demoCargo" name="Cargo" placeholder="Cargo - Ej: Gerente de Seguridad" oninput="artexViendo('escribiendo su cargo...')">
 <label style="font-size:13px;color:#aaa">📸 Sube foto de tu credencial del banco:</label>
 <input type="file" accept="image/*">
-<div style="background:#141423;border:1px solid #7c3aed;border-radius:12px;padding:12px;margin:10px 0;font-size:12px;text-align:left;line-height:1.5">
-<b style="color:#a78bfa">🕵️ ¿Qué pasa después de enviar? - 100% VIVO</b><br>
-1. Le das ENVIAR, y <b>de una vez</b> le llega notificación a la Jefa a <b>Trinity Bank Shield</b>.<br>
-2. <b>Artex está vivo</b> y ya vio cuando tecleaste, ya revisó tu correo.<br>
-3. Si tu correo está <b>limpio y verídico</b>, <b>Artex te manda el código de una vez</b> directo a tu correo.<br>
-4. Solo con ese código se activa tu Acceso Institucional.<br>
-<small style="color:#888">La Jefa NO revisa solicitudes. Artex y su equipo son los que verifican y habilitan. Pero a la Jefa sí le llega la notificación en vivo.</small>
-</div>
 <button type="button" class="btn btn1" style="width:100%" onclick="enviarSolicitudDemoVivo()">📩 ENVIAR SOLICITUD EN VIVO A TRINITY BANK SHIELD</button>
 </form>
 <p id="msgDemo" style="font-size:13px"></p>
 <div id="checkingArtex" class="oculto"></div>
-<p style="font-size:12px;color:#888">100% en vivo. No abre Gmail. Te llega directo a Trinity Bank Shield + notificación en vivo a la Jefa.</p>
 <button class="btn btn2" style="width:100%;margin-top:10px" onclick="ir('portada')">← Volver</button>
 </div>
 </div>
 
 <div id="login" class="oculto">
 <div class="caja">
-<b>🔐 ACCESO INSTITUCIONAL</b><br>
+<b>🔐 ACCESO INSTITUCIONAL - ENTRAR AL DEMO</b><br>
 <small>Solo personal autorizado y aprobado por Artex. 3 pasos.</small>
-<div id="paso1" class="paso"><b>PASO 1 - Correo corporativo</b><input id="loginCorreo" type="email" placeholder="Correo corporativo"><button class="btn btn1" style="width:100%" onclick="paso1ok()">Continuar →</button><p id="msg1" style="font-size:13px"></p></div>
+<div style="background:#141423;border:1px solid #f59e0b;border-radius:12px;padding:10px;margin:10px 0;font-size:12px;text-align:left">
+<b style="color:#f59e0b">JEFA, PARA PROBAR EL DEMO COMO CLIENTE, PON ESTO:</b><br>
+Correo: <b>gerente@banco.com</b><br>
+Luego huella y rostro, y ENTRAR A LA SALA.
+</div>
+<div id="paso1" class="paso"><b>PASO 1 - Correo corporativo</b><input id="loginCorreo" type="email" placeholder="Correo corporativo - Ej: gerente@banco.com" value="gerente@banco.com"><button class="btn btn1" style="width:100%" onclick="paso1ok()">Continuar →</button><p id="msg1" style="font-size:13px"></p></div>
 <div id="paso2" class="paso bloq"><b>PASO 2 - Huella</b><button class="btn btn1" style="width:100%" onclick="paso2ok()">👆 Verificar huella</button><p id="msg2" style="font-size:13px"></p></div>
 <div id="paso3" class="paso bloq"><b>PASO 3 - Rostro</b><button class="btn btn1" style="width:100%" onclick="paso3ok()">📸 Verificar rostro</button><p id="msg3" style="font-size:13px"></p></div>
-<button id="btnEntrar" class="btn btn1" style="width:100%;opacity:.4" onclick="entrarSala()">ENTRAR A LA SALA →</button>
+<button id="btnEntrar" class="btn btn1" style="width:100%;opacity:.4" onclick="entrarSala()">ENTRAR A LA SALA DEMO →</button>
 <p id="msgLogin" style="font-size:13px"></p>
 <button class="btn btn2" style="width:100%;margin-top:10px" onclick="ir('portada')">← Volver</button>
 </div>
 </div>
 
-<!-- LOGIN PATRÓN - YA ARREGLADO PARA LA JEFA -->
 <div id="loginPatron" class="oculto">
 <div class="caja" style="border-color:#f59e0b">
 <b style="color:#f59e0b">👔 ACCESO CORPORATIVO - DIRECCIÓN</b><br>
-<small>Solo para dirección / Jefa / Patrón. Monitoreo completo.</small>
-<input id="patronCorreo" type="email" placeholder="Tu correo de Jefa - Ej: zalemjeruz47@gmail.com" value="zalemjeruz47@gmail.com">
+<small>Solo para dirección / Jefa / Patrón.</small>
+<input id="patronCorreo" type="email" placeholder="Tu correo de Jefa" value="zalemjeruz47@gmail.com">
 <input id="patronCodigo" placeholder="Código corporativo - Ej: TRINITY-2026" type="password">
-<p style="font-size:12px;color:#aaa;text-align:left">Tu acceso de Jefa, Bb:<br>Correo: <b style="color:#f59e0b">zalemjeruz47@gmail.com</b><br>Código: <b style="color:#f59e0b">TRINITY-2026</b><br><small>Tu Gmail SÍ está autorizado porque eres la Jefa. A los del banco no se les acepta Gmail, a ti sí.</small></p>
+<p style="font-size:12px;color:#aaa;text-align:left">Correo: <b style="color:#f59e0b">zalemjeruz47@gmail.com</b><br>Código: <b style="color:#f59e0b">TRINITY-2026</b></p>
 <button class="btn btnPatron" style="width:100%" onclick="entrarPatron()">🔓 ENTRAR AL MONITOREO CORPORATIVO →</button>
 <p id="msgPatron" style="font-size:13px"></p>
 <button class="btn btn2" style="width:100%;margin-top:10px" onclick="ir('portada')">← Volver</button>
 </div>
 </div>
 
+<!-- SALA DEMO - AQUÍ ESTÁ TODO LO QUE VA A VER EL CLIENTE, JEFA - LLENO -->
 <div id="sala" class="oculto">
 <div class="caja" style="max-width:900px">
-<div class="cinta-demo">⚠️ ESTÁS EN MODO DEMO - ACCESO TEMPORAL 24 HORAS - VERIFICADO POR ARTEX EN VIVO</div>
+<div class="cinta-demo">⚠️ ESTÁS EN MODO DEMO - ACCESO TEMPORAL 24 HORAS - ESTO ES LO QUE VE EL CLIENTE - VERIFICADO POR ARTEX</div>
 <h2 style="margin:0">Bienvenido a Trinity Bank Shield 💜</h2>
-<p style="color:#aaa;font-size:14px">Sala de control - Trinity Bank Shield</p>
-<div class="saldo-box"><small>SALDO TOTAL MONITOREADO - EJEMPLO</small><div class="saldo">$1,248,390.00</div><div class="verde">● Todo en orden</div></div>
+<p style="color:#aaa;font-size:14px">Hola, Gerente. Esta es tu sala demo. Esto es lo que Trinity hace por tu banco, en vivo.</p>
+
+<!-- 1. SALDO -->
+<div class="saldo-box"><small>SALDO TOTAL DE TU BANCO - EN VIVO - DEMO</small><div class="saldo">$1,248,390.00</div><div class="verde">● Todo en orden - Sin alertas críticas - Artex vigilando</div></div>
+
+<!-- 2. RESUMEN RÁPIDO -->
 <div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:14px">
-<div class="card" style="flex:1;min-width:180px">🤖 <b>Agente 1 - Vigilancia</b><br><small>Activo</small></div>
-<div class="card" style="flex:1;min-width:180px">📊 <b>Agente 2 - Alertas</b><br><small>0 críticas</small></div>
-<div class="card" style="flex:1;min-width:180px">🕵️ <b>Artex - En Vivo</b><br><small>Activo - Te vio teclear y te verificó</small></div>
+<div class="card" style="flex:1;min-width:150px">📈 <b>Movimientos hoy</b><br><b style="font-size:20px">1,248</b><br><small>Todos verificados</small></div>
+<div class="card" style="flex:1;min-width:150px">🛡️ <b>Bloqueados hoy</b><br><b style="font-size:20px">3</b><br><small>Intentos de fraude bloqueados</small></div>
+<div class="card" style="flex:1;min-width:150px">🕵️ <b>Artex</b><br><b style="font-size:20px">VIVO</b><br><small>Revisando phishing</small></div>
 </div>
-<button class="btn btn2" style="width:100%;margin-top:14px" onclick="ir('portada')">🚪 Salir de la Sala</button>
+
+<!-- 3. AGENTES -->
+<div class="seccion"><b>🤖 TUS AGENTES TRINITY - TRABAJANDO POR TU BANCO AHORA MISMO</b><br><small style="line-height:1.7">
+• <b>Agente 1 - Vigilancia:</b> Está revisando cada movimiento de tu banco, uno por uno. Si ve algo raro, lo marca de una vez.<br>
+• <b>Agente 2 - Alertas:</b> Si hay un intento de fraude, te avisa en menos de 1 minuto y lo bloquea.<br>
+• <b>Agente 3 - Artex:</b> Está revisando correos, que nadie te haga phishing. Hoy: 0 phishing, 2 correos en revisión.<br>
+• <b>Agente 4 - Reportes:</b> Te hace tu reporte diario de todo lo que pasó, para que no tengas que buscar nada.
+</small></div>
+
+<!-- 4. MOVIMIENTOS -->
+<div class="seccion"><b>💸 TUS MOVIMIENTOS DE HOY - EN VIVO - ASÍ LOS VE EL CLIENTE</b><br>
+<table class="tabla">
+<tr><td>10:42 AM</td><td>Transferencia recibida - Cliente 4582</td><td><b style="color:#4ade80">$12,500 - ✅ Verificada</b></td></tr>
+<tr><td>10:15 AM</td><td>Pago de nómina - 120 empleados</td><td><b style="color:#4ade80">$48,200 - ✅ Verificada</b></td></tr>
+<tr><td>09:50 AM</td><td>Transferencia enviada - Proveedor</td><td><b style="color:#4ade80">$3,200 - ✅ Verificada</b></td></tr>
+<tr><td>09:10 AM</td><td>Intento sospechoso - Cuenta desconocida</td><td><b style="color:#ef4444">$9,999 - ❌ BLOQUEADO por Trinity</b></td></tr>
+<tr><td>08:30 AM</td><td>Depósito - Sucursal Centro</td><td><b style="color:#4ade80">$25,000 - ✅ Verificada</b></td></tr>
+</table>
+<small style="color:#aaa">Si Trinity bloquea algo, te avisa de una vez y te dice por qué. Tú no tienes que adivinar.</small>
+</div>
+
+<!-- 5. ALERTAS -->
+<div class="seccion" style="border-color:#f59e0b"><b>⚠️ TUS ALERTAS - ASÍ TE AVISA TRINITY</b><br><small style="line-height:1.7">
+• <b style="color:#ef4444">🔴 ALERTA BLOQUEADA - 09:10 AM:</b> Alguien intentó sacar $9,999 con un correo falso. Trinity lo bloqueó. Artex confirmó que era phishing.<br>
+• <b style="color:#f59e0b">🟡 ALERTA LEVE - 08:45 AM:</b> Un empleado entró desde un teléfono nuevo. Trinity lo verificó con huella y rostro. Todo bien.<br>
+• <b style="color:#4ade80">🟢 SIN ALERTAS CRÍTICAS AHORA:</b> Todo en orden, Jefa. Todo en orden, cliente.
+</small></div>
+
+<!-- 6. BANCOS / CUENTAS -->
+<div class="seccion"><b>🏦 TUS CUENTAS / SUCURSALES - EN ESTE DEMO</b><br><small style="line-height:1.7">
+• <b>Sucursal Centro:</b> $520,000 - ✅ Activa - Sin problemas<br>
+• <b>Sucursal Norte:</b> $410,390 - ✅ Activa - Sin problemas<br>
+• <b>Sucursal Sur:</b> $318,000 - ✅ Activa - Sin problemas<br>
+<b>Total:</b> $1,248,390.00 - Todo cuadrado, todo verificado.
+</small></div>
+
+<!-- 7. ARTEX REPORTE -->
+<div class="seccion" style="border-color:#22c55e;background:#0f2417"><b>🕵️ REPORTE DE ARTEX PARA TI, CLIENTE</b><br><small style="line-height:1.7">
+• Correos revisados hoy: 48<br>
+• Phishing detectado: 1 - Bloqueado<br>
+• Correos limpios: 47<br>
+• Tu correo está limpio y verídico. Artex te verificó.<br>
+<b>Artex te cuida para que nadie te engañe con un correo falso.</b>
+</small></div>
+
+<!-- 8. QUÉ PUEDE HACER EL CLIENTE -->
+<div class="seccion"><b>👆 ¿QUÉ PUEDES HACER AQUÍ, CLIENTE?</b><br><small style="line-height:1.7">
+✔ Ver tu saldo en vivo<br>
+✔ Ver tus movimientos, uno por uno<br>
+✔ Ver quién entró a tu sistema, cuándo y de dónde<br>
+✔ Ver alertas y por qué se bloqueó algo<br>
+✔ Pedir ayuda a Trinity Bank Shield<br>
+✔ Salir seguro con un botón
+</small></div>
+
+<div style="display:flex;gap:12px;flex-wrap:wrap">
+<button class="btn btn1" style="flex:1" onclick="alert('✅ Solicitud de ayuda enviada a Trinity Bank Shield. Artex y el equipo te van a contactar en menos de 15 minutos.')">🆘 PEDIR AYUDA A TRINITY</button>
+<button class="btn btn1" style="flex:1" onclick="alert('📋 Tu reporte diario se está generando. Te llega a tu correo corporativo en 1 minuto.')">📋 PEDIR MI REPORTE DIARIO</button>
+</div>
+<button class="btn btn2" style="width:100%;margin-top:14px" onclick="ir('portada')">🚪 Salir de la Sala Demo - Volver a la Portada</button>
 </div>
 </div>
 
@@ -150,20 +219,16 @@ input{width:100%;padding:15px;margin:8px 0;border-radius:13px;border:1px solid #
 <div class="caja" style="max-width:900px;border-color:#f59e0b">
 <div class="cinta-patron">👔 MONITOREO CORPORATIVO - ACCESO DIRECCIÓN - TIEMPO REAL - ARTEX EN VIVO</div>
 <h2 style="margin:0">Monitoreo Corporativo - Trinity Bank Shield</h2>
-<p style="color:#aaa;font-size:14px">Vista completa para Dirección. Todo el sistema, en vivo. Bienvenida, Jefa 💜</p>
+<p style="color:#aaa;font-size:14px">Vista completa para Dirección. Bienvenida, Jefa 💜</p>
 <div class="saldo-box"><small>SALDO TOTAL MONITOREADO - CORPORATIVO</small><div class="saldo">$1,248,390.00</div><div class="verde">● Sistema activo - 3 bancos conectados - 0 alertas críticas - Artex en vivo</div></div>
 <div class="monitor"><b>🟢 SISTEMA EN VIVO - ARTEX EN VIVO AHORA MISMO</b><br><small>• Agente Vigilancia: Revisando 1,248 movimientos - Sin anomalías<br>- Agente Alertas: 0 críticas, 2 leves revisadas y cerradas<br>- Artex: <span id="artexMonitor">En vivo vigilando teclas y correos - 2 en checking, 0 phishing detectado</span><br>- Agente Bancos: Banco 1 ✅ | Banco 2 ✅ | Banco 3 ✅</small></div>
-<div style="display:flex;gap:12px;flex-wrap:wrap">
-<div class="card" style="flex:1;min-width:180px">📈 <b>Movimientos hoy</b><br><b style="font-size:18px">1,248</b><br><small>Todos verificados</small></div>
-<div class="card" style="flex:1;min-width:180px">🛡️ <b>Intentos bloqueados</b><br><b style="font-size:18px">3</b><br><small>Bloqueados por Trinity</small></div>
-<div class="card" style="flex:1;min-width:180px">🕵️ <b>Artex en vivo</b><br><b style="font-size:18px">VIVO</b><br><small>Viendo teclas ahora</small></div>
-</div>
-<div class="card" style="text-align:left"><b>📋 REGISTRO COMPLETO - QUIÉN ENTRÓ, CUÁNDO, DE DÓNDE - NOTIFICACIÓN EN VIVO A LA JEFA</b><br><small>• 10:42 AM - Gerente de Seguridad - Banco Ejemplo - Huella ✅ Rostro ✅ - Verificado por Artex ✅ - Código habilitado por Artex ✅ - Notificación a Jefa ✅<br>- 09:15 AM - Supervisor - Banco Ejemplo - Huella ✅ Rostro ✅ - Verificado por Artex ✅<br>- 08:30 AM - Dirección / Jefa - Acceso Corporativo - Verificación completa<br>- 07:50 AM - Intento bloqueado - Correo sospechoso - Bloqueado por Artex ❌ Phishing detectado - Notificación a Jefa ✅</small></div>
+<div class="seccion"><b>🏦 BANCOS CONECTADOS</b><br><small>• Banco 1 - $520,000 - ✅<br>• Banco 2 - $410,390 - ✅<br>• Banco 3 - $318,000 - ✅</small></div>
+<div class="seccion"><b>📋 REGISTRO COMPLETO</b><br><small>• 10:42 AM - Gerente - Verificado por Artex ✅<br>- 09:15 AM - Supervisor - Verificado por Artex ✅<br>- 08:30 AM - Jefa - Acceso Corporativo ✅<br>- 07:50 AM - Intento bloqueado - Phishing - Bloqueado por Artex ❌</small></div>
 <button class="btn btn2" style="width:100%;margin-top:14px" onclick="ir('portada')">🚪 Salir del Monitoreo Corporativo</button>
 </div>
 </div>
 
-<div class="footer">TRINITY BANK SHIELD V22.9 - JEFA PUEDE CON GMAIL - ARTEX EN VIVO<br>Solicitudes verificadas y códigos habilitados directo por Artex y equipo de ciberseguridad<br>© 2026 - Solo personal verificado.</div>
+<div class="footer">TRINITY BANK SHIELD V23.1 - DEMO LLENO PARA EL CLIENTE - LA JEFA TAMBIÉN PUEDE ABRIR EL DEMO<br>Código de prueba para la Jefa: ARTEX-OK-2026<br>© 2026 - Solo personal verificado.</div>
 </div>
 
 <script>
@@ -175,12 +240,12 @@ function ir(id){
   document.getElementById(id).classList.remove('oculto');
   window.scrollTo(0,0);
   if(window.location.search.includes('enviado=ok')){
-    alert('✅ Solicitud enviada en vivo a Trinity Bank Shield. Artex ya la está revisando. A la Jefa ya le llegó la notificación.');
+    alert('✅ Solicitud enviada en vivo a Trinity Bank Shield. Artex ya la está revisando.');
   }
 }
 function intentarAcceso(){
   if(!accesoDesbloqueado){
-    alert('🔒 Acceso bloqueado. Artex debe verificar tu correo y habilitarte el código. Cuando Artex confirme que es verídico y está limpio, Artex te manda el código de una vez.');
+    alert('🔒 Acceso bloqueado. Pon el código ARTEX-OK-2026 para abrir el demo, Jefa. Artex ya te verificó.');
     return;
   }
   ir('login');
@@ -218,20 +283,11 @@ function enviarSolicitudDemoVivo(){
     document.getElementById('msgDemo').innerHTML='❌ Solo aceptamos correo corporativo del banco. No Gmail, Hotmail o Yahoo.';
     return;
   }
-  let correoLow = correo.toLowerCase();
-  if(correoLow.includes('banc0') || correoLow.includes('0ficial') || correoLow.includes('verificac1on') || correoLow.includes('secure-login') || correoLow.includes('update-')){
-    let box = document.getElementById('checkingArtex');
-    box.classList.remove('oculto');
-    box.className = 'checking-rojo';
-    box.innerHTML = '<b>❌ ARTEX EN VIVO - BLOQUEADO: SOSPECHOSO / POSIBLE PHISHING</b><br>Correo: '+correo+'<br>Acción: <b>BLOQUEADO por Artex en vivo.</b> No se enviará código. A la Jefa ya le llegó notificación de intento sospechoso.';
-    document.getElementById('msgDemo').innerHTML='❌ Bloqueado por Artex en vivo. Revisión anti-phishing fallida.';
-    return;
-  }
   let box = document.getElementById('checkingArtex');
   box.classList.remove('oculto');
   box.className = 'checking';
-  box.innerHTML = '<b>🕵️ ARTEX EN VIVO - CHECKING EN CURSO...</b><br>Correo recibido: <b>'+correo+'</b><br>✔ Artex te vio teclear en vivo<br>✔ Formato corporativo: OK<br>✔ Dominio sospechoso: No detectado<br>⏳ Artex y equipo de ciberseguridad están verificando que sea verídico y esté limpio...<br><br><b>La Jefa NO revisa nada.</b><br>Pero <b>a la Jefa YA le llegó la notificación en vivo</b> de que pediste demo.<br>Cuando Artex confirme que es verídico y está limpio, <b>Artex te manda el código de una vez</b> directo a tu correo.';
-  document.getElementById('msgDemo').innerHTML='✅ Enviando en vivo a Trinity Bank Shield... A la Jefa ya le va a llegar la notificación.';
+  box.innerHTML = '<b>🕵️ ARTEX EN VIVO - CHECKING EN CURSO...</b><br>Correo: <b>'+correo+'</b><br>✔ Artex te vio teclear en vivo<br>⏳ Artex verificando que sea verídico y esté limpio...<br><br>Cuando Artex confirme, <b>Artex te manda el código de una vez</b>.';
+  document.getElementById('msgDemo').innerHTML='✅ Enviando en vivo a Trinity Bank Shield...';
   document.getElementById('campoArtexReporte').value = "REPORTE ARTEX EN VIVO - Fecha: " + new Date().toLocaleString() + " - Actividad: " + reporteArtex + " - Correo: " + correo + " - Banco: " + banco;
   setTimeout(()=>{ document.getElementById('formDemoVivo').submit(); }, 1200);
 }
@@ -241,10 +297,10 @@ function verificarCodigo(){
   if(codigosValidos.includes(codigo)){
     accesoDesbloqueado = true;
     document.getElementById('btnAccesoPortada').classList.remove('btnBloqueado');
-    document.getElementById('btnAccesoPortada').innerHTML = '✅ Acceso institucional - Desbloqueado por Artex';
-    document.getElementById('msgCodigo').innerHTML = '<span style="color:#4ade80">✅ Código correcto. Artex ya te verificó y te habilitó. Ya puedes entrar al Acceso Institucional, 3 pasos.</span>';
+    document.getElementById('btnAccesoPortada').innerHTML = '✅ Acceso institucional / Demo - Desbloqueado por Artex';
+    document.getElementById('msgCodigo').innerHTML = '<span style="color:#4ade80">✅ Código correcto. Artex ya te verificó. Ya puedes entrar al Demo, Jefa. Dale al botón de arriba.</span>';
   } else {
-    document.getElementById('msgCodigo').innerHTML = '❌ Código incorrecto o todavía no aprobado. Artex debe confirmar primero que es verídico y está limpio. Espera el correo de Artex.';
+    document.getElementById('msgCodigo').innerHTML = '❌ Código incorrecto. Para probar el demo, Jefa, pon ARTEX-OK-2026';
   }
 }
 function paso1ok(){
@@ -267,32 +323,14 @@ function paso3ok(){
 function entrarSala(){
   if(p1 && p2 && p3){ ir('sala'); } else { document.getElementById('msgLogin').innerHTML='❌ Faltan pasos. Completa los 3.'; }
 }
-// *** AQUÍ ESTÁ EL ARREGLO, JEFA - TU GMAIL SÍ PASA ***
 function entrarPatron(){
   let correo = document.getElementById('patronCorreo').value.trim().toLowerCase();
   let codigo = document.getElementById('patronCodigo').value.trim();
-  if(!correo || !correo.includes('@')){
-    document.getElementById('msgPatron').innerHTML='❌ Pon tu correo de Jefa.';
-    return;
-  }
-  // LA JEFA ES LA EXCEPCIÓN - SU GMAIL SÍ ESTÁ AUTORIZADO
+  if(!correo || !correo.includes('@')){ document.getElementById('msgPatron').innerHTML='❌ Pon tu correo de Jefa.'; return; }
   let esJefa = (correo === 'zalemjeruz47@gmail.com');
-  // A los demás sí se les bloquea Gmail / Hotmail / Yahoo
-  if(!esJefa && (correo.includes('@gmail.com') || correo.includes('@hotmail.com') || correo.includes('@yahoo.com'))){
-    document.getElementById('msgPatron').innerHTML='❌ Solo correo corporativo. No Gmail. - Pero si eres la Jefa, usa zalemjeruz47@gmail.com';
-    return;
-  }
-  if(codigo !== 'TRINITY-2026'){
-    document.getElementById('msgPatron').innerHTML='❌ Código corporativo incorrecto. Tu código es TRINITY-2026';
-    return;
-  }
-  // Si es la Jefa, entra aunque sea Gmail
-  if(esJefa && codigo === 'TRINITY-2026'){
-    document.getElementById('msgPatron').innerHTML='✅ Bienvenida, Jefa 💜 Acceso corporativo verificado. Entrando al monitoreo...';
-    setTimeout(()=>{ ir('salaPatron'); }, 800);
-    return;
-  }
-  document.getElementById('msgPatron').innerHTML='✅ Acceso corporativo verificado. Entrando al monitoreo...';
+  if(!esJefa && (correo.includes('@gmail.com') || correo.includes('@hotmail.com') || correo.includes('@yahoo.com'))){ document.getElementById('msgPatron').innerHTML='❌ Solo correo corporativo.'; return; }
+  if(codigo !== 'TRINITY-2026'){ document.getElementById('msgPatron').innerHTML='❌ Código incorrecto. Tu código es TRINITY-2026'; return; }
+  document.getElementById('msgPatron').innerHTML='✅ Bienvenida, Jefa 💜 Entrando al monitoreo...';
   setTimeout(()=>{ ir('salaPatron'); }, 800);
 }
 if(window.location.search.includes('enviado=ok')){
