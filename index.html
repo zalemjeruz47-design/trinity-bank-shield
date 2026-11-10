@@ -17,21 +17,23 @@ button{width:100%;padding:15px;border:none;border-radius:12px;font-weight:800;ma
 .b1{background:linear-gradient(90deg,#8B5CF6,#3B82F6)}
 .b2{background:#000;border:1px solid #7C3AED}
 .card{background:#11111F;border-radius:14px;padding:14px;margin-top:12px}
-.card b{font-size:14px}
-.card span{font-size:12px;color:#999}
 .oculto{display:none}
 input,textarea{width:100%;padding:13px;border-radius:10px;border:1px solid #222;background:#0D0D1E;color:#fff;margin-bottom:10px}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
-.tar{background:#0A0A1A;border:1px solid #2A2A3A;border-radius:14px;padding:14px}
+.tar{background:#0A0A1A;border:1px solid #2A2A3A;border-radius:14px;padding:14px;cursor:pointer}
 .tar h3{font-size:15px;margin:6px 0}
 .tar p{font-size:12px}
 .ecg{width:100%;height:50px;background:#05051A;border-radius:8px;border:1px solid #1E3A8A;margin:8px 0}
 .live{color:#4ADE80;font-size:11px;font-weight:700}
+.inv{background:#0A0A1A;border:1px solid #2A2A3A;border-radius:14px;padding:14px;margin:12px 0}
+.inv b{color:#fff}
+.inv-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #1E1E35;font-size:13px}
+.inv-row span:last-child{color:#38BDF8;font-weight:700}
+.badge{display:inline-block;background:#1E1E35;padding:5px 10px;border-radius:20px;font-size:11px;color:#A78BFA;margin:5px 5px 0 0}
 </style>
 </head>
 <body>
 
-<!-- PORTADA, JEFA - ESTA SI SE TIENE QUE VER, BB -->
 <div id="portada">
 <div class="top">🛡️ <span>TRINITY</span> BANK SHIELD</div>
 <h1>Tu dinero protegido.<br>Tu banco seguro.</h1>
@@ -46,14 +48,11 @@ input,textarea{width:100%;padding:13px;border-radius:10px;border:1px solid #222;
 <button class="b2" onclick="irAcceso()">Acceso institucional</button>
 <div class="card"><b>✅ Amenazas bloqueadas</b><br><span style="color:#4ADE80">1,284 este mes • 0 brechas</span></div>
 <div class="card"><b>🔐 Transacciones hoy</b><br><span>45,230 • Todo en orden</span></div>
-<p style="text-align:center;font-size:11px;color:#666;margin-top:15px">© TRINITY BANK SHIELD • Proyecto demostrativo</p>
 </div>
 
-<!-- FORMULARIO, JEFA -->
 <div id="formulario" class="oculto">
 <div class="top">🛡️ <span>TRINITY</span> BANK SHIELD</div>
-<h1 style="text-align:center;font-size:24px">Solicitar Demo</h1>
-<p style="text-align:center">Dejanos tu contacto, Jefa.</p><br>
+<h1 style="text-align:center;font-size:24px">Solicitar Demo</h1><br>
 <input id="nombre" placeholder="Nombre *">
 <input id="correo" placeholder="Correo *">
 <textarea id="mensaje" rows="4" placeholder="Mensaje *"></textarea>
@@ -61,33 +60,65 @@ input,textarea{width:100%;padding:13px;border-radius:10px;border:1px solid #222;
 <button class="b2" onclick="volver()">← Volver</button>
 </div>
 
-<!-- CENTRO DE COMANDO, JEFA - CON TODAS LAS RAYITAS -->
 <div id="ops" class="oculto">
 <div class="top">🛡️ <span>TRINITY</span> BANK SHIELD</div>
 <h1 style="text-align:center;font-size:26px">Centro de <span style="color:#38BDF8">Comando</span></h1>
 <p style="text-align:center">Bienvenida, Jefa. Todas moviéndose, Bb. Como electrocardiograma.</p>
 <div class="grid">
-<div class="tar" onclick="abrir('ARTEX')"><div style="font-size:24px">🛡️</div><h3>ARTEX</h3><p>División Legal</p><canvas class="ecg"></canvas><span class="live">● EN VIVO</span></div>
-<div class="tar" onclick="abrir('PENTAGI')"><div style="font-size:24px">🏦</div><h3>PENTAGI</h3><p>División Legal</p><canvas class="ecg"></canvas><span class="live">● EN VIVO</span></div>
-<div class="tar" onclick="abrir('CAIRN')"><div style="font-size:24px">🌑</div><h3>CAIRN</h3><p>División Legal</p><canvas class="ecg"></canvas><span class="live">● EN VIVO</span></div>
-<div class="tar" onclick="abrir('CIBERESTRIKE AI')"><div style="font-size:24px">🤖</div><h3>CIBERESTRIKE AI</h3><p>División Legal</p><canvas class="ecg"></canvas><span class="live">● EN VIVO</span></div>
-<div class="tar" onclick="abrir('Guardián')"><div style="font-size:24px">🔒</div><h3>1. Guardián</h3><p>Seguridad</p><canvas class="ecg"></canvas><span class="live">● ACTIVO</span></div>
-<div class="tar" onclick="abrir('Centinela')"><div style="font-size:24px">👁️</div><h3>2. Centinela</h3><p>Amenazas</p><canvas class="ecg"></canvas><span class="live">● ACTIVO</span></div>
-<div class="tar" onclick="abrir('Tesorero')"><div style="font-size:24px">💰</div><h3>3. Tesorero</h3><p>Cuentas</p><canvas class="ecg"></canvas><span class="live">● ACTIVO</span></div>
-<div class="tar" onclick="abrir('Mensajero')"><div style="font-size:24px">✈️</div><h3>4. Mensajero</h3><p>Transferencias</p><canvas class="ecg"></canvas><span class="live">● ACTIVO</span></div>
-<div class="tar" onclick="abrir('Vigía')"><div style="font-size:24px">🔔</div><h3>5. Vigía</h3><p>Alertas 24/7</p><canvas class="ecg"></canvas><span class="live">● ACTIVO</span></div>
-<div class="tar" onclick="abrir('Trinity')"><div style="font-size:24px">🧠</div><h3>6. Trinity</h3><p>Coordina a los 5</p><canvas class="ecg"></canvas><span class="live">● ACTIVO</span></div>
+<div class="tar" onclick="abrir('ARTEX')"><div style="font-size:24px">🛡️</div><h3>ARTEX</h3><p>División Legal</p><canvas class="ecg"></canvas><span class="live">● EN VIVO • Ver inventario →</span></div>
+<div class="tar" onclick="abrir('PENTAGI')"><div style="font-size:24px">🏦</div><h3>PENTAGI</h3><p>División Legal</p><canvas class="ecg"></canvas><span class="live">● EN VIVO • Ver inventario →</span></div>
+<div class="tar" onclick="abrir('CAIRN')"><div style="font-size:24px">🌑</div><h3>CAIRN</h3><p>División Legal</p><canvas class="ecg"></canvas><span class="live">● EN VIVO • Ver inventario →</span></div>
+<div class="tar" onclick="abrir('CIBERESTRIKE AI')"><div style="font-size:24px">🤖</div><h3>CIBERESTRIKE AI</h3><p>División Legal</p><canvas class="ecg"></canvas><span class="live">● EN VIVO • Ver inventario →</span></div>
+<div class="tar" onclick="abrir('Guardián')"><div style="font-size:24px">🔒</div><h3>1. Guardián</h3><p>Seguridad</p><canvas class="ecg"></canvas><span class="live">● ACTIVO • Ver inventario →</span></div>
+<div class="tar" onclick="abrir('Centinela')"><div style="font-size:24px">👁️</div><h3>2. Centinela</h3><p>Amenazas</p><canvas class="ecg"></canvas><span class="live">● ACTIVO • Ver inventario →</span></div>
+<div class="tar" onclick="abrir('Tesorero')"><div style="font-size:24px">💰</div><h3>3. Tesorero</h3><p>Cuentas</p><canvas class="ecg"></canvas><span class="live">● ACTIVO • Ver inventario →</span></div>
+<div class="tar" onclick="abrir('Mensajero')"><div style="font-size:24px">✈️</div><h3>4. Mensajero</h3><p>Transferencias</p><canvas class="ecg"></canvas><span class="live">● ACTIVO • Ver inventario →</span></div>
+<div class="tar" onclick="abrir('Vigía')"><div style="font-size:24px">🔔</div><h3>5. Vigía</h3><p>Alertas 24/7</p><canvas class="ecg"></canvas><span class="live">● ACTIVO • Ver inventario →</span></div>
+<div class="tar" onclick="abrir('Trinity')"><div style="font-size:24px">🧠</div><h3>6. Trinity</h3><p>Coordina a los 5</p><canvas class="ecg"></canvas><span class="live">● ACTIVO • Ver inventario →</span></div>
 </div>
 <button class="b2" onclick="volver()">← Salir del Centro de Comando</button>
 </div>
 
+<!-- INVENTARIO DETALLADO, JEFA - AQUI TE MANDA AHORA, BB -->
+<div id="detalle" class="oculto">
+<div class="top">🛡️ <span>TRINITY</span> BANK SHIELD</div>
+<h1 id="dTitulo" style="font-size:26px">ARTEX</h1>
+<p id="dDesc">Inventario detallado, Jefa.</p>
+<div><span class="badge" id="dEstado">● EN VIVO</span><span class="badge" id="dTotal">Total: 0 items</span></div>
+<div class="inv" id="dInv"></div>
+<button class="b1" onclick="cerrarDetalle()">← Volver al Centro de Comando</button>
+</div>
+
 <script>
-function ocultar(){document.getElementById('portada').style.display='none';document.getElementById('formulario').style.display='none';document.getElementById('ops').style.display='none';}
+let datos={
+'ARTEX':{t:'🛡️ ARTEX - Inventario',d:'División Legal. Auditoría y cumplimiento, Jefa.',e:'● EN VIVO',inv:[['Documentos verificados','124'],['Contratos revisados','38'],['Reportes de auditoría','12'],['Alertas pendientes','0'],['Archivos sellados','124']]},
+'PENTAGI':{t:'🏦 PENTAGI - Inventario',d:'División Legal. Pruebas de seguridad, Jefa.',e:'● EN VIVO',inv:[['Pruebas realizadas','58'],['Pruebas pasadas','58'],['Vulnerabilidades críticas','0'],['Vulnerabilidades leves','2'],['Informes entregados','18']]},
+'CAIRN':{t:'🌑 CAIRN - Inventario',d:'División Legal. Amenazas ocultas, Jefa.',e:'● EN VIVO',inv:[['Amenazas rastreadas','312'],['Amenazas bloqueadas','312'],['IPs bloqueadas','89'],['Dominios sospechosos','24'],['Alertas activas','0']]},
+'CIBERESTRIKE AI':{t:'🤖 CIBERESTRIKE AI - Inventario',d:'División Legal. IA de respuesta, Jefa.',e:'● EN VIVO',inv:[['Ataques bloqueados','1,284'],['Tiempo de respuesta','0.2 seg'],['Modelos activos','4'],['Reglas activas','156'],['Falsos positivos','3']]},
+'Guardián':{t:'🔒 1. Guardián - Inventario',d:'Yo controlo quién entra, Jefa.',e:'● ACTIVO',inv:[['Accesos verificados','2,340'],['Accesos bloqueados','12'],['Llaves activas','48'],['Sesiones abiertas','14'],['Intentos fallidos','12']]},
+'Centinela':{t:'👁️ 2. Centinela - Inventario',d:'Yo miro todo en tiempo real, Jefa.',e:'● ACTIVO',inv:[['Patrones revisados','45'],['Amenazas reales','0'],['Cámaras / sensores','24'],['Alertas hoy','5'],['Zonas vigiladas','12']]},
+'Tesorero':{t:'💰 3. Tesorero - Inventario',d:'Yo cuido los saldos, Jefa.',e:'● ACTIVO',inv:[['Movimientos revisados','45,230'],['Errores','0'],['Cuentas verificadas','1,240'],['Conciliaciones','98'],['Diferencias','0']]},
+'Mensajero':{t:'✈️ 4. Mensajero - Inventario',d:'Yo rastreo cada transferencia, Jefa.',e:'● ACTIVO',inv:[['Transferencias','12,480'],['Fallidas','0'],['En tránsito','32'],['Entregadas','12,448'],['Tiempo promedio','1.8 seg']]},
+'Vigía':{t:'🔔 5. Vigía - Inventario',d:'Yo no duermo, Jefa. 24/7.',e:'● ACTIVO 24/7',inv:[['Alertas leves','3'],['Alertas graves','0'],['Turnos cubiertos','24 / 24'],['Horas sin dormir','24'],['Notificaciones enviadas','112']]},
+'Trinity':{t:'🧠 6. Trinity - Inventario',d:'Yo coordino a los otros 5, Jefa.',e:'● ACTIVO',inv:[['Agentes coordinados','5'],['Tareas asignadas','24'],['Tareas completadas','24'],['Pendientes','0'],['Resumen','Todo en orden, Jefa']]}
+};
+function ocultar(){document.getElementById('portada').style.display='none';document.getElementById('formulario').style.display='none';document.getElementById('ops').style.display='none';document.getElementById('detalle').style.display='none';}
 function irDemo(){ocultar();document.getElementById('formulario').style.display='block';window.scrollTo(0,0);}
 function volver(){ocultar();document.getElementById('portada').style.display='block';window.scrollTo(0,0);}
 function irAcceso(){ocultar();document.getElementById('ops').style.display='block';window.scrollTo(0,0);setTimeout(iniciar,100);}
 function enviar(){let n=document.getElementById('nombre').value;let c=document.getElementById('correo').value;if(!n||!c){alert("Jefa, faltan Nombre y Correo");return;}alert("Enviado, Jefa. Te escribimos pronto.");volver();}
-function abrir(n){alert("Entraste a "+n+", Jefa. Panel en vivo, Bb.");}
+function abrir(n){
+let d=datos[n];
+document.getElementById('dTitulo').innerHTML=d.t;
+document.getElementById('dDesc').innerHTML=d.d;
+document.getElementById('dEstado').innerHTML=d.e;
+document.getElementById('dTotal').innerHTML='Total: '+d.inv.length+' items • 24 en total en el Centro';
+let html='';
+d.inv.forEach(r=>{html+='<div class="inv-row"><span>'+r[0]+'</span><span>'+r[1]+'</span></div>';});
+document.getElementById('dInv').innerHTML='<b>📦 Inventario detallado, Jefa:</b>'+html;
+ocultar();document.getElementById('detalle').style.display='block';window.scrollTo(0,0);
+}
+function cerrarDetalle(){ocultar();document.getElementById('ops').style.display='block';window.scrollTo(0,0);}
 let ya=false;
 function iniciar(){if(ya)return;ya=true;document.querySelectorAll('.ecg').forEach((cv,idx)=>{let ctx=cv.getContext('2d');let W=cv.width=cv.offsetWidth*2;let H=cv.height=100;let pts=[];for(let i=0;i<100;i++)pts.push(H/2);let cont=0;function dib(){ctx.clearRect(0,0,W,H);ctx.beginPath();ctx.strokeStyle=idx%2==0?'#38BDF8':'#A78BFA';ctx.lineWidth=3;ctx.shadowColor=ctx.strokeStyle;ctx.shadowBlur=8;pts.forEach((y,i)=>{let x=(i/100)*W;if(i==0)ctx.moveTo(x,y);else ctx.lineTo(x,y);});ctx.stroke();cont++;let nu=H/2+(Math.random()-0.5)*10;if(cont%40==0)nu=H/2-35;if(cont%40==1)nu=H/2+25;if(cont%40==2)nu=H/2-5;pts.push(nu);pts.shift();requestAnimationFrame(dib);}setTimeout(dib,idx*150);});}
 </script>
