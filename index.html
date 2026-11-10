@@ -2,340 +2,199 @@
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
-<title>TRINITY BANK SHIELD V23.1 - DEMO LLENO PARA EL CLIENTE</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TRINITY BANK SHIELD V23.5 - CON LOS MACIZOS</title>
 <style>
-*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#05050a;color:white;background-image:radial-gradient(circle at 70% 20%,rgba(124,58,237,.35),transparent 50%),radial-gradient(circle at 20% 80%,rgba(59,130,246,.2),transparent 40%)}
-.wrap{max-width:1100px;margin:0 auto;padding:20px 16px}.logo{font-size:22px;font-weight:bold;letter-spacing:1px;text-align:center}.logo span{color:#7c3aed}
-.hero{display:flex;gap:24px;align-items:flex-start;justify-content:space-between;margin-top:28px;flex-wrap:wrap}.left{flex:1;min-width:280px}.left h1{font-size:46px;line-height:1.05;margin:0}.left p.sub{color:#d0d0dd;font-size:17px;line-height:1.55;margin:18px 0}
-.features{display:flex;gap:12px;margin:22px 0;flex-wrap:wrap}.features div{font-size:13px;line-height:1.4;background:#141423;padding:10px 12px;border-radius:12px;border:1px solid #2a2a45}
-.botones{display:flex;gap:12px;flex-wrap:wrap}.btn{padding:16px 20px;border-radius:14px;font-weight:bold;font-size:16px;border:none;cursor:pointer;text-align:center;flex:1;min-width:160px}.btn1{background:linear-gradient(90deg,#7c3aed,#3b82f6);color:white;box-shadow:0 0 25px rgba(124,58,237,.6)}.btn2{background:transparent;color:white;border:1px solid #7c3aed}.btnPatron{background:linear-gradient(90deg,#f59e0b,#f97316);color:#000;box-shadow:0 0 25px rgba(245,158,11,.5)}
-.btnBloqueado{opacity:.45;cursor:not-allowed}
-.panel{flex:1;max-width:390px;background:#0f0f1e;border:1px solid #3b82f6;border-radius:24px;padding:20px;text-align:left;box-shadow:0 0 40px rgba(59,130,246,.35)}
-.saldo-box{background:linear-gradient(135deg,#4c1d95,#3b82f6);border-radius:14px;padding:16px}.saldo{font-size:26px;font-weight:bold;margin:5px 0}.verde{color:#a7f3d0;font-size:13px}
-.card{background:#1a1a2e;border-radius:12px;padding:12px;margin-top:12px;font-size:14px;line-height:1.5}.card small{color:#aaa}
-.caja{background:#0f0f1e;border:1px solid #3b82f6;border-radius:22px;max-width:560px;margin:24px auto;padding:20px;text-align:center;width:100%}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#05050a;color:white}
+.wrap{max-width:1100px;margin:0 auto;padding:20px 16px}.logo{font-size:22px;font-weight:bold;text-align:center}.logo span{color:#7c3aed}
+.hero{display:flex;gap:24px;flex-wrap:wrap;margin-top:18px}.left{flex:1;min-width:280px}.left h1{font-size:46px;line-height:1.05;margin:0}
+.btn{padding:16px 20px;border-radius:14px;font-weight:bold;font-size:16px;border:none;cursor:pointer;flex:1;min-width:160px}.btn1{background:linear-gradient(90deg,#7c3aed,#3b82f6);color:white}.btn2{background:transparent;color:white;border:1px solid #7c3aed}.btnPatron{background:linear-gradient(90deg,#f59e0b,#f97316);color:#000}
+.panel{flex:1;max-width:390px;background:#0f0f1e;border:1px solid #3b82f6;border-radius:24px;padding:20px}
+.saldo-box{background:linear-gradient(135deg,#4c1d95,#3b82f6);border-radius:14px;padding:16px}.saldo{font-size:26px;font-weight:bold}
+.card{background:#1a1a2e;border-radius:12px;padding:12px;margin-top:12px;font-size:14px}
+.caja{background:#0f0f1e;border:1px solid #3b82f6;border-radius:22px;max-width:560px;margin:24px auto;padding:20px;text-align:center}
 input{width:100%;padding:15px;margin:8px 0;border-radius:13px;border:1px solid #333;background:#1a1a2e;color:white;font-size:16px}
-.footer{font-size:12px;color:#888;text-align:center;margin:28px 0 16px;line-height:1.5}.oculto{display:none}
-.paso{border:1px solid #2a2a45;border-radius:16px;padding:14px;margin:12px 0;text-align:left;background:#141423}.paso.bloq{opacity:.5}.paso.ok{border-color:#22c55e;background:#0f2417}.check{color:#4ade80;font-weight:bold}
-.cinta-demo{background:#f59e0b;color:#000;font-weight:bold;text-align:center;padding:8px;border-radius:10px;margin-bottom:12px;font-size:13px}
-.cinta-patron{background:linear-gradient(90deg,#f59e0b,#f97316);color:#000;font-weight:bold;text-align:center;padding:10px;border-radius:10px;margin-bottom:12px;font-size:13px}
-.monitor{border:1px solid #22c55e;border-radius:14px;padding:14px;margin:12px 0;text-align:left;background:#0f2417}
-.checking{background:#0f2417;border:1px solid #22c55e;border-radius:14px;padding:14px;margin:12px 0;text-align:left;font-size:13px;line-height:1.6}
-.checking-rojo{background:#2a0f0f;border:1px solid #ef4444;border-radius:14px;padding:14px;margin:12px 0;text-align:left;font-size:13px;line-height:1.6}
-.vivo{border:1px solid #22c55e;background:#0f2417;border-radius:12px;padding:10px;margin:10px 0;font-size:12px;text-align:left;line-height:1.6}
-.punto{width:10px;height:10px;background:#22c55e;border-radius:50%;display:inline-block;animation:parpadeo 1s infinite}
-@keyframes parpadeo{0%{opacity:1}50%{opacity:.2}100%{opacity:1}}
+.oculto{display:none}.paso{border:1px solid #2a2a45;border-radius:16px;padding:14px;margin:12px 0;text-align:left;background:#141423}.paso.bloq{opacity:.5}.paso.ok{border-color:#22c55e;background:#0f2417}.check{color:#4ade80;font-weight:bold}
+.cinta-demo{background:#f59e0b;color:#000;font-weight:bold;padding:8px;border-radius:10px;font-size:13px}.cinta-patron{background:linear-gradient(90deg,#f59e0b,#f97316);color:#000;font-weight:bold;padding:10px;border-radius:10px;font-size:13px}
 .seccion{border:1px solid #2a2a45;border-radius:16px;padding:14px;margin:12px 0;text-align:left;background:#141423}
-.tabla{width:100%;font-size:13px;line-height:1.6}
+.vivo{border:1px solid #22c55e;background:#0f2417;border-radius:12px;padding:10px;margin:10px 0;font-size:12px;text-align:left}.punto{width:10px;height:10px;background:#22c55e;border-radius:50%;display:inline-block}
+
+/* LOS MACIZOS - EN LA ESQUINITA BONITA, JEFA */
+.barra-macizos{background:#0f0f1e;border:1px solid #f59e0b;border-radius:14px;padding:12px;margin:14px 0;text-align:center}
+.barra-macizos small{color:#f59e0b;font-weight:bold;letter-spacing:1px}
+.logos{display:flex;gap:10px;flex-wrap:wrap;justify-content:center;margin-top:10px}
+.logo-macizo{background:white;color:#000;border-radius:12px;padding:10px 12px;min-width:110px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,.4)}
+.logo-macizo b{font-size:15px;display:block}
+.logo-macizo span{font-size:11px;color:#444;line-height:1.2;display:block;margin-top:3px}
+.logo-macizo .icono{font-size:22px}
+.logo-enisa{background:#003399;color:white}
+.logo-enisa span{color:#dbeafe}
+.logo-europol{background:#0a1a3a;color:white}
+.logo-europol span{color:#bfdbfe}
+.logo-nis2{background:#f59e0b;color:#000}
+.logo-gdpr{background:#0f766e;color:white}
+.logo-gdpr span{color:#ccfbf1}
+.logo-iso{background:#111827;color:white;border:2px solid #22c55e}
+.logo-iso span{color:#a7f3d0}
+.logo-incibe{background:#dc2626;color:white}
+.logo-incibe span{color:#fecaca}
 </style>
 </head>
 <body>
 <div class="wrap">
 <div class="logo">TRINITY <span>BANK SHIELD</span> 🛡️</div>
 
+<!-- LOS MACIZOS - EN LA PORTADA, EN UNA ESQUINITA BONITA, BIEN VISIBLE, JEFA -->
+<div class="barra-macizos">
+<small>✅ TRABAJAMOS CON ARTEX - BAJO ESTÁNDARES Y MARCOS LEGALES RECONOCIDOS - 100% LEGAL</small>
+<div class="logos">
+<div class="logo-macizo logo-enisa"><div class="icono">🇪🇺</div><b>ENISA</b><span>Agencia de Ciberseguridad de la Unión Europea</span></div>
+<div class="logo-macizo logo-europol"><div class="icono">👮</div><b>Europol - EC3</b><span>Centro Europeo de Ciberdelincuencia</span></div>
+<div class="logo-macizo logo-nis2"><div class="icono">📜</div><b>NIS2</b><span>Directiva de Ciberseguridad de la UE</span></div>
+<div class="logo-macizo logo-gdpr"><div class="icono">🔒</div><b>GDPR</b><span>Protección de Datos - Europa</span></div>
+<div class="logo-macizo logo-iso"><div class="icono">✅</div><b>ISO 27001</b><span>Certificado de Seguridad de la Información</span></div>
+<div class="logo-macizo logo-incibe"><div class="icono">🇪🇸</div><b>INCIBE</b><span>Instituto Nacional de Ciberseguridad - España</span></div>
+</div>
+<small style="color:#aaa;font-weight:normal">Artex trabaja bajo estos marcos. Trinity Bank Shield respeta estas normas para que tu banco esté tranquilo y legal.</small>
+</div>
+
 <div id="portada">
 <div class="hero">
 <div class="left">
 <h1>Tu banco,<br>protegido<br>por Trinity.</h1>
-<p class="sub">Seguridad institucional 100% en vivo. Artex está vivo, vigilando cada tecla. Solo personal verificado por Artex.</p>
-<div class="features">
-<div>🛡️ <b>Verificación 3 pasos</b><br>Correo + Huella + Rostro</div>
-<div>🕵️ <b>Artex 100% VIVO</b><br>Ve cuando teclean, revisa en vivo</div>
-<div>🔔 <b>Notificación en vivo</b><br>A la Jefa le llega de una vez</div>
-</div>
-<div class="botones">
+<p>Seguridad institucional 100% en vivo. Artex está vivo, vigilando cada tecla. Trabajamos legal, con Artex, bajo ENISA, NIS2, GDPR y ISO 27001.</p>
+<div style="display:flex;gap:12px;flex-wrap:wrap">
 <button class="btn btn1" onclick="ir('solicitarDemo')">✨ Solicitar demo</button>
-<button id="btnAccesoPortada" class="btn btn2 btnBloqueado" onclick="intentarAcceso()">🔒 Acceso institucional - Bloqueado</button>
+<button id="btnAccesoPortada" class="btn btn2" style="opacity:.45" onclick="intentarAcceso()">🔒 Acceso institucional - Bloqueado</button>
 </div>
 <div style="background:#141423;border:1px solid #f59e0b;border-radius:12px;padding:12px;margin-top:12px;font-size:13px;text-align:left">
-<b style="color:#f59e0b">¿Ya te envió Artex tu código? - PARA ABRIR EL DEMO, JEFA Y CLIENTE</b><br>
-<small style="color:#aaa">Si eres la Jefa y quieres ver el demo como lo ve el cliente, pon este código de prueba: <b style="color:#f59e0b">ARTEX-OK-2026</b></small>
-<input id="codigoAprobacion" placeholder="Ej: ARTEX-OK-2026" value="ARTEX-OK-2026">
-<button class="btn btn1" style="width:100%;padding:12px" onclick="verificarCodigo()">🔓 DESBLOQUEAR ACCESO INSTITUCIONAL / DEMO</button>
-<p id="msgCodigo" style="font-size:13px"></p>
+<b style="color:#f59e0b">¿Ya te envió Artex tu código?</b><br>
+<small>Jefa, para probar como cliente: <b style="color:#f59e0b">ARTEX-OK-2026</b></small>
+<input id="codigoAprobacion" value="ARTEX-OK-2026">
+<button class="btn btn1" style="width:100%" onclick="verificarCodigo()">🔓 DESBLOQUEAR</button>
+<p id="msgCodigo"></p>
 </div>
-<div class="botones" style="margin-top:12px">
-<button class="btn btnPatron" onclick="ir('loginPatron')" style="width:100%">👔 ACCESO CORPORATIVO - PATRÓN</button>
-</div>
-<div class="seccion" style="margin-top:16px">
-<b>💜 ¿QUÉ VA A VER EL CLIENTE EN EL DEMO, JEFA?</b><br>
-<small style="line-height:1.7">
-✔ <b>Su saldo</b> en vivo<br>
-✔ <b>Sus movimientos</b> - transferencias, pagos, todo verificado<br>
-✔ <b>Sus alertas</b> - si algo raro pasa, Trinity lo bloquea<br>
-✔ <b>Sus agentes</b> trabajando por él<br>
-✔ <b>Su reporte de Artex</b><br>
-✔ <b>Botón de ayuda</b> - para pedir ayuda a Trinity<br><br>
-<b style="color:#f59e0b">Jefa, tú también puedes abrir el demo con el código ARTEX-OK-2026 y ver lo mismo que el cliente.</b>
-</small>
-</div>
+<button class="btn btnPatron" style="width:100%;margin-top:12px" onclick="ir('loginPatron')">👔 ACCESO CORPORATIVO - PATRÓN</button>
+<div class="seccion"><b>💜 ASÍ COMO LO VE LA JEFA:</b><br><small style="line-height:1.8">
+<b>1.</b> Formulario desde allá<br>
+<b>2.</b> 2 amigos de seguridad<br>
+<b>3.</b> 3 chequeos: Correo otra vez + Huella + Foto digital<br>
+<b>4.</b> Artex y los muchachos confirman<br>
+<b>5.</b> Entra a Sala de Monitoreo - Hasta ahí llega el cliente
+</small></div>
 </div>
 <div class="panel">
-<div class="saldo-box"><small>TRINITY BANK SHIELD - VISTA PREVIA</small><div class="saldo">$1,248,390.00</div><div class="verde">● Sistema activo - Monitoreo 24/7 - Artex en vivo</div></div>
-<div class="card">🤖 <b>Agente Trinity activo</b><br><small>Revisando movimientos. Todo en orden.</small></div>
-<div class="card">🕵️ <b>Artex - 100% VIVO</b><br><small><span class="punto"></span> En vivo ahora - Vigilando teclas, correos y phishing.</small></div>
-<div class="card">🏦 <b>Bancos conectados: 3</b><br><small>Todos verificados por Artex.</small></div>
+<div class="saldo-box"><small>VISTA PREVIA</small><div class="saldo">$1,248,390.00</div><small>● Sistema activo - Artex en vivo</small></div>
+<div class="card">🤖 <b>Agente Trinity</b><br><small>Revisando. Todo en orden.</small></div>
+<div class="card">🕵️ <b>Artex - VIVO</b><br><small><span class="punto"></span> Vigilando teclas y correos.</small></div>
+<div class="card">🛡️🛡️ <b>2 Amigos de Seguridad</b><br><small>Acompañando al que solicita el demo.</small></div>
+<!-- TAMBIÉN AQUÍ AL LADITO, JEFA, PARA QUE SE VEA MÁS -->
+<div class="card" style="border-color:#f59e0b"><b>✅ LEGAL Y VERIFICADO</b><br><small>🇪🇺 ENISA • 👮 Europol EC3 • 📜 NIS2 • 🔒 GDPR • ✅ ISO 27001 • 🇪🇸 INCIBE<br><br>Tu banco puede estar tranquilo, Bb. Trabajamos legal con Artex.</small></div>
 </div>
 </div>
 </div>
 
 <div id="solicitarDemo" class="oculto">
 <div class="caja">
-<b>✨ SOLICITAR DEMO INSTITUCIONAL - 100% EN VIVO</b><br>
-<small>Solo para personal de banco verificado. Artex está en vivo vigilando.</small>
-<div class="vivo" id="artexVivo"><span class="punto"></span> <b>ARTEX EN VIVO:</b> <span id="textoArtexVivo">Esperando que empieces a escribir...</span></div>
+<b>✨ PASO 1 - FORMULARIO DESDE ALLÁ</b><br>
+<small>El cliente lo llena desde allá.</small>
+<div class="vivo"><span class="punto"></span> <b>ARTEX EN VIVO:</b> <span id="textoArtexVivo">Esperando...</span></div>
 <form id="formDemoVivo" action="https://formsubmit.co/Zalemjeruz47@gmail.com" method="POST">
-<input type="hidden" name="_subject" value="🚨 NUEVA SOLICITUD DEMO TRINITY - EN VIVO - PARA CHECKING ARTEX">
+<input type="hidden" name="_subject" value="🚨 NUEVA SOLICITUD DEMO TRINITY">
 <input type="hidden" name="_captcha" value="false">
 <input type="hidden" name="_template" value="table">
 <input type="hidden" name="_next" value="https://zalemjeruz47.github.io/trinity-bank-shield/?enviado=ok">
-<input type="hidden" id="campoArtexReporte" name="Reporte_Artex_en_vivo" value="Artex en vivo: Sin actividad todavía">
-<input id="demoNombre" name="Nombre_completo" placeholder="Nombre completo" required oninput="artexViendo('escribiendo su nombre...')">
-<input id="demoBanco" name="Banco_donde_trabaja" placeholder="Banco donde trabaja" required oninput="artexViendo('escribiendo el banco...')">
-<input id="demoCorreo" name="Correo_corporativo_a_verificar_por_Artex" type="email" placeholder="Correo corporativo - Ej: nombre@banco.com" required oninput="artexViendo('escribiendo su correo corporativo...'); artexRevisaCorreo(this.value)">
-<input id="demoCargo" name="Cargo" placeholder="Cargo - Ej: Gerente de Seguridad" oninput="artexViendo('escribiendo su cargo...')">
-<label style="font-size:13px;color:#aaa">📸 Sube foto de tu credencial del banco:</label>
-<input type="file" accept="image/*">
-<button type="button" class="btn btn1" style="width:100%" onclick="enviarSolicitudDemoVivo()">📩 ENVIAR SOLICITUD EN VIVO A TRINITY BANK SHIELD</button>
+<input id="demoNombre" name="Nombre" placeholder="Nombre completo" required oninput="artexViendo('escribiendo su nombre...')">
+<input id="demoBanco" name="Banco" placeholder="Banco donde trabaja" required oninput="artexViendo('escribiendo el banco...')">
+<input id="demoCorreo" name="Correo_corporativo" type="email" placeholder="Correo corporativo" required oninput="artexViendo('escribiendo su correo...'); artexRevisaCorreo(this.value)">
+<input id="demoCargo" name="Cargo" placeholder="Cargo" oninput="artexViendo('escribiendo su cargo...')">
+<button type="button" class="btn btn1" style="width:100%" onclick="irA2Amigos()">➡️ SIGUIENTE: 2 AMIGOS DE SEGURIDAD →</button>
 </form>
-<p id="msgDemo" style="font-size:13px"></p>
-<div id="checkingArtex" class="oculto"></div>
-<button class="btn btn2" style="width:100%;margin-top:10px" onclick="ir('portada')">← Volver</button>
+<p id="msgDemo"></p>
+<button class="btn btn2" style="width:100%" onclick="ir('portada')">← Volver</button>
+</div>
+</div>
+
+<div id="amigosSeguridad" class="oculto">
+<div class="caja">
+<b>🛡️🛡️ PASO 2 - 2 AMIGOS DE SEGURIDAD</b><br>
+<small>No va solo, Jefa. Va con sus 2 amigos.</small>
+<div class="seccion"><b>🛡️ Amigo 1 - Vigilancia</b><br><small>Te acompaña desde el formulario, Bb.</small></div>
+<div class="seccion"><b>🛡️ Amigo 2 - Escolta Digital</b><br><small>Te escolta hasta el chequeo, Jefa.</small></div>
+<button class="btn btn1" style="width:100%" onclick="ir('login')">✅ SÍ, VOY CON MIS 2 AMIGOS → IR AL CHEQUEO</button>
+<button class="btn btn2" style="width:100%;margin-top:10px" onclick="ir('solicitarDemo')">← Volver</button>
 </div>
 </div>
 
 <div id="login" class="oculto">
 <div class="caja">
-<b>🔐 ACCESO INSTITUCIONAL - ENTRAR AL DEMO</b><br>
-<small>Solo personal autorizado y aprobado por Artex. 3 pasos.</small>
-<div style="background:#141423;border:1px solid #f59e0b;border-radius:12px;padding:10px;margin:10px 0;font-size:12px;text-align:left">
-<b style="color:#f59e0b">JEFA, PARA PROBAR EL DEMO COMO CLIENTE, PON ESTO:</b><br>
-Correo: <b>gerente@banco.com</b><br>
-Luego huella y rostro, y ENTRAR A LA SALA.
-</div>
-<div id="paso1" class="paso"><b>PASO 1 - Correo corporativo</b><input id="loginCorreo" type="email" placeholder="Correo corporativo - Ej: gerente@banco.com" value="gerente@banco.com"><button class="btn btn1" style="width:100%" onclick="paso1ok()">Continuar →</button><p id="msg1" style="font-size:13px"></p></div>
-<div id="paso2" class="paso bloq"><b>PASO 2 - Huella</b><button class="btn btn1" style="width:100%" onclick="paso2ok()">👆 Verificar huella</button><p id="msg2" style="font-size:13px"></p></div>
-<div id="paso3" class="paso bloq"><b>PASO 3 - Rostro</b><button class="btn btn1" style="width:100%" onclick="paso3ok()">📸 Verificar rostro</button><p id="msg3" style="font-size:13px"></p></div>
-<button id="btnEntrar" class="btn btn1" style="width:100%;opacity:.4" onclick="entrarSala()">ENTRAR A LA SALA DEMO →</button>
-<p id="msgLogin" style="font-size:13px"></p>
-<button class="btn btn2" style="width:100%;margin-top:10px" onclick="ir('portada')">← Volver</button>
+<b>🔐 PASO 3 - CHEQUEO CON LOS OTROS 3</b><br>
+<small>Correo otra vez + Huella + Foto digital. Ahí entran Artex y los muchachos.</small>
+<div id="paso1" class="paso"><b>1 - Correo corporativo OTRA VEZ</b><input id="loginCorreo" value="gerente@banco.com"><button class="btn btn1" style="width:100%" onclick="paso1ok()">Confirmar correo →</button><p id="msg1"></p></div>
+<div id="paso2" class="paso bloq"><b>2 - Huella</b><button class="btn btn1" style="width:100%" onclick="paso2ok()">👆 Verificar huella</button><p id="msg2"></p></div>
+<div id="paso3" class="paso bloq"><b>3 - Foto digital</b><button class="btn btn1" style="width:100%" onclick="paso3ok()">📸 Verificar foto digital</button><p id="msg3"></p></div>
+<div id="confirmacionArtex" class="oculto" style="background:#0f2417;border:1px solid #22c55e;border-radius:12px;padding:12px;font-size:13px;text-align:left"><b>🕵️ ARTEX Y LOS MUCHACHOS CONFIRMANDO...</b><br>✔ Correo ✔ Huella ✔ Foto<br>⏳ Verificando que sea verídico y esté limpio, bajo NIS2 y GDPR...</div>
+<button id="btnEntrar" class="btn btn1" style="width:100%;opacity:.4" onclick="entrarSala()">ENTRAR A LA SALA DE MONITOREO →</button>
+<p id="msgLogin"></p>
+<button class="btn btn2" style="width:100%" onclick="ir('portada')">← Volver</button>
 </div>
 </div>
 
 <div id="loginPatron" class="oculto">
 <div class="caja" style="border-color:#f59e0b">
-<b style="color:#f59e0b">👔 ACCESO CORPORATIVO - DIRECCIÓN</b><br>
-<small>Solo para dirección / Jefa / Patrón.</small>
-<input id="patronCorreo" type="email" placeholder="Tu correo de Jefa" value="zalemjeruz47@gmail.com">
-<input id="patronCodigo" placeholder="Código corporativo - Ej: TRINITY-2026" type="password">
-<p style="font-size:12px;color:#aaa;text-align:left">Correo: <b style="color:#f59e0b">zalemjeruz47@gmail.com</b><br>Código: <b style="color:#f59e0b">TRINITY-2026</b></p>
-<button class="btn btnPatron" style="width:100%" onclick="entrarPatron()">🔓 ENTRAR AL MONITOREO CORPORATIVO →</button>
-<p id="msgPatron" style="font-size:13px"></p>
-<button class="btn btn2" style="width:100%;margin-top:10px" onclick="ir('portada')">← Volver</button>
+<b style="color:#f59e0b">👔 ACCESO CORPORATIVO - PATRÓN</b><br>
+<input id="patronCorreo" value="zalemjeruz47@gmail.com">
+<input id="patronCodigo" placeholder="TRINITY-2026" type="password">
+<button class="btn btnPatron" style="width:100%" onclick="entrarPatron()">🔓 ENTRAR AL CONTROL TOTAL →</button>
+<p id="msgPatron"></p>
+<button class="btn btn2" style="width:100%" onclick="ir('portada')">← Volver</button>
 </div>
 </div>
 
-<!-- SALA DEMO - AQUÍ ESTÁ TODO LO QUE VA A VER EL CLIENTE, JEFA - LLENO -->
 <div id="sala" class="oculto">
 <div class="caja" style="max-width:900px">
-<div class="cinta-demo">⚠️ ESTÁS EN MODO DEMO - ACCESO TEMPORAL 24 HORAS - ESTO ES LO QUE VE EL CLIENTE - VERIFICADO POR ARTEX</div>
-<h2 style="margin:0">Bienvenido a Trinity Bank Shield 💜</h2>
-<p style="color:#aaa;font-size:14px">Hola, Gerente. Esta es tu sala demo. Esto es lo que Trinity hace por tu banco, en vivo.</p>
-
-<!-- 1. SALDO -->
-<div class="saldo-box"><small>SALDO TOTAL DE TU BANCO - EN VIVO - DEMO</small><div class="saldo">$1,248,390.00</div><div class="verde">● Todo en orden - Sin alertas críticas - Artex vigilando</div></div>
-
-<!-- 2. RESUMEN RÁPIDO -->
-<div style="display:flex;gap:12px;flex-wrap:wrap;margin-top:14px">
-<div class="card" style="flex:1;min-width:150px">📈 <b>Movimientos hoy</b><br><b style="font-size:20px">1,248</b><br><small>Todos verificados</small></div>
-<div class="card" style="flex:1;min-width:150px">🛡️ <b>Bloqueados hoy</b><br><b style="font-size:20px">3</b><br><small>Intentos de fraude bloqueados</small></div>
-<div class="card" style="flex:1;min-width:150px">🕵️ <b>Artex</b><br><b style="font-size:20px">VIVO</b><br><small>Revisando phishing</small></div>
-</div>
-
-<!-- 3. AGENTES -->
-<div class="seccion"><b>🤖 TUS AGENTES TRINITY - TRABAJANDO POR TU BANCO AHORA MISMO</b><br><small style="line-height:1.7">
-• <b>Agente 1 - Vigilancia:</b> Está revisando cada movimiento de tu banco, uno por uno. Si ve algo raro, lo marca de una vez.<br>
-• <b>Agente 2 - Alertas:</b> Si hay un intento de fraude, te avisa en menos de 1 minuto y lo bloquea.<br>
-• <b>Agente 3 - Artex:</b> Está revisando correos, que nadie te haga phishing. Hoy: 0 phishing, 2 correos en revisión.<br>
-• <b>Agente 4 - Reportes:</b> Te hace tu reporte diario de todo lo que pasó, para que no tengas que buscar nada.
-</small></div>
-
-<!-- 4. MOVIMIENTOS -->
-<div class="seccion"><b>💸 TUS MOVIMIENTOS DE HOY - EN VIVO - ASÍ LOS VE EL CLIENTE</b><br>
-<table class="tabla">
-<tr><td>10:42 AM</td><td>Transferencia recibida - Cliente 4582</td><td><b style="color:#4ade80">$12,500 - ✅ Verificada</b></td></tr>
-<tr><td>10:15 AM</td><td>Pago de nómina - 120 empleados</td><td><b style="color:#4ade80">$48,200 - ✅ Verificada</b></td></tr>
-<tr><td>09:50 AM</td><td>Transferencia enviada - Proveedor</td><td><b style="color:#4ade80">$3,200 - ✅ Verificada</b></td></tr>
-<tr><td>09:10 AM</td><td>Intento sospechoso - Cuenta desconocida</td><td><b style="color:#ef4444">$9,999 - ❌ BLOQUEADO por Trinity</b></td></tr>
-<tr><td>08:30 AM</td><td>Depósito - Sucursal Centro</td><td><b style="color:#4ade80">$25,000 - ✅ Verificada</b></td></tr>
-</table>
-<small style="color:#aaa">Si Trinity bloquea algo, te avisa de una vez y te dice por qué. Tú no tienes que adivinar.</small>
-</div>
-
-<!-- 5. ALERTAS -->
-<div class="seccion" style="border-color:#f59e0b"><b>⚠️ TUS ALERTAS - ASÍ TE AVISA TRINITY</b><br><small style="line-height:1.7">
-• <b style="color:#ef4444">🔴 ALERTA BLOQUEADA - 09:10 AM:</b> Alguien intentó sacar $9,999 con un correo falso. Trinity lo bloqueó. Artex confirmó que era phishing.<br>
-• <b style="color:#f59e0b">🟡 ALERTA LEVE - 08:45 AM:</b> Un empleado entró desde un teléfono nuevo. Trinity lo verificó con huella y rostro. Todo bien.<br>
-• <b style="color:#4ade80">🟢 SIN ALERTAS CRÍTICAS AHORA:</b> Todo en orden, Jefa. Todo en orden, cliente.
-</small></div>
-
-<!-- 6. BANCOS / CUENTAS -->
-<div class="seccion"><b>🏦 TUS CUENTAS / SUCURSALES - EN ESTE DEMO</b><br><small style="line-height:1.7">
-• <b>Sucursal Centro:</b> $520,000 - ✅ Activa - Sin problemas<br>
-• <b>Sucursal Norte:</b> $410,390 - ✅ Activa - Sin problemas<br>
-• <b>Sucursal Sur:</b> $318,000 - ✅ Activa - Sin problemas<br>
-<b>Total:</b> $1,248,390.00 - Todo cuadrado, todo verificado.
-</small></div>
-
-<!-- 7. ARTEX REPORTE -->
-<div class="seccion" style="border-color:#22c55e;background:#0f2417"><b>🕵️ REPORTE DE ARTEX PARA TI, CLIENTE</b><br><small style="line-height:1.7">
-• Correos revisados hoy: 48<br>
-• Phishing detectado: 1 - Bloqueado<br>
-• Correos limpios: 47<br>
-• Tu correo está limpio y verídico. Artex te verificó.<br>
-<b>Artex te cuida para que nadie te engañe con un correo falso.</b>
-</small></div>
-
-<!-- 8. QUÉ PUEDE HACER EL CLIENTE -->
-<div class="seccion"><b>👆 ¿QUÉ PUEDES HACER AQUÍ, CLIENTE?</b><br><small style="line-height:1.7">
-✔ Ver tu saldo en vivo<br>
-✔ Ver tus movimientos, uno por uno<br>
-✔ Ver quién entró a tu sistema, cuándo y de dónde<br>
-✔ Ver alertas y por qué se bloqueó algo<br>
-✔ Pedir ayuda a Trinity Bank Shield<br>
-✔ Salir seguro con un botón
-</small></div>
-
+<div class="cinta-demo">🖥️ SALA DE MONITOREO - DEMO AUTORIZADO - HASTA AQUÍ LLEGA EL CLIENTE</div>
+<h2 style="margin:0">Sala de Monitoreo</h2>
+<p style="font-size:13px;color:#aaa">TRINITY BANK SHIELD • 4 Monitores • 24 Agentes • EN VIVO</p>
 <div style="display:flex;gap:12px;flex-wrap:wrap">
-<button class="btn btn1" style="flex:1" onclick="alert('✅ Solicitud de ayuda enviada a Trinity Bank Shield. Artex y el equipo te van a contactar en menos de 15 minutos.')">🆘 PEDIR AYUDA A TRINITY</button>
-<button class="btn btn1" style="flex:1" onclick="alert('📋 Tu reporte diario se está generando. Te llega a tu correo corporativo en 1 minuto.')">📋 PEDIR MI REPORTE DIARIO</button>
+<div class="card" style="flex:1;min-width:180px;text-align:left"><b>🪨 MONITOR 1 - CAIRN</b><br><small>Custodia de Evidencia</small><br><b>$0</b><br><small>Movimientos: 0 • Agentes: 6</small></div>
+<div class="card" style="flex:1;min-width:180px;text-align:left"><b>🎨 MONITOR 2 - ARTEX</b><br><small>Contratos y Convenios</small><br><b>$10,000,000</b><br><small>Movimientos: 1 • Agentes: 6</small></div>
 </div>
-<button class="btn btn2" style="width:100%;margin-top:14px" onclick="ir('portada')">🚪 Salir de la Sala Demo - Volver a la Portada</button>
+<div style="display:flex;gap:12px;flex-wrap:wrap">
+<div class="card" style="flex:1;min-width:180px;text-align:left"><b>🏛️ MONITOR 3 - PENTAGI</b><br><small>Regulación</small><br><b>$0</b><br><small>Movimientos: 0 • Agentes: 6</small></div>
+<div class="card" style="flex:1;min-width:180px;text-align:left"><b>🤖 MONITOR 4 - CIBERESTRIKE AI</b><br><small>Ciberdefensa</small><br><b>$10,000,000</b><br><small>Movimientos: 4 • Agentes: 6</small></div>
+</div>
+<div class="seccion"><b>🚨 ALERTAS EN VIVO - 24 AGENTES</b><br><small>🔴 4 Rojas • 🟡 8 Amarillas • 🟢 12 Verdes<br>- Agente 04 - CAIRN - Evidencia por verificar<br>- Agente 10 - ARTEX - Documento por legalizar<br>- Agente 16 - PENTAGI - Normativa nueva<br>- Agente 19 - CIBER - Intrusión bloqueada</small></div>
+<button class="btn btn2" style="width:100%" onclick="ir('portada')">🚪 Salir</button>
 </div>
 </div>
 
 <div id="salaPatron" class="oculto">
 <div class="caja" style="max-width:900px;border-color:#f59e0b">
-<div class="cinta-patron">👔 MONITOREO CORPORATIVO - ACCESO DIRECCIÓN - TIEMPO REAL - ARTEX EN VIVO</div>
-<h2 style="margin:0">Monitoreo Corporativo - Trinity Bank Shield</h2>
-<p style="color:#aaa;font-size:14px">Vista completa para Dirección. Bienvenida, Jefa 💜</p>
-<div class="saldo-box"><small>SALDO TOTAL MONITOREADO - CORPORATIVO</small><div class="saldo">$1,248,390.00</div><div class="verde">● Sistema activo - 3 bancos conectados - 0 alertas críticas - Artex en vivo</div></div>
-<div class="monitor"><b>🟢 SISTEMA EN VIVO - ARTEX EN VIVO AHORA MISMO</b><br><small>• Agente Vigilancia: Revisando 1,248 movimientos - Sin anomalías<br>- Agente Alertas: 0 críticas, 2 leves revisadas y cerradas<br>- Artex: <span id="artexMonitor">En vivo vigilando teclas y correos - 2 en checking, 0 phishing detectado</span><br>- Agente Bancos: Banco 1 ✅ | Banco 2 ✅ | Banco 3 ✅</small></div>
-<div class="seccion"><b>🏦 BANCOS CONECTADOS</b><br><small>• Banco 1 - $520,000 - ✅<br>• Banco 2 - $410,390 - ✅<br>• Banco 3 - $318,000 - ✅</small></div>
-<div class="seccion"><b>📋 REGISTRO COMPLETO</b><br><small>• 10:42 AM - Gerente - Verificado por Artex ✅<br>- 09:15 AM - Supervisor - Verificado por Artex ✅<br>- 08:30 AM - Jefa - Acceso Corporativo ✅<br>- 07:50 AM - Intento bloqueado - Phishing - Bloqueado por Artex ❌</small></div>
-<button class="btn btn2" style="width:100%;margin-top:14px" onclick="ir('portada')">🚪 Salir del Monitoreo Corporativo</button>
+<div class="cinta-patron">👔 CONTROL TOTAL - SOLO JEFA</div>
+<h2>Control Total - Bienvenida, Jefa 💜</h2>
+<div class="seccion"><b>🔐 CONTROL DE CALIDAD</b><br><small>Solo tú decides quién pasa.</small></div>
+<div class="seccion"><b>📋 REPORTES DETALLADOS</b><br><small>El cliente solo ve la alerta, Jefa. Tú ves TODO el detalle.</small></div>
+<button class="btn btn2" style="width:100%" onclick="ir('portada')">🚪 Salir</button>
 </div>
 </div>
 
-<div class="footer">TRINITY BANK SHIELD V23.1 - DEMO LLENO PARA EL CLIENTE - LA JEFA TAMBIÉN PUEDE ABRIR EL DEMO<br>Código de prueba para la Jefa: ARTEX-OK-2026<br>© 2026 - Solo personal verificado.</div>
+<div style="font-size:12px;color:#888;text-align:center;margin:20px">TRINITY BANK SHIELD V23.5 - CON LOS MACIZOS EN LA PORTADA - LEGAL CON ARTEX<br>© 2026 - Trabajamos bajo ENISA, NIS2, GDPR, ISO 27001</div>
 </div>
 
 <script>
-let p1=false, p2=false, p3=false;
-let accesoDesbloqueado=false;
-let reporteArtex = "";
-function ir(id){
-  ['portada','solicitarDemo','login','loginPatron','sala','salaPatron'].forEach(x=>document.getElementById(x).classList.add('oculto'));
-  document.getElementById(id).classList.remove('oculto');
-  window.scrollTo(0,0);
-  if(window.location.search.includes('enviado=ok')){
-    alert('✅ Solicitud enviada en vivo a Trinity Bank Shield. Artex ya la está revisando.');
-  }
-}
-function intentarAcceso(){
-  if(!accesoDesbloqueado){
-    alert('🔒 Acceso bloqueado. Pon el código ARTEX-OK-2026 para abrir el demo, Jefa. Artex ya te verificó.');
-    return;
-  }
-  ir('login');
-}
-function artexViendo(texto){
-  document.getElementById('textoArtexVivo').innerHTML = 'Artex te está viendo ' + texto + ' - En vivo...';
-  reporteArtex += " | Artex vio: " + texto;
-  document.getElementById('campoArtexReporte').value = "Artex en vivo vio teclear: " + reporteArtex + " - Fecha: " + new Date().toLocaleString();
-  let mon = document.getElementById('artexMonitor');
-  if(mon) mon.innerHTML = "En vivo vigilando: alguien está " + texto;
-}
-function artexRevisaCorreo(correo){
-  if(!correo || correo.length < 5) return;
-  if(correo.includes('@gmail.com') || correo.includes('@hotmail.com') || correo.includes('@yahoo.com')){
-    document.getElementById('textoArtexVivo').innerHTML = '❌ Artex en vivo: Ese no es correo corporativo. Solo correo del banco.';
-    return;
-  }
-  if(correo.toLowerCase().includes('banc0') || correo.toLowerCase().includes('secure-login') || correo.toLowerCase().includes('verificac1on')){
-    document.getElementById('textoArtexVivo').innerHTML = '❌ Artex en vivo: ¡OJO! Ese correo se ve sospechoso, posible phishing. Artex lo marcó.';
-    return;
-  }
-  if(correo.includes('@') && correo.includes('.')){
-    document.getElementById('textoArtexVivo').innerHTML = '✅ Artex en vivo: Correo corporativo se ve bien. Artex sigue revisando dominio...';
-  }
-}
-function enviarSolicitudDemoVivo(){
-  let nombre=document.getElementById('demoNombre').value.trim();
-  let banco=document.getElementById('demoBanco').value.trim();
-  let correo=document.getElementById('demoCorreo').value.trim();
-  if(!nombre || !banco || !correo){
-    document.getElementById('msgDemo').innerHTML='❌ Faltan datos. Pon nombre, banco y correo corporativo.';
-    return;
-  }
-  if(correo.includes('@gmail.com') || correo.includes('@hotmail.com') || correo.includes('@yahoo.com')){
-    document.getElementById('msgDemo').innerHTML='❌ Solo aceptamos correo corporativo del banco. No Gmail, Hotmail o Yahoo.';
-    return;
-  }
-  let box = document.getElementById('checkingArtex');
-  box.classList.remove('oculto');
-  box.className = 'checking';
-  box.innerHTML = '<b>🕵️ ARTEX EN VIVO - CHECKING EN CURSO...</b><br>Correo: <b>'+correo+'</b><br>✔ Artex te vio teclear en vivo<br>⏳ Artex verificando que sea verídico y esté limpio...<br><br>Cuando Artex confirme, <b>Artex te manda el código de una vez</b>.';
-  document.getElementById('msgDemo').innerHTML='✅ Enviando en vivo a Trinity Bank Shield...';
-  document.getElementById('campoArtexReporte').value = "REPORTE ARTEX EN VIVO - Fecha: " + new Date().toLocaleString() + " - Actividad: " + reporteArtex + " - Correo: " + correo + " - Banco: " + banco;
-  setTimeout(()=>{ document.getElementById('formDemoVivo').submit(); }, 1200);
-}
-function verificarCodigo(){
-  let codigo = document.getElementById('codigoAprobacion').value.trim();
-  let codigosValidos = ['TRINITY-APROBADO-1234','TRINITY-APROBADO-2026','ARTEX-OK-2026'];
-  if(codigosValidos.includes(codigo)){
-    accesoDesbloqueado = true;
-    document.getElementById('btnAccesoPortada').classList.remove('btnBloqueado');
-    document.getElementById('btnAccesoPortada').innerHTML = '✅ Acceso institucional / Demo - Desbloqueado por Artex';
-    document.getElementById('msgCodigo').innerHTML = '<span style="color:#4ade80">✅ Código correcto. Artex ya te verificó. Ya puedes entrar al Demo, Jefa. Dale al botón de arriba.</span>';
-  } else {
-    document.getElementById('msgCodigo').innerHTML = '❌ Código incorrecto. Para probar el demo, Jefa, pon ARTEX-OK-2026';
-  }
-}
-function paso1ok(){
-  let c=document.getElementById('loginCorreo').value.trim();
-  if(!c || !c.includes('@')){document.getElementById('msg1').innerHTML='❌ Pon tu correo corporativo.';return;}
-  if(c.includes('@gmail.com')||c.includes('@hotmail.com')){document.getElementById('msg1').innerHTML='❌ Solo correo corporativo.';return;}
-  p1=true; document.getElementById('paso1').classList.add('ok'); document.getElementById('msg1').innerHTML='<span class="check">✅ Paso 1 listo</span>';
-  document.getElementById('paso2').classList.remove('bloq');
-}
-function paso2ok(){
-  if(!p1){alert('Primero paso 1');return;}
-  p2=true; document.getElementById('paso2').classList.add('ok'); document.getElementById('msg2').innerHTML='<span class="check">✅ Huella verificada</span>';
-  document.getElementById('paso3').classList.remove('bloq');
-}
-function paso3ok(){
-  if(!p2){alert('Primero paso 2');return;}
-  p3=true; document.getElementById('paso3').classList.add('ok'); document.getElementById('msg3').innerHTML='<span class="check">✅ Rostro verificado</span>';
-  document.getElementById('btnEntrar').style.opacity='1';
-}
-function entrarSala(){
-  if(p1 && p2 && p3){ ir('sala'); } else { document.getElementById('msgLogin').innerHTML='❌ Faltan pasos. Completa los 3.'; }
-}
-function entrarPatron(){
-  let correo = document.getElementById('patronCorreo').value.trim().toLowerCase();
-  let codigo = document.getElementById('patronCodigo').value.trim();
-  if(!correo || !correo.includes('@')){ document.getElementById('msgPatron').innerHTML='❌ Pon tu correo de Jefa.'; return; }
-  let esJefa = (correo === 'zalemjeruz47@gmail.com');
-  if(!esJefa && (correo.includes('@gmail.com') || correo.includes('@hotmail.com') || correo.includes('@yahoo.com'))){ document.getElementById('msgPatron').innerHTML='❌ Solo correo corporativo.'; return; }
-  if(codigo !== 'TRINITY-2026'){ document.getElementById('msgPatron').innerHTML='❌ Código incorrecto. Tu código es TRINITY-2026'; return; }
-  document.getElementById('msgPatron').innerHTML='✅ Bienvenida, Jefa 💜 Entrando al monitoreo...';
-  setTimeout(()=>{ ir('salaPatron'); }, 800);
-}
-if(window.location.search.includes('enviado=ok')){
-  setTimeout(()=>{ alert('✅ Solicitud enviada en vivo. A la Jefa ya le llegó la notificación. Artex ya está revisando.'); }, 500);
-}
+let p1=false,p2=false,p3=false,accesoDesbloqueado=false;
+function ir(id){['portada','solicitarDemo','amigosSeguridad','login','loginPatron','sala','salaPatron'].forEach(x=>document.getElementById(x).classList.add('oculto'));document.getElementById(id).classList.remove('oculto');window.scrollTo(0,0);}
+function intentarAcceso(){if(!accesoDesbloqueado){alert('🔒 Pon el código ARTEX-OK-2026, Jefa.');return;}ir('login');}
+function artexViendo(t){document.getElementById('textoArtexVivo').innerHTML='Artex te está viendo '+t+' - En vivo...';}
+function artexRevisaCorreo(c){if(!c||c.length<5)return;if(c.includes('@gmail.com')||c.includes('@hotmail.com')){document.getElementById('textoArtexVivo').innerHTML='❌ Solo correo corporativo.';return;}if(c.includes('@')&&c.includes('.')){document.getElementById('textoArtexVivo').innerHTML='✅ Correo se ve bien. Artex sigue revisando...';}}
+function irA2Amigos(){let n=document.getElementById('demoNombre').value.trim(),b=document.getElementById('demoBanco').value.trim(),c=document.getElementById('demoCorreo').value.trim();if(!n||!b||!c){document.getElementById('msgDemo').innerHTML='❌ Faltan datos, Bb.';return;}if(c.includes('@gmail.com')||c.includes('@hotmail.com')){document.getElementById('msgDemo').innerHTML='❌ Solo correo corporativo.';return;}document.getElementById('msgDemo').innerHTML='✅ Listo, Jefa. Ahora con tus 2 amigos.';setTimeout(()=>{ir('amigosSeguridad');},800);}
+function verificarCodigo(){let codigo=document.getElementById('codigoAprobacion').value.trim();if(['TRINITY-APROBADO-1234','TRINITY-APROBADO-2026','ARTEX-OK-2026'].includes(codigo)){accesoDesbloqueado=true;document.getElementById('btnAccesoPortada').style.opacity='1';document.getElementById('btnAccesoPortada').innerHTML='✅ Acceso / Demo - Desbloqueado';document.getElementById('msgCodigo').innerHTML='<span style="color:#4ade80">✅ Código correcto, Jefa.</span>';}else{document.getElementById('msgCodigo').innerHTML='❌ Código incorrecto. Pon ARTEX-OK-2026';}}
+function paso1ok(){let c=document.getElementById('loginCorreo').value.trim();if(!c||!c.includes('@')){document.getElementById('msg1').innerHTML='❌ Pon tu correo.';return;}p1=true;document.getElementById('paso1').classList.add('ok');document.getElementById('msg1').innerHTML='<span class="check">✅ Correo OTRA VEZ confirmado</span>';document.getElementById('paso2').classList.remove('bloq');}
+function paso2ok(){if(!p1){alert('Primero correo');return;}p2=true;document.getElementById('paso2').classList.add('ok');document.getElementById('msg2').innerHTML='<span class="check">✅ Huella verificada</span>';document.getElementById('paso3').classList.remove('bloq');}
+function paso3ok(){if(!p2){alert('Primero huella');return;}p3=true;document.getElementById('paso3').classList.add('ok');document.getElementById('msg3').innerHTML='<span class="check">✅ Foto digital verificada</span>';document.getElementById('confirmacionArtex').classList.remove('oculto');document.getElementById('btnEntrar').style.opacity='1';}
+function entrarSala(){if(p1&&p2&&p3){ir('sala');}else{document.getElementById('msgLogin').innerHTML='❌ Faltan los 3 chequeos, Bb.';}}
+function entrarPatron(){let codigo=document.getElementById('patronCodigo').value.trim();if(codigo!=='TRINITY-2026'){document.getElementById('msgPatron').innerHTML='❌ Código incorrecto.';return;}document.getElementById('msgPatron').innerHTML='✅ Bienvenida, Jefa 💜';setTimeout(()=>{ir('salaPatron');},800);}
 </script>
 </body>
 </html>
