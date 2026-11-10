@@ -47,6 +47,8 @@ body{background:#030014;color:#fff}
 .op-card p{font-size:13px;color:#999;line-height:1.5}
 .op-card .tag{display:inline-block;font-size:11px;background:#1E1E35;padding:4px 8px;border-radius:20px;color:#A78BFA;margin-top:8px}
 .op-card .live{color:#4ADE80;font-size:12px;font-weight:700}
+/* LA RAYITA DE CADA UNO, JEFA */
+.ecg{width:100%;height:55px;background:#05051A;border-radius:10px;border:1px solid #1E3A8A;margin:10px 0 6px}
 .btn-salir{width:100%;background:#111;border:1px solid #333;color:#fff;padding:13px;border-radius:12px;margin:25px 0;cursor:pointer}
 .detalle{display:none;max-width:700px;margin:0 auto;padding:15px}
 .detalle-box{background:#070714;border:1px solid #2A1A5E;border-radius:20px;padding:24px}
@@ -66,130 +68,5 @@ body{background:#030014;color:#fff}
 </head>
 <body>
 
-<!-- PORTADA -->
 <div id="portada">
-  <div class="top">🛡️ <span>TRINITY</span> BANK SHIELD</div>
-  <div class="container">
-    <div class="left">
-      <h1>Tu dinero protegido.<br>Tu banco seguro.</h1>
-      <p class="desc">Presentación de proyecto de seguridad. Monitoreo, verificación y cumplimiento.</p>
-      <div class="boxes">
-        <div class="box">🛡️<br><b>ARTEX</b><br><small>División Legal</small></div>
-        <div class="box">🏦<br><b>PENTAGI</b><br><small>División Legal</small></div>
-        <div class="box">🌑<br><b>CAIRN</b><br><small>División Legal</small></div>
-        <div class="box">🤖<br><b>CIBERESTRIKE AI</b><br><small>División Legal</small></div>
-      </div>
-      <div class="btns">
-        <button class="btn-demo" onclick="irDemo()">Solicitar demo</button>
-        <button class="btn-acceso" onclick="irAcceso()">Acceso institucional</button>
-      </div>
-      <p style="font-size:11px;color:#888;margin-top:15px">© TRINITY BANK SHIELD • Proyecto demostrativo</p>
-    </div>
-    <div class="right">
-      <h3>Centro de Seguridad</h3>
-      <div class="big-blue">Transacciones monitoreadas hoy<h2>45,230</h2><span>✓ Todo en orden • Sin incidentes</span></div>
-      <div class="card"><b>✅ Amenazas bloqueadas</b><p><span style="color:#4ADE80;font-weight:700">1,284 este mes</span><br>0 brechas de seguridad</p></div>
-      <div class="card"><b>🔐 Verificación reforzada</b><p>Acceso en 3 pasos • Solo personal autorizado</p></div>
-      <div class="card"><b>📋 Cumplimiento legal</b><p>Reportes auditables</p></div>
-    </div>
-  </div>
-  <div class="footer">Proyecto demostrativo • © TRINITY BANK SHIELD</div>
-</div>
-
-<!-- FORMULARIO - SOLO PARA DEMO, JEFA -->
-<div id="formulario" class="form-wrap">
-  <div style="text-align:center;padding:20px 0;font-weight:800">🛡️ <span style="color:#A78BFA">TRINITY</span> BANK SHIELD</div>
-  <div class="form-box">
-    <h2>Solicitar Demo</h2>
-    <p class="sub">Dejanos tu contacto y te escribimos, Jefa.</p>
-    <input id="nombre" placeholder="Nombre *">
-    <input id="correo" placeholder="Correo *">
-    <textarea id="mensaje" rows="4" placeholder="Mensaje * Ej: Quiero ver la demo del proyecto"></textarea>
-    <button class="btn-enviar" onclick="enviar()">ENVIAR SOLICITUD</button>
-    <button class="btn-volver" onclick="volver()">← Volver</button>
-  </div>
-</div>
-
-<!-- CENTRO DE COMANDO - SOLO PARA ACCESO INSTITUCIONAL, JEFA -->
-<div id="ops" class="ops">
-  <div class="ops-header">
-    <div style="font-weight:800">🛡️ <span style="color:#A78BFA">TRINITY</span> BANK SHIELD</div>
-    <h1 style="margin-top:12px">Centro de <span>Comando</span></h1>
-    <p>Bienvenida, Jefa. Aquí están distribuidos todos los muchachos.</p>
-  </div>
-  <div class="ops-stats">
-    <div class="stat"><b>45,230</b><span>Transacciones hoy</span></div>
-    <div class="stat"><b>1,284</b><span>Amenazas bloqueadas</span></div>
-    <div class="stat"><b>0</b><span>Brechas</span></div>
-    <div class="stat"><b>10 / 10</b><span>Agentes activos</span></div>
-  </div>
-  <div class="ops-title">🛡️ Las 4 Divisiones Principales</div>
-  <div class="grid4">
-    <div class="op-card" onclick="abrir('ARTEX')"><div style="font-size:28px">🛡️</div><h3>ARTEX</h3><p>División Legal. Auditoría y cumplimiento.</p><span class="tag">División Legal</span><br><span class="live">● EN VIVO - Toca para entrar →</span></div>
-    <div class="op-card" onclick="abrir('PENTAGI')"><div style="font-size:28px">🏦</div><h3>PENTAGI</h3><p>División Legal. Pruebas de seguridad.</p><span class="tag">División Legal</span><br><span class="live">● EN VIVO - Toca para entrar →</span></div>
-    <div class="op-card" onclick="abrir('CAIRN')"><div style="font-size:28px">🌑</div><h3>CAIRN</h3><p>División Legal. Amenazas ocultas.</p><span class="tag">División Legal</span><br><span class="live">● EN VIVO - Toca para entrar →</span></div>
-    <div class="op-card" onclick="abrir('CIBERESTRIKE AI')"><div style="font-size:28px">🤖</div><h3>CIBERESTRIKE AI</h3><p>División Legal. IA de respuesta.</p><span class="tag">División Legal</span><br><span class="live">● EN VIVO - Toca para entrar →</span></div>
-  </div>
-  <div class="ops-title">👥 Los 6 Agentes - Distribuidos en el Centro de Comando</div>
-  <div class="grid6">
-    <div class="op-card" onclick="abrir('Guardian')"><div style="font-size:28px">🔒</div><h3>1. Guardián</h3><p>Seguridad y acceso.</p><span class="live">● ACTIVO →</span></div>
-    <div class="op-card" onclick="abrir('Centinela')"><div style="font-size:28px">👁️</div><h3>2. Centinela</h3><p>Detección de amenazas.</p><span class="live">● ACTIVO →</span></div>
-    <div class="op-card" onclick="abrir('Tesorero')"><div style="font-size:28px">💰</div><h3>3. Tesorero</h3><p>Integridad de cuentas.</p><span class="live">● ACTIVO →</span></div>
-    <div class="op-card" onclick="abrir('Mensajero')"><div style="font-size:28px">✈️</div><h3>4. Mensajero</h3><p>Transacciones.</p><span class="live">● ACTIVO →</span></div>
-    <div class="op-card" onclick="abrir('Vigia')"><div style="font-size:28px">🔔</div><h3>5. Vigía</h3><p>Alertas 24/7.</p><span class="live">● ACTIVO →</span></div>
-    <div class="op-card" onclick="abrir('Trinity')"><div style="font-size:28px">🧠</div><h3>6. Trinity</h3><p>Asistente inteligente.</p><span class="live">● ACTIVO →</span></div>
-  </div>
-  <button class="btn-salir" onclick="salir()">← Salir del Centro de Comando</button>
-</div>
-
-<div id="detalle" class="detalle">
-  <div class="detalle-box">
-    <div style="font-weight:800">🛡️ <span style="color:#A78BFA">TRINITY</span> BANK SHIELD</div>
-    <h2 id="detalleTitulo">ARTEX</h2>
-    <p id="detalleTexto">Panel en vivo.</p>
-    <div class="mini" id="detalleMini"></div>
-    <button class="btn-detalle" onclick="cerrarDetalle()">← Volver al Centro de Comando</button>
-  </div>
-</div>
-
-<script>
-let datos = {
-  'ARTEX': {titulo:'🛡️ ARTEX - División Legal', texto:'Bienvenida al panel de ARTEX, Jefa.', mini:'<b>Estado:</b> <span style="color:#4ADE80">● EN VIVO</span><br><b>Hoy:</b> 124 documentos verificados<br><b>Alertas:</b> 0'},
-  'PENTAGI': {titulo:'🏦 PENTAGI', texto:'Bienvenida a PENTAGI, Jefa.', mini:'<b>Estado:</b> <span style="color:#4ADE80">● EN VIVO</span><br><b>Hoy:</b> 58 pruebas<br><b>Vulnerabilidades:</b> 0 críticas'},
-  'CAIRN': {titulo:'🌑 CAIRN', texto:'Bienvenida a CAIRN, Jefa.', mini:'<b>Estado:</b> <span style="color:#4ADE80">● EN VIVO</span><br><b>Bloqueadas:</b> 312 / 312'},
-  'CIBERESTRIKE AI': {titulo:'🤖 CIBERESTRIKE AI', texto:'Bienvenida a CIBERESTRIKE AI, Jefa.', mini:'<b>Estado:</b> <span style="color:#4ADE80">● EN VIVO</span><br><b>Hoy:</b> 1,284 ataques bloqueados'},
-  'Guardian': {titulo:'🔒 1. Guardián', texto:'Soy Guardián, Jefa. Yo controlo quién entra.', mini:'<b>Estado:</b> <span style="color:#4ADE80">● ACTIVO</span><br><b>Hoy:</b> 2,340 accesos verificados'},
-  'Centinela': {titulo:'👁️ 2. Centinela', texto:'Soy Centinela, Jefa. Miro todo en tiempo real.', mini:'<b>Estado:</b> <span style="color:#4ADE80">● ACTIVO</span><br><b>Hoy:</b> Todo tranquilo'},
-  'Tesorero': {titulo:'💰 3. Tesorero', texto:'Soy Tesorero, Jefa. Cuido los saldos.', mini:'<b>Estado:</b> <span style="color:#4ADE80">● ACTIVO</span><br><b>Hoy:</b> 45,230 movimientos revisados'},
-  'Mensajero': {titulo:'✈️ 4. Mensajero', texto:'Soy Mensajero, Jefa. Rastreo cada transferencia.', mini:'<b>Estado:</b> <span style="color:#4ADE80">● ACTIVO</span><br><b>Hoy:</b> 12,480 transferencias'},
-  'Vigia': {titulo:'🔔 5. Vigía', texto:'Soy Vigía, Jefa. Yo no duermo.', mini:'<b>Estado:</b> <span style="color:#4ADE80">● ACTIVO 24/7</span><br><b>Graves:</b> 0'},
-  'Trinity': {titulo:'🧠 6. Trinity', texto:'Soy Trinity, Jefa. Coordino a los otros 5.', mini:'<b>Estado:</b> <span style="color:#4ADE80">● ACTIVO</span><br><b>Resumen:</b> Todo en orden, Jefa.'}
-};
-function ocultarTodo(){
-  document.getElementById('portada').style.display='none';
-  document.getElementById('formulario').style.display='none';
-  document.getElementById('ops').style.display='none';
-  document.getElementById('detalle').style.display='none';
-}
-function irDemo(){ ocultarTodo(); document.getElementById('formulario').style.display='block'; window.scrollTo(0,0); }
-function volver(){ ocultarTodo(); document.getElementById('portada').style.display='block'; window.scrollTo(0,0); }
-function salir(){ volver(); }
-function irAcceso(){ ocultarTodo(); document.getElementById('ops').style.display='block'; window.scrollTo(0,0); }
-function enviar(){
-  let n=document.getElementById('nombre').value;
-  let c=document.getElementById('correo').value;
-  if(!n||!c){ alert("Jefa, faltan Nombre y Correo."); return; }
-  alert("Solicitud de demo enviada, Jefa. Te escribimos pronto.");
-  volver();
-}
-function abrir(nombre){
-  let d = datos[nombre];
-  document.getElementById('detalleTitulo').innerHTML = d.titulo;
-  document.getElementById('detalleTexto').innerHTML = d.texto;
-  document.getElementById('detalleMini').innerHTML = d.mini;
-  ocultarTodo(); document.getElementById('detalle').style.display='block'; window.scrollTo(0,0);
-}
-function cerrarDetalle(){ ocultarTodo(); document.getElementById('ops').style.display='block'; window.scrollTo(0,0); }
-</script>
-</body>
-</html>
+  <div class="top">🛡️ <span>TRINITY
