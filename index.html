@@ -1,28 +1,103 @@
 <!DOCTYPE html>
-<html>
+<html lang="es">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TRINITY BANK SHIELD</title>
 <style>
-body{background:#0a0a1a;color:white;text-align:center;font-family:Arial;padding:40px 20px}
-h1{font-size:45px;color:#ffd700;margin:0}
-h2{color:#00e5ff}
-.card{background:white;color:black;border-radius:20px;padding:20px;margin:20px auto;max-width:350px}
-button{background:#ffd700;border:none;padding:15px 25px;border-radius:30px;font-weight:bold;font-size:16px;width:100%;margin-top:10px}
+body{
+margin:0;
+font-family: Arial, sans-serif;
+background:#0a0a0f;
+color:white;
+text-align:center;
+padding:40px 20px;
+}
+.logo{
+font-size:60px;
+text-shadow: 0 0 20px #7c3aed, 0 0 40px #3b82f6;
+}
+h1{
+font-size:28px;
+letter-spacing:3px;
+margin:10px 0 5px;
+}
+.sub{
+color:#a78bfa;
+font-size:14px;
+letter-spacing:1px;
+}
+.caja{
+background:#15151f;
+padding:25px;
+border-radius:20px;
+max-width:360px;
+margin:25px auto;
+border:1px solid #2e2e45;
+box-shadow: 0 0 30px rgba(124,58,237,0.3);
+}
+input{
+width:90%;
+padding:13px;
+margin:8px 0;
+border-radius:12px;
+border:1px solid #333;
+background:#0a0a0f;
+color:white;
+font-size:15px;
+outline:none;
+}
+input:focus{
+border-color:#7c3aed;
+box-shadow: 0 0 10px #3b82f6;
+}
+.boton{
+display:block;
+width:98%;
+background:#7c3aed;
+color:white;
+padding:14px;
+border-radius:12px;
+font-weight:bold;
+text-decoration:none;
+font-size:16px;
+margin-top:12px;
+border:none;
+box-shadow: 0 0 20px rgba(124,58,237,0.6);
+}
+.opciones{
+display:flex;
+justify-content:space-between;
+margin-top:18px;
+font-size:12px;
+color:#8b8bff;
+}
+.luz{
+color:#3b82f6;
+font-size:12px;
+margin-top:15px;
+}
 </style>
 </head>
 <body>
-<h1>TRINITY</h1>
-<h2>BANK SHIELD</h2>
-<p>Tu banco seguro, Jefa. Tu dinero protegido.</p>
-<div class="card">
-<h3>Bienvenida, Jefa</h3>
-<p>Saldo: $10,000.00</p>
-<button>Ver mi saldo</button>
-<button>Enviar dinero</button>
-<button>Recargar</button>
+
+<div class="logo">🛡️</div>
+<h1>TRINITY BANK SHIELD</h1>
+<p class="sub">Centro de Comando - Solo Equipo de Seguridad</p>
+
+<div class="caja">
+<input type="text" placeholder="Usuario">
+<input type="password" placeholder="Contraseña">
+<a class="boton" href="dashboard.html">ENTRAR AL SHIELD</a>
+<div class="opciones">
+<span>Face ID</span>
+<span>Touch ID</span>
+<span>Two Factor</span>
 </div>
-<p>Hecho con amor por Zalem</p>
+</div>
+
+<p class="luz">✦ Protegido por TRINITY ✦</p>
+<p style="font-size:12px; color:#777;">© 2026 TRINITY BANK SHIELD</p>
+
 </body>
 </html>
