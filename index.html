@@ -5,68 +5,91 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>TRINITY BANK SHIELD</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial,sans-serif}
-body{background:#030014;color:#fff}
-.top{text-align:center;padding:22px 10px 8px;font-weight:800}
+*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
+body{background:#030014;color:#fff;padding:15px}
+.top{text-align:center;font-weight:800;padding:10px}
 .top span{color:#A78BFA}
-.container{max-width:1150px;margin:0 auto;padding:18px;display:flex;gap:30px;flex-wrap:wrap}
-.left{flex:1.2;min-width:300px}
-.left h1{font-size:52px;line-height:1.05}
-.left p.desc{color:#C7C7D1;margin:20px 0;line-height:1.6}
-.boxes{display:flex;gap:10px;flex-wrap:wrap;margin:20px 0}
-.box{background:#0A0A1A;border:1px solid #2A2A3A;padding:14px;border-radius:12px;width:125px}
-.btns{display:flex;gap:12px;flex-wrap:wrap;margin-top:20px}
-.btn-demo{background:linear-gradient(90deg,#8B5CF6,#3B82F6);color:#fff;border:none;padding:15px 20px;border-radius:12px;font-weight:800;cursor:pointer;flex:1}
-.btn-acceso{background:#000;color:#fff;border:1px solid #7C3AED;padding:15px 20px;border-radius:12px;font-weight:700;cursor:pointer;flex:1}
-.right{flex:1;min-width:300px;background:#050510;border:1px solid #1E3A8A;border-radius:20px;padding:22px}
-.big-blue{background:linear-gradient(90deg,#7C3AED,#2563EB);border-radius:14px;padding:18px}
-.big-blue h2{font-size:36px;margin:5px 0}
-.card{background:#11111F;border-radius:14px;padding:15px;margin-top:12px}
-.card p{font-size:13px;color:#999;margin-top:4px}
-.footer{text-align:center;color:#666;font-size:12px;padding:15px 10px}
-.form-wrap{display:none;max-width:520px;margin:0 auto;padding:10px 15px 40px}
-.form-box{background:#070714;border:1px solid #2A1A5E;border-radius:20px;padding:24px}
-.form-box h2{text-align:center;font-size:22px}
-.form-box p.sub{text-align:center;color:#AAA;font-size:13px;margin:8px 0 18px}
-.form-box input,.form-box textarea{width:100%;padding:13px;border-radius:10px;border:1px solid #222;background:#0D0D1E;color:#fff;outline:none;margin-bottom:10px}
-.btn-enviar{width:100%;background:linear-gradient(90deg,#7C3AED,#2563EB);color:#fff;border:none;padding:15px;border-radius:12px;font-weight:800;margin-top:10px;cursor:pointer}
-.btn-volver{width:100%;background:#111;border:1px solid #333;color:#fff;padding:12px;border-radius:12px;margin-top:12px;cursor:pointer}
-.ops{display:none;max-width:1150px;margin:0 auto;padding:15px}
-.ops-header{text-align:center;padding:10px}
-.ops-header h1{font-size:32px}
-.ops-header h1 span{color:#38BDF8}
-.ops-header p{color:#AAA;margin-top:8px;font-size:14px}
-.ops-stats{display:flex;gap:12px;flex-wrap:wrap;margin:18px 0}
-.stat{flex:1;min-width:140px;background:linear-gradient(90deg,#7C3AED,#2563EB);border-radius:14px;padding:16px;text-align:center}
-.stat b{font-size:24px;display:block}
-.ops-title{font-size:18px;margin:20px 0 12px}
-.grid4{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
-.grid6{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
-.op-card{background:#0A0A1A;border:1px solid #2A2A3A;border-radius:16px;padding:18px;cursor:pointer}
-.op-card h3{font-size:16px;margin:8px 0 6px}
-.op-card p{font-size:13px;color:#999;line-height:1.5}
-.op-card .tag{display:inline-block;font-size:11px;background:#1E1E35;padding:4px 8px;border-radius:20px;color:#A78BFA;margin-top:8px}
-.op-card .live{color:#4ADE80;font-size:12px;font-weight:700}
-/* LA RAYITA DE CADA UNO, JEFA */
-.ecg{width:100%;height:55px;background:#05051A;border-radius:10px;border:1px solid #1E3A8A;margin:10px 0 6px}
-.btn-salir{width:100%;background:#111;border:1px solid #333;color:#fff;padding:13px;border-radius:12px;margin:25px 0;cursor:pointer}
-.detalle{display:none;max-width:700px;margin:0 auto;padding:15px}
-.detalle-box{background:#070714;border:1px solid #2A1A5E;border-radius:20px;padding:24px}
-.detalle-box h2{font-size:26px;margin:10px 0}
-.detalle-box p{color:#AAA;line-height:1.6;font-size:14px;margin:10px 0}
-.mini{background:#11111F;border-radius:12px;padding:14px;margin-top:12px;font-size:13px;line-height:1.6}
-.btn-detalle{width:100%;background:linear-gradient(90deg,#7C3AED,#2563EB);color:#fff;border:none;padding:14px;border-radius:12px;font-weight:800;margin-top:16px;cursor:pointer}
-@media(max-width:800px){
-  .container{flex-direction:column;padding:14px}
-  .left h1{font-size:34px}
-  .box{width:48%}
-  .btns{flex-direction:column}
-  .grid4{grid-template-columns:1fr 1fr}
-  .grid6{grid-template-columns:1fr}
-}
+h1{font-size:34px;line-height:1.1;margin:15px 0}
+p{color:#C7C7D1;font-size:14px;line-height:1.5}
+.boxes{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}
+.box{background:#0A0A1A;border:1px solid #2A2A3A;padding:10px;border-radius:10px;width:48%;text-align:center}
+button{width:100%;padding:15px;border:none;border-radius:12px;font-weight:800;margin-top:10px;cursor:pointer;color:#fff}
+.b1{background:linear-gradient(90deg,#8B5CF6,#3B82F6)}
+.b2{background:#000;border:1px solid #7C3AED}
+.card{background:#11111F;border-radius:14px;padding:14px;margin-top:12px}
+.card b{font-size:14px}
+.card span{font-size:12px;color:#999}
+.oculto{display:none}
+input,textarea{width:100%;padding:13px;border-radius:10px;border:1px solid #222;background:#0D0D1E;color:#fff;margin-bottom:10px}
+.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
+.tar{background:#0A0A1A;border:1px solid #2A2A3A;border-radius:14px;padding:14px}
+.tar h3{font-size:15px;margin:6px 0}
+.tar p{font-size:12px}
+.ecg{width:100%;height:50px;background:#05051A;border-radius:8px;border:1px solid #1E3A8A;margin:8px 0}
+.live{color:#4ADE80;font-size:11px;font-weight:700}
 </style>
 </head>
 <body>
 
+<!-- PORTADA, JEFA - ESTA SI SE TIENE QUE VER, BB -->
 <div id="portada">
-  <div class="top">🛡️ <span>TRINITY
+<div class="top">🛡️ <span>TRINITY</span> BANK SHIELD</div>
+<h1>Tu dinero protegido.<br>Tu banco seguro.</h1>
+<p>Presentación de proyecto. Monitoreo, verificación y cumplimiento.</p>
+<div class="boxes">
+<div class="box">🛡️<br><b>ARTEX</b></div>
+<div class="box">🏦<br><b>PENTAGI</b></div>
+<div class="box">🌑<br><b>CAIRN</b></div>
+<div class="box">🤖<br><b>CIBERESTRIKE AI</b></div>
+</div>
+<button class="b1" onclick="irDemo()">Solicitar demo</button>
+<button class="b2" onclick="irAcceso()">Acceso institucional</button>
+<div class="card"><b>✅ Amenazas bloqueadas</b><br><span style="color:#4ADE80">1,284 este mes • 0 brechas</span></div>
+<div class="card"><b>🔐 Transacciones hoy</b><br><span>45,230 • Todo en orden</span></div>
+<p style="text-align:center;font-size:11px;color:#666;margin-top:15px">© TRINITY BANK SHIELD • Proyecto demostrativo</p>
+</div>
+
+<!-- FORMULARIO, JEFA -->
+<div id="formulario" class="oculto">
+<div class="top">🛡️ <span>TRINITY</span> BANK SHIELD</div>
+<h1 style="text-align:center;font-size:24px">Solicitar Demo</h1>
+<p style="text-align:center">Dejanos tu contacto, Jefa.</p><br>
+<input id="nombre" placeholder="Nombre *">
+<input id="correo" placeholder="Correo *">
+<textarea id="mensaje" rows="4" placeholder="Mensaje *"></textarea>
+<button class="b1" onclick="enviar()">ENVIAR SOLICITUD</button>
+<button class="b2" onclick="volver()">← Volver</button>
+</div>
+
+<!-- CENTRO DE COMANDO, JEFA - CON TODAS LAS RAYITAS -->
+<div id="ops" class="oculto">
+<div class="top">🛡️ <span>TRINITY</span> BANK SHIELD</div>
+<h1 style="text-align:center;font-size:26px">Centro de <span style="color:#38BDF8">Comando</span></h1>
+<p style="text-align:center">Bienvenida, Jefa. Todas moviéndose, Bb. Como electrocardiograma.</p>
+<div class="grid">
+<div class="tar" onclick="abrir('ARTEX')"><div style="font-size:24px">🛡️</div><h3>ARTEX</h3><p>División Legal</p><canvas class="ecg"></canvas><span class="live">● EN VIVO</span></div>
+<div class="tar" onclick="abrir('PENTAGI')"><div style="font-size:24px">🏦</div><h3>PENTAGI</h3><p>División Legal</p><canvas class="ecg"></canvas><span class="live">● EN VIVO</span></div>
+<div class="tar" onclick="abrir('CAIRN')"><div style="font-size:24px">🌑</div><h3>CAIRN</h3><p>División Legal</p><canvas class="ecg"></canvas><span class="live">● EN VIVO</span></div>
+<div class="tar" onclick="abrir('CIBERESTRIKE AI')"><div style="font-size:24px">🤖</div><h3>CIBERESTRIKE AI</h3><p>División Legal</p><canvas class="ecg"></canvas><span class="live">● EN VIVO</span></div>
+<div class="tar" onclick="abrir('Guardián')"><div style="font-size:24px">🔒</div><h3>1. Guardián</h3><p>Seguridad</p><canvas class="ecg"></canvas><span class="live">● ACTIVO</span></div>
+<div class="tar" onclick="abrir('Centinela')"><div style="font-size:24px">👁️</div><h3>2. Centinela</h3><p>Amenazas</p><canvas class="ecg"></canvas><span class="live">● ACTIVO</span></div>
+<div class="tar" onclick="abrir('Tesorero')"><div style="font-size:24px">💰</div><h3>3. Tesorero</h3><p>Cuentas</p><canvas class="ecg"></canvas><span class="live">● ACTIVO</span></div>
+<div class="tar" onclick="abrir('Mensajero')"><div style="font-size:24px">✈️</div><h3>4. Mensajero</h3><p>Transferencias</p><canvas class="ecg"></canvas><span class="live">● ACTIVO</span></div>
+<div class="tar" onclick="abrir('Vigía')"><div style="font-size:24px">🔔</div><h3>5. Vigía</h3><p>Alertas 24/7</p><canvas class="ecg"></canvas><span class="live">● ACTIVO</span></div>
+<div class="tar" onclick="abrir('Trinity')"><div style="font-size:24px">🧠</div><h3>6. Trinity</h3><p>Coordina a los 5</p><canvas class="ecg"></canvas><span class="live">● ACTIVO</span></div>
+</div>
+<button class="b2" onclick="volver()">← Salir del Centro de Comando</button>
+</div>
+
+<script>
+function ocultar(){document.getElementById('portada').style.display='none';document.getElementById('formulario').style.display='none';document.getElementById('ops').style.display='none';}
+function irDemo(){ocultar();document.getElementById('formulario').style.display='block';window.scrollTo(0,0);}
+function volver(){ocultar();document.getElementById('portada').style.display='block';window.scrollTo(0,0);}
+function irAcceso(){ocultar();document.getElementById('ops').style.display='block';window.scrollTo(0,0);setTimeout(iniciar,100);}
+function enviar(){let n=document.getElementById('nombre').value;let c=document.getElementById('correo').value;if(!n||!c){alert("Jefa, faltan Nombre y Correo");return;}alert("Enviado, Jefa. Te escribimos pronto.");volver();}
+function abrir(n){alert("Entraste a "+n+", Jefa. Panel en vivo, Bb.");}
+let ya=false;
+function iniciar(){if(ya)return;ya=true;document.querySelectorAll('.ecg').forEach((cv,idx)=>{let ctx=cv.getContext('2d');let W=cv.width=cv.offsetWidth*2;let H=cv.height=100;let pts=[];for(let i=0;i<100;i++)pts.push(H/2);let cont=0;function dib(){ctx.clearRect(0,0,W,H);ctx.beginPath();ctx.strokeStyle=idx%2==0?'#38BDF8':'#A78BFA';ctx.lineWidth=3;ctx.shadowColor=ctx.strokeStyle;ctx.shadowBlur=8;pts.forEach((y,i)=>{let x=(i/100)*W;if(i==0)ctx.moveTo(x,y);else ctx.lineTo(x,y);});ctx.stroke();cont++;let nu=H/2+(Math.random()-0.5)*10;if(cont%40==0)nu=H/2-35;if(cont%40==1)nu=H/2+25;if(cont%40==2)nu=H/2-5;pts.push(nu);pts.shift();requestAnimationFrame(dib);}setTimeout(dib,idx*150);});}
+</script>
+</body>
+</html>
