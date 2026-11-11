@@ -6,16 +6,17 @@
 <title>TRINITY BANK SHIELD</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-body{background:#030014;color:#fff;padding:15px}
+body{background:#030014;color:#fff;padding:15px;padding-bottom:30px}
 .top{text-align:center;font-weight:800;padding:10px}
 .top span{color:#A78BFA}
 h1{font-size:32px;line-height:1.1;margin:15px 0}
 p{color:#C7C7D1;font-size:14px;line-height:1.5}
-button{width:100%;padding:15px;border:none;border-radius:12px;font-weight:800;margin-top:10px;cursor:pointer;color:#fff}
+button{width:100%;padding:15px;border:none;border-radius:12px;font-weight:800;margin-top:12px;cursor:pointer;color:#fff;display:block;position:relative;z-index:2}
 .b1{background:linear-gradient(90deg,#8B5CF6,#3B82F6)}
-.b2{background:#000;border:1px solid #7C3AED}
-.bVerde{background:#16A34A}
-.bAmarillo{background:#EAB308;color:#000}
+.b2{background:#000;border:1px solid #7C3AED;margin-top:12px}
+.bVerde{background:#16A34A;margin-top:12px}
+.bAmarillo{background:#EAB308;color:#000;margin-top:12px}
+.separador{height:12px}
 .card{background:#11111F;border-radius:14px;padding:14px;margin-top:12px}
 .oculto{display:none}
 input,textarea{width:100%;padding:13px;border-radius:10px;border:1px solid #222;background:#0D0D1E;color:#fff;margin-bottom:10px}
@@ -35,7 +36,7 @@ input,textarea{width:100%;padding:13px;border-radius:10px;border:1px solid #222;
 .cajaS{flex:1;background:#422006;border:1px solid #EAB308;border-radius:14px;padding:14px;text-align:center}
 .cajaE b,.cajaS b{font-size:22px;display:block}
 .movItem{background:#11111F;border-radius:10px;padding:10px;margin-top:8px;font-size:12px;line-height:1.5}
-.ficherito{margin-top:18px;background:#0A0A1A;border:1px solid #2A2A3A;border-radius:12px;padding:14px;text-align:center}
+.ficherito{margin-top:20px;background:#0A0A1A;border:1px solid #2A2A3A;border-radius:12px;padding:14px;text-align:center;position:relative;z-index:1}
 .ficherito h4{font-size:13px;color:#FACC15;letter-spacing:0.5px;margin-bottom:6px}
 .ficherito p{font-size:11px;line-height:1.6;color:#A1A1AA}
 .ficherito b{color:#E5E7EB}
@@ -48,6 +49,7 @@ input,textarea{width:100%;padding:13px;border-radius:10px;border:1px solid #222;
 <h1>Tu dinero protegido.<br>Tu banco seguro.</h1>
 <p>Presentación de proyecto. Monitoreo, verificación y cumplimiento.</p>
 <button class="b1" onclick="irDemo()">Solicitar demo</button>
+<div class="separador"></div>
 <button class="b2" onclick="irAcceso()">Acceso institucional</button>
 <div class="card"><b>✅ Amenazas bloqueadas</b><br><span style="color:#4ADE80">1,284 este mes • 0 brechas</span></div>
 <div class="card"><b>🔐 Transacciones hoy</b><br><span>45,230 • Todo en orden</span></div>
@@ -61,9 +63,24 @@ input,textarea{width:100%;padding:13px;border-radius:10px;border:1px solid #222;
 <input id="correo" placeholder="Correo *">
 <textarea id="mensaje" rows="4" placeholder="Mensaje *"></textarea>
 <button class="b1" onclick="enviar()">ENVIAR SOLICITUD</button>
+<div class="separador"></div>
 <button class="b2" onclick="volver()">← Volver</button>
 </div>
 
 <div id="ops" class="oculto">
 <div class="top">🛡️ <span>TRINITY</span> BANK SHIELD</div>
-<h1 style="text-align:center;font-size:26px">Centro de <span style="color:#38BDF8">Comando</span
+<h1 style="text-align:center;font-size:26px">Centro de <span style="color:#38BDF8">Comando</span></h1>
+<p style="text-align:center">Bienvenido. 24 Trini. Busca la que necesites.</p>
+<input id="buscador" class="buscador" placeholder="🔍 Buscar Trini... Ej: Trini 19, ARTEX, Guardián" oninput="filtrar()">
+<p id="resultadoBusqueda" style="text-align:center;font-size:12px;color:#A78BFA"></p>
+<div class="grid" id="gridTrini"></div>
+<button class="b2" onclick="volver()">← Salir del Centro de Comando</button>
+</div>
+
+<div id="detalle" class="oculto">
+<div class="top">🛡️ <span>TRINITY</span> BANK SHIELD</div>
+<h1 id="dTitulo" style="font-size:26px">TRINI</h1>
+<p id="dDesc">Inventario detallado.</p>
+<div><span class="badge" id="dEstado">● EN VIVO</span><span class="badge">Total: 24 items detallados</span><span class="badge">24 Trini en total</span></div>
+<div class="cajaES">
+<div class="cajaE">🟢 ENTRADAS<b id="numEntradas">0</b><span style="font-size:11
