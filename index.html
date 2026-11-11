@@ -83,4 +83,130 @@ input,textarea{width:100%;padding:13px;border-radius:10px;border:1px solid #222;
 <p id="dDesc">Inventario detallado.</p>
 <div><span class="badge" id="dEstado">● EN VIVO</span><span class="badge">Total: 24 items detallados</span><span class="badge">24 Trini en total</span></div>
 <div class="cajaES">
-<div class="cajaE">🟢 ENTRADAS<b id="numEntradas">0</b><span style="font-size:11
+<div class="cajaE">🟢 ENTRADAS<b id="numEntradas">0</b><span style="font-size:11px;color:#86EFAC">Lo que entró</span><canvas class="ecg" id="ecgEntrada" style="height:40px;border-color:#16A34A"></canvas></div>
+<div class="cajaS">🟡 SALIDAS<b id="numSalidas">0</b><span style="font-size:11px;color:#FDE68A">Lo que salió</span><canvas class="ecg" id="ecgSalida" style="height:40px;border-color:#EAB308"></canvas></div>
+</div>
+<button class="bVerde" onclick="agregarMov('ENTRADA')">+ 🟢 AGREGAR ENTRADA - Movimiento</button>
+<div class="separador"></div>
+<button class="bAmarillo" onclick="agregarMov('SALIDA')">+ 🟡 AGREGAR SALIDA - Movimiento</button>
+<p style="text-align:center;font-size:12px;margin-top:8px">Cada clic se guarda con hora, día y segundo.</p>
+<div class="inv" id="dInv"></div>
+<div id="dMovs"></div>
+<button class="b1" onclick="cerrarDetalle()">← Volver al Centro de Comando</button>
+</div>
+
+<!-- FICHERITO ABAJO - NO CAIGAS EN EL PHISHING -->
+<div class="ficherito">
+  <h4>⚠️ NO CAIGAS EN EL PHISHING</h4>
+  <p>
+    <b>Ningún banco te pedirá tu contraseña, código o llave por correo, mensaje o llamada.</b><br><br>
+    Antes de hacer clic, detente un momento y verifica.<br>
+    Si un mensaje te presiona, te asusta o te promete algo urgente, es la primera señal de que algo no está bien.<br><br>
+    Tu tranquilidad vale más que un clic apresurado.<br>
+    Verifica siempre en los canales oficiales. Si tienes duda, no continúes y pregunta.
+  </p>
+</div>
+
+<script>
+let nombres=["1. ARTEX","2. PENTAGI","3. CAIRN","4. CIBERESTRIKE AI","5. Guardián","6. Centinela","7. Tesorero","8. Mensajero","9. Vigía","10. Trinity","11. Escudo","12. Lanza","13. Flecha","14. Torre","15. Llave","16. Ojo","17. Voz","18. Sombra","19. Luz","20. Rayo","21. Muro","22. Puente","23. Corona","24. Jefa Final"];
+let emojis=["🛡️","🏦","🌑","🤖","🔒","👁️","💰","✈️","🔔","🧠","🛡️","⚔️","🏹","🏰","🔑","👁️","🎤","🌑","💡","⚡","🧱","🌉","👑","👑"];
+let inventarios=[
+[['Documentos verificados','124'],['Contratos revisados','38'],['Reportes de auditoría','12'],['Alertas pendientes','0'],['Archivos sellados','124'],['Licencias vigentes','24'],['Permisos actualizados','18'],['Expedientes cerrados','96'],['Expedientes abiertos','4'],['Firmas validadas','210'],['Cláusulas revisadas','340'],['Casos en revisión','3'],['Casos resueltos','89'],['Normativas cumplidas','24 / 24'],['Políticas internas','15'],['Manuales actualizados','7'],['Actas firmadas','42'],['Poderes notariales','11'],['Registros legales','67'],['Certificados emitidos','29'],['Auditorías internas','6'],['Auditorías externas','2'],['Sanciones','0'],['Sellos de seguridad','24']],
+[['Pruebas realizadas','58'],['Pruebas pasadas','58'],['Vulnerabilidades críticas','0'],['Vulnerabilidades leves','2'],['Informes entregados','18'],['Escaneos completos','24'],['Puertos revisados','120'],['Servidores probados','12'],['Apps probadas','8'],['Ataques simulados','156'],['Ataques bloqueados','156'],['Contraseñas fuertes','100%'],['Cifrado activo','Sí'],['Firewalls activos','6'],['Copias de seguridad','24'],['Pruebas de phishing','12'],['Usuarios capacitados','98'],['Incidentes reales','0'],['Parches aplicados','34'],['Actualizaciones','24'],['Certificados SSL','10'],['Monitoreo 24/7','Activo'],['Reportes semanales','4'],['Puntuación seguridad','98 / 100']],
+[['Amenazas rastreadas','312'],['Amenazas bloqueadas','312'],['IPs bloqueadas','89'],['Dominios sospechosos','24'],['Alertas activas','0'],['Redes oscuras vigiladas','12'],['Cuentas falsas detectadas','17'],['Malware detenido','45'],['Archivos maliciosos','23'],['Correos no deseados / Spam','1,204'],['Intentos de fraude','31'],['Fraudes exitosos','0'],['Dispositivos rastreados','240'],['Ubicaciones sospechosas','9'],['Patrones nuevos','4'],['Bases filtradas revisadas','7'],['Contraseñas filtradas','0'],['Alertas silenciosas','6'],['Vigilancia nocturna','24 / 24'],['Sensores activos','24'],['Cámaras activas','24'],['Reportes oscuros','8'],['Colaboradores alerta','12'],['Nivel de riesgo','Bajo']],
+[['Ataques bloqueados','1,284'],['Tiempo de respuesta','0.2 seg'],['Modelos activos','4'],['Reglas activas','156'],['Falsos positivos','3'],['Decisiones por minuto','240'],['Aprendizaje diario','Sí'],['Predicciones hoy','89'],['Predicciones acertadas','88'],['Escaneos IA','1,024'],['Patrones aprendidos','312'],['Actualizaciones IA','24'],['Idiomas detectados','5'],['Bots bloqueados','432'],['Bots buenos','120'],['Sesiones analizadas','5,400'],['Anomalías','7'],['Anomalías graves','0'],['Precisión','99.7%'],['Servidores IA','8'],['Memoria usada','62%'],['Entrenamientos','12'],['Alertas auto-resueltas','98'],['Estado IA','Optimo']],
+[['Accesos verificados','2,340'],['Accesos bloqueados','12'],['Llaves activas','48'],['Sesiones abiertas','14'],['Intentos fallidos','12'],['Huellas registradas','96'],['Rostros registrados','96'],['Tarjetas activas','48'],['Códigos enviados','340'],['Códigos correctos','338'],['Puertas vigiladas','24'],['Puertas cerradas','24'],['Turnos cubiertos','3'],['Guardias activos','8'],['Rondas hoy','24'],['Alarmas puerta','0'],['Visitantes hoy','18'],['Visitantes autorizados','18'],['Cámaras puerta','12'],['Candados digitales','24'],['Contraseñas cambiadas','24'],['Accesos VIP','6'],['Accesos denegados','12'],['Nivel de seguridad','Máximo']],
+[['Patrones revisados','45'],['Amenazas reales','0'],['Cámaras / sensores','24'],['Alertas hoy','5'],['Zonas vigiladas','12'],['Pantallas activas','8'],['Horas vigiladas','24'],['Movimientos detectados','1,240'],['Movimientos sospechosos','2'],['Vehículos revisados','34'],['Personas identificadas','210'],['Personas desconocidas','1'],['Drones activos','2'],['Radares activos','4'],['Reportes por hora','24'],['Alertas leves','5'],['Alertas medias','0'],['Alertas graves','0'],['Ojos digitales','24'],['Grabaciones guardadas','240'],['Espacio guardado','98%'],['Turno mañana','Cubierto'],['Turno noche','Cubierto'],['Estado','Todo tranquilo']],
+[['Movimientos revisados','45,230'],['Errores','0'],['Cuentas verificadas','1,240'],['Conciliaciones','98'],['Diferencias','0'],['Saldo total revisado','$ 12.4 M'],['Depósitos hoy','1,240'],['Retiros hoy','890'],['Transferencias internas','340'],['Comisiones cobradas','$ 4,230'],['Cuentas nuevas','24'],['Cuentas cerradas','2'],['Cuentas congeladas','0'],['Préstamos activos','156'],['Préstamos pagados','24'],['Préstamos vencidos','0'],['Monedas manejadas','3'],['Cajas fuertes','6'],['Cajas abiertas','0'],['Billetes contados','24,000'],['Monedas contadas','8,500'],['Cheques revisados','42'],['Cheques sin fondo','0'],['Cuadre del día','Perfecto']],
+[['Transferencias','12,480'],['Fallidas','0'],['En tránsito','32'],['Entregadas','12,448'],['Tiempo promedio','1.8 seg'],['Nacionales','10,200'],['Internacionales','2,280'],['Monto enviado hoy','$ 8.2 M'],['Monto recibido hoy','$ 8.1 M'],['Comisiones','0 errores'],['Rutas activas','24'],['Rutas lentas','1'],['Bancos conectados','24'],['Mensajes enviados','12,480'],['Mensajes leídos','12,448'],['Confirmaciones','12,448'],['Reintentos','32'],['Prioritarias','120'],['Normales','12,360'],['Paquetes grandes','240'],['Paquetes pequeños','12,240'],['Entregas de noche','890'],['Entregas de día','11,590'],['Estado','Todo entregado']],
+[['Alertas leves','3'],['Alertas graves','0'],['Turnos cubiertos','24 / 24'],['Horas sin dormir','24'],['Notificaciones enviadas','112'],['Llamadas atendidas','24'],['Mensajes WhatsApp','48'],['Correos enviados','36'],['Alarmas sonadas','3'],['Alarmas falsas','0'],['Vecinos avisados','12'],['Rondas de noche','12'],['Rondas de día','12'],['Luces encendidas','24'],['Sirenas probadas','2'],['Baterías cargadas','24'],['Radios activas','6'],['Teléfonos cargados','6'],['Ojos abiertos','2'],['Cafés tomados','24'],['Reportes nocturnos','8'],['Reportes diurnos','16'],['Emergencias','0'],['Estado','Despierto']],
+[['Agentes coordinados','5'],['Tareas asignadas','24'],['Tareas completadas','24'],['Pendientes','0'],['Resumen','Todo en orden'],['Reuniones hoy','4'],['Mensajes entre agentes','240'],['Ordenes dadas','24'],['Ordenes cumplidas','24'],['Problemas resueltos','12'],['Problemas pendientes','0'],['Ideas nuevas','6'],['Planes activos','3'],['Metas del día','24 / 24'],['Horas trabajadas','24'],['Pausas','2'],['Recordatorios','24'],['Archivos ordenados','120'],['Carpetas creadas','12'],['Nombres recordados','10'],['Cumpleaños hoy','0'],['Felicitaciones','0'],['Abrazos dados','24'],['Estado final','Lista']],
+[['Escudos levantados','24'],['Escudos caídos','0'],['Protección frontal','100%'],['Protección trasera','100%'],['Golpes bloqueados','312'],['Golpes recibidos','12'],['Blindaje revisado','24'],['Escudos pulidos','24'],['Escudos nuevos','4'],['Escudos viejos','0'],['Turnos de escudo','3'],['Guardias con escudo','12'],['Simulacros','6'],['Simulacros pasados','6'],['Puntos débiles','0'],['Puntos fuertes','24'],['Material revisado','Acero'],['Peso soportado','2 Ton'],['Tiempo de reacción','0.1 seg'],['Alertas de escudo','0'],['Mantenimiento','Al día'],['Escudos en reserva','12'],['Escudos en uso','12'],['Estado escudo','Firme']],
+[['Lanzas listas','24'],['Lanzas lanzadas','120'],['Lanzas acertadas','119'],['Lanzas fallidas','1'],['Blancos alcanzados','119'],['Blancos lejanos','24'],['Blancos cercanos','96'],['Afiladas hoy','24'],['Sin filo','0'],['Entrenamientos','12'],['Entrenadores','2'],['Precisión','99%'],['Velocidad lanza','80 km/h'],['Distancia máxima','120 m'],['Lanzas rotas','0'],['Lanzas reparadas','3'],['Lanzas nuevas','6'],['Lanzas guardadas','24'],['Guardias con lanza','12'],['Turnos','3'],['Reportes','4'],['Alertas','0'],['Mantenimiento','Al día'],['Estado','Lista']],
+[['Flechas disparadas','1,240'],['Flechas acertadas','1,238'],['Flechas fallidas','2'],['Arcos tensados','24'],['Arcos rotos','0'],['Blancos móviles','120'],['Blancos fijos','1,120'],['Distancia larga','240 m'],['Distancia corta','20 m'],['Viento a favor','12'],['Viento en contra','2'],['Flechas recuperadas','1,200'],['Flechas perdidas','40'],['Flechas nuevas','240'],['Flechas afiladas','240'],['Arqueros activos','12'],['Arqueros en descanso','12'],['Entrenamientos','8'],['Puntuación','99.8%'],['Alertas','0'],['Turnos','3'],['Reportes','6'],['Mantenimiento','Al día'],['Estado','En el blanco']],
+[['Torres vigiladas','24'],['Torres activas','24'],['Torres apagadas','0'],['Altura torre','30 m'],['Guardias en torre','24'],['Vista desde torre','360°'],['Cámaras en torre','48'],['Luces en torre','24'],['Alertas desde torre','3'],['Alertas falsas','0'],['Visitantes en torre','12'],['Escaleras revisadas','24'],['Puertas de torre','24'],['Ventanas torre','48'],['Mantenimiento torre','Al día'],['Pintura torre','Nueva'],['Antenas torre','12'],['Radios torre','24'],['Baterías torre','24'],['Turnos torre','3'],['Reportes torre','8'],['Emergencias torre','0'],['Seguridad torre','Máxima'],['Estado','Alta y firme']],
+[['Llaves maestras','24'],['Llaves copiadas','0'],['Llaves perdidas','0'],['Llaves entregadas','12'],['Llaves devueltas','12'],['Puertas con llave','120'],['Puertas sin llave','0'],['Cerraduras revisadas','120'],['Cerraduras nuevas','24'],['Cerraduras viejas','0'],['Candados revisados','48'],['Candados abiertos','0'],['Candados cerrados','48'],['Dueños de llave','24'],['Copias autorizadas','0'],['Copias no autorizadas','0'],['Cajas con llave','12'],['Cajas sin llave','0'],['Turnos llave','3'],['Reportes llave','4'],['Alertas llave','0'],['Mantenimiento','Al día'],['Llaves en caja fuerte','24'],['Estado','Todo bajo llave']],
+[['Ojos abiertos','24'],['Ojos cerrados','0'],['Parpadeos','1,200'],['Vigilancia','24 / 24'],['Detecciones','2,400'],['Detecciones falsas','2'],['Rostros vistos','340'],['Rostros conocidos','338'],['Rostros desconocidos','2'],['Movimientos vistos','1,240'],['Movimientos sospechosos','3'],['Cámaras de ojo','24'],['Lentes limpios','24'],['Lentes sucios','0'],['Turnos ojo','3'],['Descansos ojo','2'],['Reportes ojo','12'],['Alertas ojo','3'],['Emergencias ojo','0'],['Visión nocturna','Activa'],['Visión diurna','Activa'],['Enfoque','Perfecto'],['Cansancio','0'],['Estado','Vigilando']],
+[['Voces escuchadas','240'],['Voces conocidas','238'],['Voces desconocidas','2'],['Llamadas grabadas','120'],['Llamadas contestadas','120'],['Mensajes de voz','48'],['Mensajes leídos','48'],['Gritos detectados','0'],['Susurros detectados','2'],['Idiomas escuchados','5'],['Traducciones','24'],['Micrófonos activos','24'],['Micrófonos apagados','0'],['Bocinas activas','12'],['Volumen','Perfecto'],['Eco','0'],['Ruido','Bajo'],['Turnos voz','3'],['Reportes voz','6'],['Alertas voz','1'],['Emergencias voz','0'],['Grabaciones guardadas','120'],['Espacio grabación','98%'],['Estado','Escuchando']],
+[['Sombras seguidas','120'],['Sombras perdidas','0'],['Sombras sospechosas','4'],['Sombras buenas','116'],['Movimientos en sombra','340'],['Movimientos de noche','240'],['Movimientos de día','100'],['Escondites revisados','24'],['Escondites vacíos','24'],['Linternas activas','24'],['Linternas apagadas','0'],['Cámaras nocturnas','24'],['Visión térmica','Activa'],['Rastros seguidos','24'],['Rastros perdidos','0'],['Huellas encontradas','48'],['Huellas identificadas','48'],['Turnos sombra','2'],['Reportes sombra','8'],['Alertas sombra','4'],['Emergencias sombra','0'],['Sigilo','100%'],['Ruido hecho','0'],['Estado','Invisible']],
+[['Luces encendidas','240'],['Luces apagadas','0'],['Luces fundidas','0'],['Luces nuevas','24'],['Luces LED','240'],['Luces de emergencia','24'],['Luces de noche','120'],['Luces de día','120'],['Brillo','100%'],['Consumo luz','Bajo'],['Paneles solares','12'],['Baterías luz','24'],['Interruptores','48'],['Cables revisados','240'],['Cables pelados','0'],['Apagones','0'],['Reportes luz','4'],['Alertas luz','0'],['Turnos luz','3'],['Mantenimiento luz','Al día'],['Luces de colores','12'],['Luces blancas','228'],['Luces en pasillo','24'],['Estado','Todo iluminado']],
+[['Rayos detectados','24'],['Rayos bloqueados','24'],['Rayos caídos','0'],['Pararrayos activos','24'],['Tormentas vigiladas','6'],['Tormentas pasadas','6'],['Truenos escuchados','24'],['Relámpagos vistos','24'],['Energía captada','98%'],['Energía guardada','24 kW'],['Cables de rayo','48'],['Tierra física','Perfecta'],['Alertas rayo','2'],['Alertas falsas','0'],['Daños por rayo','0'],['Turnos rayo','3'],['Reportes rayo','6'],['Mantenimiento rayo','Al día'],['Velocidad rayo','300,000 km/s'],['Impactos cerca','0'],['Impactos lejos','24'],['Protección','Máxima'],['Baterías rayo','24'],['Estado','Con energía']],
+[['Muros levantados','24'],['Muros caídos','0'],['Muros altos','24'],['Altura muro','4 m'],['Largo muro','240 m'],['Ladrillos contados','24,000'],['Ladrillos rotos','0'],['Cemento usado','240 sacos'],['Grietas','0'],['Grietas reparadas','2'],['Pintura muro','Nueva'],['Cámaras en muro','48'],['Luces en muro','24'],['Guardias en muro','12'],['Turnos muro','3'],['Patrullas muro','24'],['Reportes muro','8'],['Alertas muro','0'],['Intentos de salto','1'],['Saltos exitosos','0'],['Puertas en muro','4'],['Puertas cerradas','4'],['Mantenimiento','Al día'],['Estado','Firme']],
+[['Puentes revisados','24'],['Puentes abiertos','24'],['Puentes cerrados','0'],['Vehículos cruzados','12,480'],['Personas cruzadas','24,000'],['Carga soportada','100%'],['Grietas puente','0'],['Tablas revisadas','240'],['Tablas rotas','0'],['Cables puente','48'],['Luces puente','48'],['Barandales','48'],['Barandales rotos','0'],['Turnos puente','3'],['Guardias puente','12'],['Reportes puente','6'],['Alertas puente','0'],['Mantenimiento puente','Al día'],['Pintura puente','Nueva'],['Peaje cobrado','0'],['Peaje gratis','Sí'],['Río debajo','Tranquilo'],['Viento puente','Bajo'],['Estado','Conectado']],
+[['Coronas guardadas','24'],['Coronas puestas','1'],['Coronas brillantes','24'],['Joyas contadas','240'],['Joyas perdidas','0'],['Joyas falsas','0'],['Diamantes','48'],['Rubíes','24'],['Esmeraldas','24'],['Oro revisado','24 kg'],['Cajas de corona','24'],['Cajas abiertas','0'],['Guardias de corona','12'],['Cámaras corona','24'],['Alarmas corona','24'],['Alertas corona','0'],['Turnos corona','3'],['Reportes corona','4'],['Limpieza corona','Al día'],['Brillo corona','100%'],['Dueña corona','Cliente'],['Préstamos corona','0'],['Robos corona','0'],['Estado','Protegida']],
+[['Decisiones','24'],['Ordenes','24'],['Ordenes cumplidas','24'],['Ordenes pendientes','0'],['Abrazos','240'],['Saludos','240'],['Palabras de apoyo','1,000'],['Regaños','0'],['Premios','24'],['Corona','1'],['Trono','1'],['Silla','Cómoda'],['Café','24'],['Agua','24'],['Comida','Lista'],['Descanso','Merecido'],['Canciones','24'],['Chistes','24'],['Sonrisas','240'],['Fotos','24'],['Recuerdos','240'],['Planes','24'],['Sueños','24'],['Estado final','Todo en orden']]
+];
+let actual=-1;
+let datosTrini=nombres.map(()=>({entradas:0,salidas:0,movs:[]}));
+function crearGrid(filtro=""){
+  let grid=document.getElementById('gridTrini'); grid.innerHTML=''; let cont=0;
+  nombres.forEach((n,i)=>{
+    if(filtro && !n.toLowerCase().includes(filtro.toLowerCase())) return; cont++;
+    let d=datosTrini[i];
+    let div=document.createElement('div'); div.className='tar';
+    div.innerHTML='<div style="font-size:24px">'+emojis[i]+'</div><h3>'+n+'</h3><p>Trini '+(i+1)+' de 24 • 24 items detallados<br>🟢 Entradas: '+d.entradas+' • 🟡 Salidas: '+d.salidas+'</p><canvas class="ecg"></canvas><span class="live">● EN VIVO • Ver inventario →</span>';
+    div.onclick=()=>abrir(i); grid.appendChild(div);
+  });
+  document.getElementById('resultadoBusqueda').innerHTML = filtro ? 'Se encontraron '+cont+' Trini con "'+filtro+'".' : 'Las 24 Trini con inventario detallado.';
+  setTimeout(iniciar,100);
+}
+function filtrar(){ crearGrid(document.getElementById('buscador').value); }
+function ocultar(){document.getElementById('portada').style.display='none';document.getElementById('formulario').style.display='none';document.getElementById('ops').style.display='none';document.getElementById('detalle').style.display='none';}
+function irDemo(){ocultar();document.getElementById('formulario').style.display='block';window.scrollTo(0,0);}
+function volver(){ocultar();document.getElementById('portada').style.display='block';window.scrollTo(0,0);}
+function irAcceso(){ocultar();document.getElementById('ops').style.display='block';window.scrollTo(0,0);crearGrid();}
+function enviar(){let n=document.getElementById('nombre').value;let c=document.getElementById('correo').value;if(!n||!c){alert("Faltan Nombre y Correo");return;}alert("Enviado. Te escribimos pronto.");volver();}
+function abrir(i){
+  actual=i; let nombre=nombres[i]; let d=datosTrini[i];
+  document.getElementById('dTitulo').innerHTML=emojis[i]+' '+nombre+' - Inventario';
+  document.getElementById('dDesc').innerHTML='Trini '+(i+1)+' de 24. Inventario detallado.';
+  document.getElementById('dEstado').innerHTML='● EN VIVO - Trini '+(i+1)+' / 24';
+  actualizarES();
+  let html='<b>📦 Inventario detallado - 24 items:</b>';
+  inventarios[i].forEach(r=>{ html+='<div class="inv-row"><span>'+r[0]+'</span><span>'+r[1]+'</span></div>'; });
+  document.getElementById('dInv').innerHTML=html;
+  mostrarMovs();
+  ocultar();document.getElementById('detalle').style.display='block';window.scrollTo(0,0);
+  setTimeout(iniciarDetalle,100);
+}
+function actualizarES(){ let d=datosTrini[actual]; document.getElementById('numEntradas').innerHTML=d.entradas; document.getElementById('numSalidas').innerHTML=d.salidas; }
+function mostrarMovs(){
+  let d=datosTrini[actual];
+  let html='<h3 style="margin:12px 0 6px">📈 Movimientos de esta Trini:</h3>';
+  if(d.movs.length==0) html+='<p style="font-size:12px">Todavía no hay movimientos. Dale a + Entrada o + Salida.</p>';
+  d.movs.slice().reverse().forEach(m=>{
+    let color=m.tipo=='ENTRADA'?'#16A34A':'#EAB308'; let icono=m.tipo=='ENTRADA'?'🟢':'🟡';
+    html+='<div class="movItem" style="border-left:3px solid '+color+'">'+icono+' <b>'+m.tipo+'</b> • '+m.cantidad+' • '+m.fecha+'</div>';
+  });
+  document.getElementById('dMovs').innerHTML=html;
+}
+function agregarMov(tipo){
+  let d=datosTrini[actual]; let ahora=new Date();
+  let fecha=ahora.toLocaleDateString('es-HN')+' • '+ahora.toLocaleTimeString('es-HN')+' • Segundo: '+ahora.getSeconds();
+  let cantidad=1+Math.floor(Math.random()*24);
+  if(tipo=='ENTRADA') d.entradas+=cantidad; else d.salidas+=cantidad;
+  d.movs.push({tipo:tipo,cantidad:cantidad,fecha:fecha});
+  actualizarES(); mostrarMovs();
+  alert(tipo+' agregada. +'+cantidad+' • '+fecha);
+}
+function cerrarDetalle(){ocultar();document.getElementById('ops').style.display='block';window.scrollTo(0,0);crearGrid(document.getElementById('buscador').value);}
+let ya=false;
+function iniciar(){
+  if(ya) return; ya=true;
+  document.querySelectorAll('#gridTrini .ecg').forEach((cv,idx)=>{
+    let ctx=cv.getContext('2d'); let W=cv.width=cv.offsetWidth*2; let H=cv.height=100; let pts=[]; for(let i=0;i<100;i++) pts.push(H/2); let cont=0;
+    function dib(){ ctx.clearRect(0,0,W,H); ctx.beginPath(); ctx.strokeStyle=idx%2==0?'#38BDF8':'#A78BFA'; ctx.lineWidth=3; ctx.shadowColor=ctx.strokeStyle; ctx.shadowBlur=8; pts.forEach((y,i)=>{let x=(i/100)*W; if(i==0)ctx.moveTo(x,y); else ctx.lineTo(x,y);}); ctx.stroke(); cont++; let nu=H/2+(Math.random()-0.5)*10; if(cont%40==0)nu=H/2-35; if(cont%40==1)nu=H/2+25; if(cont%40==2)nu=H/2-5; pts.push(nu); pts.shift(); requestAnimationFrame(dib); }
+    setTimeout(dib,idx*80);
+  });
+}
+function iniciarDetalle(){
+  ['ecgEntrada','ecgSalida'].forEach((id,idx)=>{
+    let cv=document.getElementById(id); if(!cv) return;
+    let ctx=cv.getContext('2d'); let W=cv.width=cv.offsetWidth*2; let H=cv.height=80; let pts=[]; for(let i=0;i<100;i++) pts.push(H/2); let cont=0;
+    function dib(){ ctx.clearRect(0,0,W,H); ctx.beginPath(); ctx.strokeStyle=idx==0?'#22C55E':'#FACC15'; ctx.lineWidth=3; ctx.shadowColor=ctx.strokeStyle; ctx.shadowBlur=8; pts.forEach((y,i)=>{let x=(i/100)*W; if(i==0)ctx.moveTo(x,y); else ctx.lineTo(x,y);}); ctx.stroke(); cont++; let nu=H/2+(Math.random()-0.5)*8; if(cont%35==0)nu=H/2-28; if(cont%35==1)nu=H/2+20; pts.push(nu); pts.shift(); requestAnimationFrame(dib); }
+    dib();
+  });
+}
+</script>
+</body>
+</html>
