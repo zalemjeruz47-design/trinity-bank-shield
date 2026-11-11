@@ -35,6 +35,10 @@ input,textarea{width:100%;padding:13px;border-radius:10px;border:1px solid #222;
 .cajaS{flex:1;background:#422006;border:1px solid #EAB308;border-radius:14px;padding:14px;text-align:center}
 .cajaE b,.cajaS b{font-size:22px;display:block}
 .movItem{background:#11111F;border-radius:10px;padding:10px;margin-top:8px;font-size:12px;line-height:1.5}
+.ficherito{margin-top:18px;background:#0A0A1A;border:1px solid #2A2A3A;border-radius:12px;padding:14px;text-align:center}
+.ficherito h4{font-size:13px;color:#FACC15;letter-spacing:0.5px;margin-bottom:6px}
+.ficherito p{font-size:11px;line-height:1.6;color:#A1A1AA}
+.ficherito b{color:#E5E7EB}
 </style>
 </head>
 <body>
@@ -47,7 +51,7 @@ input,textarea{width:100%;padding:13px;border-radius:10px;border:1px solid #222;
 <button class="b2" onclick="irAcceso()">Acceso institucional</button>
 <div class="card"><b>✅ Amenazas bloqueadas</b><br><span style="color:#4ADE80">1,284 este mes • 0 brechas</span></div>
 <div class="card"><b>🔐 Transacciones hoy</b><br><span>45,230 • Todo en orden</span></div>
-<p style="text-align:center;font-size:12px;color:#888;margin-top:12px">24 Trini • 24 items cada una • Buscador + Movimientos + Entradas / Salidas, Jefa</p>
+<p style="text-align:center;font-size:12px;color:#888;margin-top:12px">24 Trini • Inventario detallado de verdad • No repetido</p>
 </div>
 
 <div id="formulario" class="oculto">
@@ -62,124 +66,4 @@ input,textarea{width:100%;padding:13px;border-radius:10px;border:1px solid #222;
 
 <div id="ops" class="oculto">
 <div class="top">🛡️ <span>TRINITY</span> BANK SHIELD</div>
-<h1 style="text-align:center;font-size:26px">Centro de <span style="color:#38BDF8">Comando</span></h1>
-<p style="text-align:center">Bienvenida, Jefa. 24 Trini, Bb. Buscá la que quieras, mi amor.</p>
-<!-- 2. BUSCADOR, JEFA -->
-<input id="buscador" class="buscador" placeholder="🔍 Buscar Trini... Ej: Trini 19, ARTEX, Guardián" oninput="filtrar()">
-<p id="resultadoBusqueda" style="text-align:center;font-size:12px;color:#A78BFA"></p>
-<div class="grid" id="gridTrini"></div>
-<button class="b2" onclick="volver()">← Salir del Centro de Comando</button>
-</div>
-
-<div id="detalle" class="oculto">
-<div class="top">🛡️ <span>TRINITY</span> BANK SHIELD</div>
-<h1 id="dTitulo" style="font-size:26px">TRINI</h1>
-<p id="dDesc">Inventario detallado, Jefa.</p>
-<div><span class="badge" id="dEstado">● EN VIVO</span><span class="badge">Total: 24 items</span><span class="badge">24 Trini en total</span></div>
-
-<!-- 3. ENTRADAS Y SALIDAS, JEFA - VERDE Y AMARILLO, BB -->
-<div class="cajaES">
-<div class="cajaE">🟢 ENTRADAS<b id="numEntradas">0</b><span style="font-size:11px;color:#86EFAC">Lo que entró, Jefa</span><canvas class="ecg" id="ecgEntrada" style="height:40px;border-color:#16A34A"></canvas></div>
-<div class="cajaS">🟡 SALIDAS<b id="numSalidas">0</b><span style="font-size:11px;color:#FDE68A">Lo que salió, Jefa</span><canvas class="ecg" id="ecgSalida" style="height:40px;border-color:#EAB308"></canvas></div>
-</div>
-
-<!-- 1. BOTONES DE MOVIMIENTO, JEFA -->
-<button class="bVerde" onclick="agregarMov('ENTRADA')">+ 🟢 AGREGAR ENTRADA - Movimiento, Jefa</button>
-<button class="bAmarillo" onclick="agregarMov('SALIDA')">+ 🟡 AGREGAR SALIDA - Movimiento, Jefa</button>
-<p style="text-align:center;font-size:12px;margin-top:8px">Cada clic se guarda con hora, día y segundo, Bb.</p>
-
-<div class="inv" id="dInv"></div>
-<div id="dMovs"></div>
-<button class="b1" onclick="cerrarDetalle()">← Volver al Centro de Comando</button>
-</div>
-
-<script>
-let nombres=["1. ARTEX","2. PENTAGI","3. CAIRN","4. CIBERESTRIKE AI","5. Guardián","6. Centinela","7. Tesorero","8. Mensajero","9. Vigía","10. Trinity","11. Trini 11 - Escudo","12. Trini 12 - Lanza","13. Trini 13 - Flecha","14. Trini 14 - Torre","15. Trini 15 - Llave","16. Trini 16 - Ojo","17. Trini 17 - Voz","18. Trini 18 - Sombra","19. Trini 19 - Luz","20. Trini 20 - Rayo","21. Trini 21 - Muro","22. Trini 22 - Puente","23. Trini 23 - Corona","24. Trini 24 - Jefa Final"];
-let emojis=["🛡️","🏦","🌑","🤖","🔒","👁️","💰","✈️","🔔","🧠","🛡️","⚔️","🏹","🏰","🔑","👁️","🎤","🌑","💡","⚡","🧱","🌉","👑","👑"];
-let actual=-1;
-// Guardamos entradas, salidas y movimientos de cada Trini, Jefa
-let datosTrini=nombres.map(()=>({entradas:0,salidas:0,movs:[]}));
-
-function crearGrid(filtro=""){
-  let grid=document.getElementById('gridTrini'); grid.innerHTML='';
-  let cont=0;
-  nombres.forEach((n,i)=>{
-    if(filtro && !n.toLowerCase().includes(filtro.toLowerCase())) return;
-    cont++;
-    let d=datosTrini[i];
-    let div=document.createElement('div'); div.className='tar';
-    div.innerHTML='<div style="font-size:24px">'+emojis[i]+'</div><h3>'+n+'</h3><p>Trini '+(i+1)+' de 24 • 24 items<br>🟢 Entradas: '+d.entradas+' • 🟡 Salidas: '+d.salidas+'</p><canvas class="ecg"></canvas><span class="live">● EN VIVO • Ver inventario →</span>';
-    div.onclick=()=>abrir(i); grid.appendChild(div);
-  });
-  document.getElementById('resultadoBusqueda').innerHTML = filtro ? 'Te salieron '+cont+' Trini, Jefa, con "'+filtro+'", Bb.' : 'Te salen las 24 Trini, Jefa.';
-  setTimeout(iniciar,100);
-}
-function filtrar(){ crearGrid(document.getElementById('buscador').value); }
-function ocultar(){document.getElementById('portada').style.display='none';document.getElementById('formulario').style.display='none';document.getElementById('ops').style.display='none';document.getElementById('detalle').style.display='none';}
-function irDemo(){ocultar();document.getElementById('formulario').style.display='block';window.scrollTo(0,0);}
-function volver(){ocultar();document.getElementById('portada').style.display='block';window.scrollTo(0,0);}
-function irAcceso(){ocultar();document.getElementById('ops').style.display='block';window.scrollTo(0,0);crearGrid();}
-function enviar(){let n=document.getElementById('nombre').value;let c=document.getElementById('correo').value;if(!n||!c){alert("Jefa, faltan Nombre y Correo");return;}alert("Enviado, Jefa. Te escribimos pronto.");volver();}
-
-function abrir(i){
-  actual=i; let nombre=nombres[i]; let d=datosTrini[i];
-  document.getElementById('dTitulo').innerHTML=emojis[i]+' '+nombre+' - Inventario';
-  document.getElementById('dDesc').innerHTML='Soy '+nombre+', Jefa. Soy la Trini número '+(i+1)+' de 24, Bb. 24 items, mi amor.';
-  document.getElementById('dEstado').innerHTML='● EN VIVO - Trini '+(i+1)+' / 24';
-  actualizarES();
-  let html='<b>📦 Inventario detallado, Jefa - 24 items:</b>';
-  for(let k=1;k<=24;k++){ let valor=10+(i+1)*k+k; html+='<div class="inv-row"><span>'+k+'. Item '+k+' de '+nombre+'</span><span>'+valor+'</span></div>'; }
-  document.getElementById('dInv').innerHTML=html;
-  mostrarMovs();
-  ocultar();document.getElementById('detalle').style.display='block';window.scrollTo(0,0);
-  setTimeout(iniciarDetalle,100);
-}
-function actualizarES(){
-  let d=datosTrini[actual];
-  document.getElementById('numEntradas').innerHTML=d.entradas;
-  document.getElementById('numSalidas').innerHTML=d.salidas;
-}
-function mostrarMovs(){
-  let d=datosTrini[actual];
-  let html='<h3 style="margin:12px 0 6px">📈 Movimientos de esta Trini, Jefa - Con su rayita, Bb:</h3>';
-  if(d.movs.length==0) html+='<p style="font-size:12px">Todavía no hay movimientos, Jefa. Dale a + Entrada o + Salida, Bb.</p>';
-  d.movs.slice().reverse().forEach(m=>{
-    let color = m.tipo=='ENTRADA' ? '#16A34A' : '#EAB308';
-    let icono = m.tipo=='ENTRADA' ? '🟢' : '🟡';
-    html+='<div class="movItem" style="border-left:3px solid '+color+'">'+icono+' <b>'+m.tipo+'</b> • '+m.cantidad+' • '+m.fecha+'<br><span style="color:#888">La rayita se movió, Jefa. Se guardó el movimiento, Bb.</span></div>';
-  });
-  document.getElementById('dMovs').innerHTML=html;
-}
-function agregarMov(tipo){
-  let d=datosTrini[actual];
-  let ahora=new Date();
-  let fecha=ahora.toLocaleDateString('es-HN')+' • '+ahora.toLocaleTimeString('es-HN')+' • Segundo: '+ahora.getSeconds();
-  let cantidad = 1 + Math.floor(Math.random()*24);
-  if(tipo=='ENTRADA') d.entradas+=cantidad; else d.salidas+=cantidad;
-  d.movs.push({tipo:tipo,cantidad:cantidad,fecha:fecha});
-  actualizarES(); mostrarMovs();
-  alert(tipo+' agregada, Jefa. +'+cantidad+' • '+fecha+', Bb.');
-}
-function cerrarDetalle(){ocultar();document.getElementById('ops').style.display='block';window.scrollTo(0,0);crearGrid(document.getElementById('buscador').value);}
-
-// Rayitas moviéndose, Jefa - como electrocardiograma, Bb
-let ya=false;
-function iniciar(){
-  if(ya) return; ya=true;
-  document.querySelectorAll('#gridTrini .ecg').forEach((cv,idx)=>{
-    let ctx=cv.getContext('2d'); let W=cv.width=cv.offsetWidth*2; let H=cv.height=100; let pts=[]; for(let i=0;i<100;i++) pts.push(H/2); let cont=0;
-    function dib(){ ctx.clearRect(0,0,W,H); ctx.beginPath(); ctx.strokeStyle=idx%2==0?'#38BDF8':'#A78BFA'; ctx.lineWidth=3; ctx.shadowColor=ctx.strokeStyle; ctx.shadowBlur=8; pts.forEach((y,i)=>{let x=(i/100)*W; if(i==0)ctx.moveTo(x,y); else ctx.lineTo(x,y);}); ctx.stroke(); cont++; let nu=H/2+(Math.random()-0.5)*10; if(cont%40==0)nu=H/2-35; if(cont%40==1)nu=H/2+25; if(cont%40==2)nu=H/2-5; pts.push(nu); pts.shift(); requestAnimationFrame(dib); }
-    setTimeout(dib,idx*80);
-  });
-}
-function iniciarDetalle(){
-  ['ecgEntrada','ecgSalida'].forEach((id,idx)=>{
-    let cv=document.getElementById(id); if(!cv) return;
-    let ctx=cv.getContext('2d'); let W=cv.width=cv.offsetWidth*2; let H=cv.height=80; let pts=[]; for(let i=0;i<100;i++) pts.push(H/2); let cont=0;
-    function dib(){ ctx.clearRect(0,0,W,H); ctx.beginPath(); ctx.strokeStyle= idx==0?'#22C55E':'#FACC15'; ctx.lineWidth=3; ctx.shadowColor=ctx.strokeStyle; ctx.shadowBlur=8; pts.forEach((y,i)=>{let x=(i/100)*W; if(i==0)ctx.moveTo(x,y); else ctx.lineTo(x,y);}); ctx.stroke(); cont++; let nu=H/2+(Math.random()-0.5)*8; if(cont%35==0)nu=H/2-28; if(cont%35==1)nu=H/2+20; pts.push(nu); pts.shift(); requestAnimationFrame(dib); }
-    dib();
-  });
-}
-</script>
-</body>
-</html>
+<h1 style="text-align:center;font-size:26px">Centro de <span style="color:#38BDF8">Comando</span
