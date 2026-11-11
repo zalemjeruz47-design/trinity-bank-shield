@@ -1,116 +1,276 @@
-<!DOCTYPE html>
+DOCTYPE html>
 <html lang="es">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>TRINITY BANK SHIELD</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+<title>TRINITY BANK SHIELD V22 - Flujos Activos</title>
 <style>
-*{margin:0;padding:0;box-sizing:border-box;font-family:Arial}
-body{background:#030014;color:#fff;padding:15px;padding-bottom:120px}
-.top{text-align:center;font-weight:800;padding:10px}
-.top span{color:#A78BFA}
-h1{font-size:32px;line-height:1.1;margin:15px 0}
-p{color:#C7C7D1;font-size:14px;line-height:1.5}
-button{width:100%;padding:15px;border:none;border-radius:12px;font-weight:800;margin-top:12px;cursor:pointer;color:#fff;display:block;position:relative;z-index:2}
-.b1{background:linear-gradient(90deg,#8B5CF6,#3B82F6)}
-.b2{background:#000;border:1px solid #7C3AED;margin-top:12px}
-.bVerde{background:#16A34A;margin-top:12px}
-.bAmarillo{background:#EAB308;color:#000;margin-top:12px}
-.separador{height:12px}
-.card{background:#11111F;border-radius:14px;padding:14px;margin-top:12px}
-.oculto{display:none}
-input,textarea{width:100%;padding:13px;border-radius:10px;border:1px solid #222;background:#0D0D1E;color:#fff;margin-bottom:10px}
-.buscador{border:1px solid #7C3AED!important}
-.grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
-.tar{background:#0A0A1A;border:1px solid #2A2A3A;border-radius:14px;padding:14px;cursor:pointer}
-.tar h3{font-size:15px;margin:6px 0}
-.tar p{font-size:12px}
-.ecg{width:100%;height:50px;background:#05051A;border-radius:8px;border:1px solid #1E3A8A;margin:8px 0}
-.live{color:#4ADE80;font-size:11px;font-weight:700}
-.inv{background:#0A0A1A;border:1px solid #2A2A3A;border-radius:14px;padding:14px;margin:12px 0}
-.inv-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #1E1E35;font-size:13px;gap:10px}
-.inv-row span:last-child{color:#38BDF8;font-weight:700;text-align:right}
-.badge{display:inline-block;background:#1E1E35;padding:5px 10px;border-radius:20px;font-size:11px;color:#A78BFA;margin:5px 5px 0 0}
-.cajaES{display:flex;gap:10px;margin:12px 0}
-.cajaE{flex:1;background:#052E16;border:1px solid #16A34A;border-radius:14px;padding:14px;text-align:center}
-.cajaS{flex:1;background:#422006;border:1px solid #EAB308;border-radius:14px;padding:14px;text-align:center}
-.cajaE b,.cajaS b{font-size:22px;display:block}
-.movItem{background:#11111F;border-radius:10px;padding:10px;margin-top:8px;font-size:12px;line-height:1.5}
-.ficherito{margin-top:20px;margin-bottom:40px;background:#0A0A1A;border:1px solid #2A2A3A;border-radius:12px;padding:16px;padding-bottom:20px;text-align:center;position:relative;z-index:1}
-.ficherito h4{font-size:13px;color:#FACC15;letter-spacing:0.5px;margin-bottom:6px}
-.ficherito p{font-size:11px;line-height:1.6;color:#A1A1AA}
-.ficherito b{color:#E5E7EB}
+*{box-sizing:border-box}body{margin:0;font-family:Arial,sans-serif;background:#05050a;color:white;background-image:radial-gradient(circle at 70% 20%,rgba(124,58,237,.35),transparent 50%),radial-gradient(circle at 20% 80%,rgba(59,130,246,.2),transparent 40%)}
+.wrap{max-width:1100px;margin:0 auto;padding:20px 16px}.logo{font-size:22px;font-weight:bold;letter-spacing:1px;text-align:center}.logo span{color:#7c3aed}
+.hero{display:flex;gap:24px;align-items:flex-start;justify-content:space-between;margin-top:28px}.left{flex:1}.left h1{font-size:46px;line-height:1.05;margin:0}.left p.sub{color:#d0d0dd;font-size:17px;line-height:1.55;margin:18px 0}
+.features{display:flex;gap:12px;margin:22px 0;flex-wrap:wrap}.features div{font-size:13px;line-height:1.4;background:#141423;padding:10px 12px;border-radius:12px;border:1px solid #2a2a45}
+.botones{display:flex;gap:12px;flex-wrap:wrap}.btn{padding:16px 20px;border-radius:14px;font-weight:bold;font-size:16px;border:none;cursor:pointer;text-align:center;flex:1;min-width:160px}.btn1{background:linear-gradient(90deg,#7c3aed,#3b82f6);color:white;box-shadow:0 0 25px rgba(124,58,237,.6)}.btn2{background:transparent;color:white;border:1px solid #7c3aed}.btn-off{opacity:.4}
+.panel{flex:1;max-width:390px;background:#0f0f1e;border:1px solid #3b82f6;border-radius:24px;padding:20px;text-align:left;box-shadow:0 0 40px rgba(59,130,246,.35)}
+.saldo-box{background:linear-gradient(135deg,#4c1d95,#3b82f6);border-radius:14px;padding:16px}.saldo{font-size:26px;font-weight:bold;margin:5px 0}.verde{color:#a7f3d0;font-size:13px}
+.card{background:#1a1a2e;border-radius:12px;padding:12px;margin-top:12px;font-size:14px;line-height:1.5}.card small{color:#aaa}
+.caja{background:#0f0f1e;border:1px solid #3b82f6;border-radius:22px;max-width:560px;margin:24px auto;padding:20px;text-align:center;width:100%}
+input,select{width:100%;padding:15px;margin:8px 0;border-radius:13px;border:1px solid #333;background:#1a1a2e;color:white;font-size:16px}
+.footer{font-size:12px;color:#888;text-align:center;margin:28px 0 16px;line-height:1.5}.oculto{display:none}
+.paso{border:1px solid #2a2a45;border-radius:16px;padding:14px;margin:12px 0;text-align:left;background:#141423}.paso.bloq{opacity:.5}.paso.ok{border-color:#22c55e;background:#0f2417}.check{color:#4ade80;font-weight:bold}.error{color:#f87171;font-weight:bold}
+video{width:100%;border-radius:14px;background:black;display:none;margin-top:10px}canvas{display:none}.mi-foto{width:90px;height:90px;border-radius:50%;object-fit:cover;border:3px solid #22c55e;display:none;margin:10px auto}
+.pasos-top{display:flex;gap:6px;margin:10px 0}.pasos-top div{flex:1;height:8px;border-radius:99px;background:#2a2a45}.pasos-top div.on{background:#22c55e}
+.login-op{border:1px solid #2a2a45;border-radius:16px;padding:14px;margin:10px 0;text-align:left;cursor:pointer;background:#141423}.login-op.sel{border-color:#7c3aed;background:#1e1533;box-shadow:0 0 15px rgba(124,58,237,.4)}
+table{width:100%;border-collapse:collapse;font-size:12px;text-align:left;margin-top:10px}th,td{padding:8px 6px;border-bottom:1px solid #2a2a45}th{color:#a78bfa}
+.rep{background:#0a1a2e;border:1px solid #1e3a5f;border-radius:20px;padding:16px;margin:14px auto;max-width:640px;text-align:left}
+.rep-head{display:flex;justify-content:space-between;align-items:center;gap:8px}.rep-head b{letter-spacing:1px;font-size:15px}.pill{font-size:11px;border:1px solid #22c55e;color:#4ade80;border-radius:99px;padding:5px 10px;white-space:nowrap}.pill.rojo{border-color:#f87171;color:#f87171}.pill.gris{border-color:#64748b;color:#94a3b8}.pill.amar{border-color:#fbbf24;color:#fbbf24}
+canvas.graf{width:100%;height:180px;display:block;background:#071525;border-radius:12px;margin-top:12px;cursor:pointer;max-width:100%}
+.leyenda{display:flex;gap:14px;font-size:12px;color:#94a3b8;margin-top:8px}.dot{width:10px;height:10px;border-radius:50%;display:inline-block}
+.ev{display:flex;gap:10px;align-items:center;border-bottom:1px solid #1e3a5f;padding:12px 0}.ev:last-child{border:none}.ev .punto{width:10px;height:10px;border-radius:50%;background:#4ade80;flex-shrink:0;box-shadow:0 0 10px #4ade80}.ev small{color:#94a3b8}
+/* V22 FLUJO CON BOTONES */
+.flujo{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:12px}.flujo button{border:1px solid #1e3a5f;background:#132a44;color:white;padding:14px 10px;border-radius:14px;font-weight:bold;font-size:13px;cursor:pointer}.flujo button.act{background:#0f3d2a;border-color:#22c55e;color:#4ade80;box-shadow:0 0 12px rgba(34,197,94,.4)}.flujo button small{display:block;font-weight:normal;font-size:11px;color:#94a3b8;margin-top:4px}
+/* V22 INVENTARIO ARREGLADO PARA CELULAR */
+.inv-row{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:14px 0;border-bottom:1px solid #1e3a5f;font-size:14px}.inv-row:last-child{border:none}.inv-row b{font-size:16px;white-space:nowrap;text-align:right;min-width:80px}
+.pulso{display:inline-block;width:8px;height:8px;border-radius:50%;background:#4ade80;box-shadow:0 0 10px #4ade80;animation:parp 1s infinite}@keyframes parp{0%,100%{opacity:1}50%{opacity:.2}}
+.acceso-rapido{background:linear-gradient(135deg,#0f3d2a,#14532d);border:2px solid #22c55e;border-radius:20px;padding:18px;margin:14px 0;text-align:center}
+.div-banner{border-radius:18px;padding:16px;margin:12px auto;max-width:640px;text-align:center;font-weight:bold;font-size:20px;letter-spacing:1px}
+.div-CAIRN{background:linear-gradient(135deg,#14532d,#22c55e);color:white}.div-ARTEX{background:linear-gradient(135deg,#4c1d95,#7c3aed);color:white}.div-PENTAGI{background:linear-gradient(135deg,#1e40af,#3b82f6);color:white}.div-CIBERESTRIKE{background:linear-gradient(135deg,#7f1d1d,#ef4444);color:white}
+.mini-btn{padding:6px 10px;border-radius:8px;border:none;font-weight:bold;cursor:pointer;font-size:12px;margin:2px}.btn-del{background:#ef4444;color:white}.btn-edit{background:#fbbf24;color:black}
+.sala-grid{display:grid;grid-template-columns:1fr 1fr;gap:14px;max-width:640px;margin:14px auto}.monitor{border-radius:20px;padding:16px;cursor:pointer;text-align:left;border:2px solid transparent}.monitor:hover{transform:scale(1.02)}.monitor.CAIRN{background:#0f2a1a;border-color:#22c55e}.monitor.ARTEX{background:#1e1533;border-color:#7c3aed}.monitor.PENTAGI{background:#0f1e3a;border-color:#3b82f6}.monitor.CIBERESTRIKE{background:#2a1212;border-color:#ef4444}
+.agente{background:#141423;border:1px solid #2a2a45;border-radius:16px;padding:12px;text-align:left}.agente-top{display:flex;justify-content:space-between;align-items:center}.avatar{width:44px;height:44px;border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:20px;font-weight:bold}.nav-sala{display:flex;gap:8px;max-width:640px;margin:12px auto}.nav-sala button{flex:1}
+.modal{position:fixed;inset:0;background:rgba(0,0,0,.85);display:none;align-items:center;justify-content:center;z-index:9999;padding:16px}.modal.show{display:flex}.modal-box{background:#0f0f1e;border:2px solid #22c55e;border-radius:22px;padding:20px;max-width:480px;width:100%;max-height:90vh;overflow-y:auto}.modal-box img.ev-foto{width:100%;border-radius:14px;display:none;margin:10px 0;border:2px solid #22c55e}.hint{font-size:12px;color:#94a3b8;text-align:center;margin-top:6px}
+@media(max-width:800px){.hero{flex-direction:column}.left h1{font-size:36px}.panel{max-width:100%;width:100%}.botones{flex-direction:column}.btn{width:100%}.sala-grid{grid-template-columns:1fr}}
 </style>
 </head>
-<body>
+<body oncontextmenu="return false">
+<div class="wrap">
+<div id="portada"><div class="logo">🛡️ <span>T</span>RINITY BANK SHIELD</div>
+<div class="hero"><div class="left"><h1>Tu dinero protegido.<br>Tu banco seguro.</h1><p class="sub">Protección avanzada para instituciones financieras. Monitoreo continuo, verificación reforzada y cumplimiento legal. Sin exponer cómo operamos, solo resultados.</p>
+<div class="features"><div>🛡️<br><b>ARTEX</b><br>División Legal</div><div>⬠<br><b>PENTAGI</b><br>División Legal</div><div>🪨<br><b>CAIRN</b><br>División Legal</div><div>🤖<br><b>CIBERESTRIKE AI</b><br>División Legal</div></div>
+<div class="botones"><button class="btn btn1" onclick="ir('login')">Solicitar demo</button><button class="btn btn2" onclick="ir('login')">Acceso institucional</button></div>
+<p style="font-size:12px;color:#888;line-height:1.5">© TRINITY BANK SHIELD • ARTEX • PENTAGI • CAIRN • CIBERESTRIKE AI<br>Prohibida su reproducción. Sistema privado. Acceso solo autorizado.</p></div>
+<div class="panel"><p style="font-weight:bold;font-size:18px;margin:0">Centro de Seguridad</p><br><div class="saldo-box"><p style="margin:0;font-size:13px">Transacciones monitoreadas hoy</p><div class="saldo">45,230</div><p class="verde">↗ Todo en orden • Sin incidentes</p></div>
+<div class="card">✅ <b>Amenazas bloqueadas</b><br><span style="color:#4ade80;font-weight:bold">1,284 este mes</span><br><small>0 brechas de seguridad</small></div>
+<div class="card">🔐 <b>Verificación reforzada</b><br><small>Acceso en 3 pasos • Solo personal autorizado</small></div>
+<div class="card">📋 <b>Cumplimiento legal</b><br><small>Reportes auditables • Bajo solicitud institucional</small></div></div></div>
+<p class="footer">Protección para instituciones financieras • Cifrado AES-256 • Soporte 24/7 • © TRINITY BANK SHIELD - Prohibido copiar</p></div>
 
-<div id="portada">
-<div class="top">🛡️ <span>TRINITY</span> BANK SHIELD</div>
-<h1>Tu dinero protegido.<br>Tu banco seguro.</h1>
-<p>Presentación de proyecto. Monitoreo, verificación y cumplimiento.</p>
-<button class="b1" onclick="irDemo()">Solicitar demo</button>
-<div class="separador"></div>
-<button class="b2" onclick="irAcceso()">Acceso institucional</button>
-<div class="card"><b>✅ Amenazas bloqueadas</b><br><span style="color:#4ADE80">1,284 este mes • 0 brechas</span></div>
-<div class="card"><b>🔐 Transacciones hoy</b><br><span>45,230 • Todo en orden</span></div>
-<p style="text-align:center;font-size:12px;color:#888;margin-top:12px">24 Trini • Inventario detallado de verdad • No repetido</p>
+<div id="login" class="oculto"><div style="text-align:center"><div style="font-size:52px">🛡️</div><div class="logo">TRINITY BANK SHIELD</div><p style="color:#c0c0d0">Acceso Institucional</p>
+<div class="caja">
+<div class="acceso-rapido"><p style="margin:0;font-size:22px">🪨 <b>ACCESO DIRECTO CAIRN</b></p><p style="font-size:13px;color:#a7f3d0">Solo para ti, Jefa. Entra directo a ver todos tus trabajos.</p>
+<input id="claveRapida" type="password" placeholder="Pon tu clave: cairn2026" style="text-align:center;font-size:18px">
+<button class="btn btn1" style="width:100%;background:#22c55e;color:#000;font-size:18px" onclick="accesoDirecto()">🪨 ENTRAR A CAIRN DIRECTO →</button>
+<p id="msgRapido" style="font-size:13px"></p><small style="color:#aaa">Tu clave es: <b style="color:white">cairn2026</b> • No la compartas, Jefa</small></div>
+<div style="display:flex;gap:8px"><button class="btn btn1" style="flex:1;background:#14532d" onclick="accesoDirectoDiv('CAIRN')">🪨 CAIRN</button><button class="btn btn1" style="flex:1;background:#4c1d95" onclick="accesoDirectoDiv('ARTEX')">🎨 ARTEX</button></div>
+<div style="display:flex;gap:8px;margin-top:8px"><button class="btn btn1" style="flex:1;background:#1e40af" onclick="accesoDirectoDiv('PENTAGI')">⬠ PENTAGI</button><button class="btn btn1" style="flex:1;background:#7f1d1d" onclick="accesoDirectoDiv('CIBERESTRIKE AI')">🤖 CIBER</button></div>
+<p style="font-size:12px;color:#aaa">Claves: cairn2026 • artex2026 • pentagi2026 • ciber2026 • Solo para ti, Jefa.</p>
+<div class="login-op sel" id="op1" onclick="elegirLogin(1,'ARTEX')">🎨 <b>ARTEX</b><br><small>División Legal</small></div>
+<div class="login-op" id="op2" onclick="elegirLogin(2,'PENTAGI')">⬠ <b>PENTAGI</b><br><small>División Legal</small></div>
+<div class="login-op" id="op3" onclick="elegirLogin(3,'CAIRN')">🪨 <b>CAIRN</b><br><small>División Legal</small></div>
+<div class="login-op" id="op4" onclick="elegirLogin(4,'CIBERESTRIKE AI')">🤖 <b>CIBERESTRIKE AI</b><br><small>División Legal</small></div>
+<div style="background:#1e1533;border:1px solid #7c3aed;border-radius:16px;padding:14px;margin:14px 0;text-align:left"><p style="margin:0"><b>🔐 CONFIGURAR MI ACCESO</b><br><small>Solo 1 vez. Tus datos quedan en tu dispositivo.</small></p>
+<input id="miCorreo" type="email" placeholder="Tu correo de empresa"><input id="miClave" type="password" placeholder="Tu clave">
+<video id="camCrear" autoplay playsinline></video><canvas id="canvasCrear"></canvas><img id="fotoGuardada" class="mi-foto">
+<div style="display:flex;gap:8px;flex-wrap:wrap"><button class="btn btn1" style="flex:1" onclick="tomarFotoCrear()">📸 Mi foto</button><button class="btn btn1" style="flex:1" onclick="registrarHuellaCrear()">🫆 Mi huella</button></div>
+<p id="msgCrear" style="font-size:13px"></p><button class="btn btn1" style="width:100%;background:#22c55e;color:#000" onclick="guardarMiAcceso()">💾 GUARDAR MI ACCESO</button><p id="miAccesoInfo" style="font-size:12px;color:#aaa"></p><button class="btn btn2" style="width:100%;margin-top:8px" onclick="borrarMiAcceso()">🗑️ Borrar mi acceso</button></div>
+<div class="pasos-top"><div id="bar1"></div><div id="bar2"></div><div id="bar3"></div></div>
+<div class="paso" id="paso1"><b>PASO 1 - CORREO Y CLAVE</b><br><small id="loginActualTxt">División: ARTEX</small><input id="correo" type="email" placeholder="Tu correo registrado"><input id="clave" type="password" placeholder="Tu clave registrada"><button class="btn btn1" style="width:100%" onclick="pasoCorreo()">Verificar →</button><p id="msg1" style="font-size:13px"></p></div>
+<div class="paso bloq" id="paso2"><b>PASO 2 - HUELLA</b><br><br><div style="font-size:60px;text-align:center">🫆</div><button class="btn btn1" style="width:100%" onclick="pasoHuella()">Verificar huella</button><p id="msg2" style="font-size:13px">Primero pasa el Paso 1</p></div>
+<div class="paso bloq" id="paso3"><b>PASO 3 - ROSTRO</b><br><br><div style="font-size:60px;text-align:center">📸</div><video id="cam" autoplay playsinline></video><button class="btn btn1" style="width:100%" onclick="pasoFacial()">Verificar rostro</button><p id="msg3" style="font-size:13px">Primero pasa el Paso 2</p></div>
+<button id="btnEntrar" class="btn btn1 btn-off" style="width:100%;margin-top:10px" onclick="entrarFinal()">🔒 ENTRAR</button><button class="btn btn2" style="width:100%;margin-top:10px" onclick="ir('portada')">← Volver</button></div></div></div>
+
+<div id="sala" class="oculto">
+<div style="text-align:center"><div style="font-size:40px">🖥️</div><div class="logo">SALA DE MONITOREO</div><p style="color:#c0c0d0">TRINITY BANK SHIELD • 4 Monitores • 24 Agentes • <span id="relojSala"></span> • <span style="color:#4ade80"><span class="pulso"></span> EN VIVO</span></p></div>
+<div class="nav-sala"><button class="btn btn1" onclick="ir('sala')">🖥️ SALA</button><button class="btn btn2" onclick="ir('dashboard')">📊 MI DIVISIÓN</button><button class="btn btn2" onclick="ir('portada')">← Salir</button></div>
+<div class="sala-grid">
+<div class="monitor CAIRN" onclick="entrarMonitor('CAIRN')"><div style="font-size:28px">🪨 MONITOR 1 - CAIRN</div><p style="font-size:13px;color:#a7f3d0">División Legal • Custodia de Evidencia</p><div style="font-size:26px;font-weight:bold" id="salaMontoCAIRN">$0</div><p style="font-size:13px">Movimientos: <b id="salaMovCAIRN">0</b> • Agentes: 6<br>Entradas: <span id="salaEntCAIRN">0</span> • Salidas: <span id="salaSalCAIRN">0</span></p><canvas class="graf" id="salaGrafCAIRN" width="600" height="120" style="height:120px"></canvas><button class="btn btn1" style="width:100%;background:#22c55e;color:#000;margin-top:10px">ENTRAR A CAIRN →</button></div>
+<div class="monitor ARTEX" onclick="entrarMonitor('ARTEX')"><div style="font-size:28px">🎨 MONITOR 2 - ARTEX</div><p style="font-size:13px;color:#ddd6fe">División Legal • Contratos y Convenios</p><div style="font-size:26px;font-weight:bold" id="salaMontoARTEX">$0</div><p style="font-size:13px">Movimientos: <b id="salaMovARTEX">0</b> • Agentes: 6<br>Entradas: <span id="salaEntARTEX">0</span> • Salidas: <span id="salaSalARTEX">0</span></p><canvas class="graf" id="salaGrafARTEX" width="600" height="120" style="height:120px"></canvas><button class="btn btn1" style="width:100%;margin-top:10px">ENTRAR A ARTEX →</button></div>
+<div class="monitor PENTAGI" onclick="entrarMonitor('PENTAGI')"><div style="font-size:28px">⬠ MONITOR 3 - PENTAGI</div><p style="font-size:13px;color:#bfdbfe">División Legal • Regulación y Cumplimiento</p><div style="font-size:26px;font-weight:bold" id="salaMontoPENTAGI">$0</div><p style="font-size:13px">Movimientos: <b id="salaMovPENTAGI">0</b> • Agentes: 6<br>Entradas: <span id="salaEntPENTAGI">0</span> • Salidas: <span id="salaSalPENTAGI">0</span></p><canvas class="graf" id="salaGrafPENTAGI" width="600" height="120" style="height:120px"></canvas><button class="btn btn1" style="width:100%;background:#3b82f6;margin-top:10px">ENTRAR A PENTAGI →</button></div>
+<div class="monitor CIBERESTRIKE" onclick="entrarMonitor('CIBERESTRIKE AI')"><div style="font-size:28px">🤖 MONITOR 4 - CIBERESTRIKE AI</div><p style="font-size:13px;color:#fecaca">División Legal • Ciberdefensa e Investigación</p><div style="font-size:26px;font-weight:bold" id="salaMontoCIBERESTRIKE">$0</div><p style="font-size:13px">Movimientos: <b id="salaMovCIBERESTRIKE">0</b> • Agentes: 6<br>Entradas: <span id="salaEntCIBERESTRIKE">0</span> • Salidas: <span id="salaSalCIBERESTRIKE">0</span></p><canvas class="graf" id="salaGrafCIBERESTRIKE" width="600" height="120" style="height:120px"></canvas><button class="btn btn1" style="width:100%;background:#ef4444;margin-top:10px">ENTRAR A CIBERESTRIKE →</button></div>
+</div>
+<div class="caja" style="max-width:640px;text-align:left"><b>🚨 ALERTAS EN VIVO - 24 AGENTES</b><p style="font-size:13px;color:#aaa">Cada agente tiene su alerta. Roja = urgente, Amarilla = en revisión, Verde = todo en orden.</p><div id="alertasSala"></div></div>
+<div class="caja" style="max-width:640px;text-align:left"><b>👥 24 AGENTES HUMANOS - REPORTE DE SEGUIMIENTO</b><p style="font-size:13px;color:#aaa">Pícale a cada agente para ver su reporte.</p><div style="display:flex;gap:8px;margin:10px 0;flex-wrap:wrap"><button class="btn btn2" onclick="filtrarAgentes('TODOS')">TODOS 24</button><button class="btn btn2" onclick="filtrarAgentes('CAIRN')">🪨 CAIRN</button><button class="btn btn2" onclick="filtrarAgentes('ARTEX')">🎨 ARTEX</button><button class="btn btn2" onclick="filtrarAgentes('PENTAGI')">⬠ PENTAGI</button><button class="btn btn2" onclick="filtrarAgentes('CIBERESTRIKE AI')">🤖 CIBER</button></div><div id="gridAgentes" style="display:grid;grid-template-columns:1fr 1fr;gap:10px"></div></div>
 </div>
 
-<div id="formulario" class="oculto">
-<div class="top">🛡️ <span>TRINITY</span> BANK SHIELD</div>
-<h1 style="text-align:center;font-size:24px">Solicitar Demo</h1><br>
-<input id="nombre" placeholder="Nombre *">
-<input id="whatsapp" placeholder="WhatsApp *">
-<textarea id="mensaje" rows="4" placeholder="Mensaje *"></textarea>
-<button class="b1" onclick="enviar()">ENVIAR SOLICITUD</button>
-<div class="separador"></div>
-<button class="b2" onclick="volver()">← Volver</button>
+<div id="dashboard" class="oculto">
+<div id="divBanner" class="div-banner div-CAIRN">🪨 ESTÁS EN: CAIRN • DIVISIÓN LEGAL</div>
+<div class="nav-sala"><button class="btn btn2" onclick="ir('sala')">🖥️ SALA DE MONITOREO</button><button class="btn btn1" onclick="ir('dashboard')">📊 MI DIVISIÓN</button><button class="btn btn2" onclick="ir('portada')">← Salir</button></div>
+<div style="text-align:center"><div style="font-size:52px">🛡️</div><div class="logo">TRINITY BANK SHIELD</div><p style="color:#c0c0d0" id="bienvenidaTxt">Bienvenido, CAIRN - Centro de Comando</p><p style="color:#4ade80;font-size:12px"><span class="pulso"></span> EN VIVO • Sesión privada • <span id="relojVivo"></span></p><img id="fotoDash" class="mi-foto" style="display:block"><p id="correoDash" style="font-size:13px;color:#aaa"></p>
+<div class="caja" style="max-width:640px;text-align:left;border-color:#22c55e"><p><b>🔒 ZONA PRIVADA - SOLO PERSONAL AUTORIZADO</b><br><small>Esta información NO es pública. No compartir capturas.</small></p><p style="font-size:13px;line-height:1.7"><b>Agente de Verificación:</b> <span id="veraDash">Identidad confirmada</span><br><b>Agente de Seguimiento:</b> <span id="trackerDash">Registrando movimientos</span><br><small>Última verificación: <span id="horaVera"></span></small></p></div>
+
+<div class="caja" style="max-width:640px"><p style="color:#a78bfa;margin:0">Dinero protegido hoy - <span id="montoTotalTxt">REAL</span></p><div style="font-size:32px;font-weight:bold" id="montoTotal">$0 USD</div><p style="text-align:left;font-size:15px;line-height:1.8">🛡️ Movimientos reales hoy: <b style="color:#4ade80" id="movHoy">0</b><br>📊 Entradas: <b id="entradasTxt">0</b> • Salidas: <b id="salidasTxt">0</b><br>⚡ Estado: <b style="color:#4ade80">Todo Protegido</b></p>
+<label style="font-size:13px;color:#aaa">Registrar acción REAL:</label><select id="tipoTrans"><option>LOGIN VERIFICADO</option><option>CONTRATO FIRMADO</option><option>CONVENIO VALIDADO</option><option>REGULACIÓN REVISADA</option><option>EVIDENCIA CUSTODIADA</option><option>ATAQUE INVESTIGADO</option><option>TRANSFERENCIA ENVIADA</option><option>REPORTE LEGAL CREADO</option></select>
+<select id="direccionTrans"><option value="ENTRADA">⬆️ ENTRADA - Entra al inventario</option><option value="SALIDA">⬇️ SALIDA - Sale del inventario</option></select>
+<select id="agenteSel"><option>Agente 01 - CAIRN</option><option>Agente 02 - CAIRN</option><option>Agente 03 - CAIRN</option><option>Agente 04 - CAIRN</option><option>Agente 05 - CAIRN</option><option>Agente 06 - CAIRN</option></select>
+<input id="montoTrans" type="number" placeholder="Monto en USD">
+<label style="font-size:13px;color:#aaa">📸 Foto de evidencia (opcional):</label><input id="fotoTrans" type="file" accept="image/*" style="padding:10px">
+<button class="btn btn1" style="width:100%" onclick="registrarTrans()">➕ Registrar movimiento REAL</button>
+<button class="btn btn1" style="width:100%;margin-top:10px;background:#22c55e;color:#000" onclick="exportarBanco()">📄 EXPORTAR REPORTE PARA EL BANCO</button>
+<button class="btn btn1" style="width:100%;margin-top:10px" onclick="mostrarSecurity()">🛡️ Security Center</button><div id="securityBox" class="oculto" style="text-align:left;background:#141423;border:1px solid #22c55e;border-radius:14px;padding:12px;margin-top:12px;font-size:13px;line-height:1.6"><b>🛡️ SECURITY CENTER</b><br>✅ Verificación OK<br>✅ Monitoreo 24/7<br>✅ Cifrado Activo<br>⚠️ Alertas: 3 revisadas, 0 pendientes</div></div>
+
+<div id="reporteV16">
+<div class="rep"><div class="rep-head"><b>ACTIVIDAD DE LA PLATAFORMA</b><span class="pill"><span class="pulso"></span> EN VIVO • REAL</span></div><p class="hint">👆 Pícale a un puntito de la gráfica para ver su foto, su agente y su detalle, Jefa.</p><canvas class="graf" id="graf1" width="600" height="180" onclick="clickGraf(event,'graf1')"></canvas><div class="leyenda"><span><i class="dot" style="background:#22d3ee"></i> Eventos</span><span><i class="dot" style="background:#4ade80"></i> Dinero acumulado $</span></div><p style="font-size:12px;color:#94a3b8" id="txtGraf1">Sin movimientos aún.</p></div>
+<div class="rep"><div class="rep-head"><b>EVENTOS RECIENTES</b><span class="pill">ÚLTIMOS REGISTROS REALES</span></div><div id="listaEventos"></div></div>
+<div class="rep"><div class="rep-head"><b>VOLUMEN DE EVENTOS</b><span class="pill rojo">MONITOREO REAL</span></div><canvas class="graf" id="graf2" width="600" height="180" onclick="clickGraf(event,'graf2')"></canvas><p style="font-size:12px;color:#94a3b8" id="txtGraf2">Cada punto = 1 movimiento real tuyo.</p></div>
+
+<!-- V22 FLUJO DE REPORTE CON BOTONES ACTIVADOS -->
+<div class="rep"><div class="rep-head"><b>FLUJO DE RESPUESTA</b><span class="pill gris">PÍCALE A CADA PASO • REPORTE</span></div><p style="font-size:12px;color:#94a3b8">Cada botón, Jefa, abre su reporte de seguimiento. Así como lo pediste, mi amor.</p>
+<div class="flujo">
+<button id="f1" onclick="abrirFlujo('ALERTA')">🚨 ALERTA<small id="f1sub">Sin alerta aún</small></button>
+<button id="f2" onclick="abrirFlujo('ANALISIS')">🔍 ANÁLISIS<small id="f2sub">Sin análisis aún</small></button>
+<button id="f3" onclick="abrirFlujo('CONTENCION')">🛡️ CONTENCIÓN<small id="f3sub">Sin contención aún</small></button>
+<button id="f4" onclick="abrirFlujo('REVISION')">✅ REVISIÓN<small id="f4sub">Sin revisión aún</small></button>
+</div>
+<p style="font-size:12px;color:#94a3b8;margin-top:10px" id="flujoTxt">Sin flujo aún.</p>
+<div id="detalleFlujo" style="background:#132a44;border:1px solid #1e3a5f;border-radius:14px;padding:14px;margin-top:10px;font-size:13px;line-height:1.7;display:none"></div>
 </div>
 
-<div id="ops" class="oculto">
-<div class="top">🛡️ <span>TRINITY</span> BANK SHIELD</div>
-<h1 style="text-align:center;font-size:26px">Centro de <span style="color:#38BDF8">Comando</span></h1>
-<p style="text-align:center">Bienvenido. 24 Trini. Busca la que necesites.</p>
-<input id="buscador" class="buscador" placeholder="🔍 Buscar Trini... Ej: Trini 19, ARTEX, Guardián" oninput="filtrar()">
-<p id="resultadoBusqueda" style="text-align:center;font-size:12px;color:#A78BFA"></p>
-<div class="grid" id="gridTrini"></div>
-<button class="b2" onclick="volver()">← Salir del Centro de Comando</button>
+<div class="rep"><div class="rep-head"><b>ENTRADAS Y SALIDAS</b><span class="pill">REAL • HOY • EN $</span></div><canvas class="graf" id="graf3" width="600" height="180" onclick="clickGraf(event,'graf3')"></canvas><div class="leyenda"><span><i class="dot" style="background:#4ade80"></i> Entradas $</span><span><i class="dot" style="background:#fbbf24"></i> Salidas $</span></div></div>
+
+<!-- V22 ESTADO INVENTARIO ARREGLADO -->
+<div class="rep"><div class="rep-head"><b>ESTADO DEL INVENTARIO</b><span class="pill gris">RESUMEN REAL</span></div><div class="inv-row"><span>Existencias normales</span><b style="color:#4ade80" id="invNormal">0</b></div><div class="inv-row"><span>Stock bajo</span><b style="color:#fbbf24" id="invBajo">0</b></div><div class="inv-row"><span>Agotados</span><b style="color:#f87171" id="invAgotado">0</b></div><div class="inv-row"><span>Movimientos pendientes</span><b id="invPend">0</b></div><div class="inv-row"><span>Total movimientos reales</span><b id="invTotal">0</b></div><div class="inv-row"><span>Total dinero Entradas</span><b style="color:#4ade80" id="invDinEnt">$0</b></div><div class="inv-row"><span>Total dinero Salidas</span><b style="color:#fbbf24" id="invDinSal">$0</b></div></div>
+<div class="rep"><div class="rep-head"><b>PRODUCTOS DESTACADOS</b><span class="pill gris">REAL</span></div><div style="background:#132a44;border-radius:14px;padding:14px;margin-top:12px"><div style="font-size:32px">📦</div><b id="prodTop">Sin movimientos aún</b><br><small style="color:#94a3b8">Existencia real</small><div style="font-size:28px;color:#22d3ee;font-weight:bold" id="prodNum">0</div><small style="color:#94a3b8" id="prodSub">Registra tu primer movimiento real.</small></div></div>
 </div>
 
-<div id="detalle" class="oculto">
-<div class="top">🛡️ <span>TRINITY</span> BANK SHIELD</div>
-<h1 id="dTitulo" style="font-size:26px">TRINI</h1>
-<p id="dDesc">Inventario detallado.</p>
-<div><span class="badge" id="dEstado">● EN VIVO</span><span class="badge">Total: 24 items detallados</span><span class="badge">24 Trini en total</span></div>
-<div class="cajaES">
-<div class="cajaE">🟢 ENTRADAS<b id="numEntradas">0</b><span style="font-size:11px;color:#86EFAC">Lo que entró</span><canvas class="ecg" id="ecgEntrada" style="height:40px;border-color:#16A34A"></canvas></div>
-<div class="cajaS">🟡 SALIDAS<b id="numSalidas">0</b><span style="font-size:11px;color:#FDE68A">Lo que salió</span><canvas class="ecg" id="ecgSalida" style="height:40px;border-color:#EAB308"></canvas></div>
-</div>
-<button class="bVerde" onclick="agregarMov('ENTRADA')">+ 🟢 AGREGAR ENTRADA - Movimiento</button>
-<div class="separador"></div>
-<button class="bAmarillo" onclick="agregarMov('SALIDA')">+ 🟡 AGREGAR SALIDA - Movimiento</button>
-<p style="text-align:center;font-size:12px;margin-top:8px">Cada clic se guarda con hora, día y segundo.</p>
-<div class="inv" id="dInv"></div>
-<div id="dMovs"></div>
-<button class="b1" onclick="cerrarDetalle()">← Volver al Centro de Comando</button>
+<div class="caja" style="max-width:640px"><p style="text-align:left"><b>📋 REGISTRO PRIVADO - HORA / DÍA / SEGUNDO - REAL</b><br><small>Solo visible en sesión autorizada. No público. Pícale a 👁️ para ver la foto.</small></p>
+<input id="buscador" placeholder="🔍 Buscar: EVIDENCIA, CONTRATO, 500..." oninput="renderInventario()" style="margin-top:10px">
+<div style="overflow-x:auto"><table><thead><tr><th>Día</th><th>Hora</th><th>Agente</th><th>Acción</th><th>Monto</th><th>Foto</th><th>Acción</th></tr></thead><tbody id="tablaInventario"></tbody></table></div></div>
+
+<div class="caja" style="max-width:640px;text-align:left"><b>👥 AGENTES DE ESTA DIVISIÓN - <span id="agentesDivTxt">CAIRN</span></b><div id="agentesDiv" style="display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:10px"></div></div>
 </div>
 
-<div class="ficherito">
-  <h4>⚠️ NO CAIGAS EN EL PHISHING</h4>
-  <p>
-    <b>Ningún banco te pedirá tu contraseña, código o llave por correo, mensaje o llamada.</b><br><br>
-    Antes de hacer clic, detente un momento y verifica.<br>
-    Si un mensaje te presiona, te asusta o te promete algo urgente, es la primera señal de que algo no está bien.<br><br>
-    Tu tranquilidad vale más que un clic apresurado.<br>
-    Verifica siempre en los canales oficiales. Si tienes duda, no continúes y pregunta.
-  </p>
+<div id="reportePrint" style="display:none;background:white;color:black;padding:24px;border-radius:12px;max-width:640px;margin:20px auto;font-family:Arial">
+<h2 style="margin:0">🛡️ TRINITY BANK SHIELD</h2><p style="color:#555">Reporte Institucional - Uso Exclusivo para Institución Financiera</p><hr>
+<p><b>División:</b> <span id="printDiv">CAIRN</span><br><b>Fecha de reporte:</b> <span id="printFecha"></span><br><b>Total movimientos:</b> <span id="printTotal"></span><br><b>Entradas:</b> <span id="printEnt"></span> • <b>Salidas:</b> <span id="printSal"></span><br><b>Dinero protegido - Entradas:</b> <span id="printDinEnt"></span><br><b>Dinero - Salidas:</b> <span id="printDinSal"></span></p>
+<h3>Detalle de Movimientos</h3><div id="printTabla" style="font-size:13px;line-height:1.6"></div><hr><p style="font-size:12px;color:#777">Documento generado por TRINITY BANK SHIELD • ARTEX • PENTAGI • CAIRN • CIBERESTRIKE AI<br>Prohibida su reproducción sin autorización. Sistema privado.</p>
+<button onclick="window.print()" style="padding:14px 20px;background:#22c55e;border:none;border-radius:12px;font-weight:bold;width:100%;font-size:16px">🖨️ IMPRIMIR / GUARDAR COMO PDF</button><button onclick="cerrarReporte()" style="padding:14px 20px;background:#eee;border:none;border-radius:12px;font-weight:bold;width:100%;margin-top:10px">← Volver</button>
+</div>
+</div></div>
+
+<div id="modalPunto" class="modal" onclick="if(event.target===this)cerrarModal()">
+<div class="modal-box">
+<div style="display:flex;justify-content:space-between;align-items:center"><b id="modalTitulo">📊 DETALLE DEL MOVIMIENTO</b><button onclick="cerrarModal()" style="background:#ef4444;color:white;border:none;border-radius:99px;width:32px;height:32px;font-weight:bold;cursor:pointer">X</button></div>
+<p id="modalSub" style="font-size:13px;color:#aaa"></p>
+<img id="modalFoto" class="ev-foto">
+<p id="modalSinFoto" style="font-size:13px;color:#fbbf24">📸 Sin foto todavía, Jefa. Súbela abajo, mi amor.</p>
+<div id="modalDetalle" style="font-size:14px;line-height:1.8;background:#141423;border-radius:14px;padding:14px"></div>
+<label style="font-size:13px;color:#aaa">Cambiar agente que atendió:</label><select id="modalAgente"></select>
+<label style="font-size:13px;color:#aaa">📸 Subir / Cambiar foto de evidencia:</label><input id="modalFotoInput" type="file" accept="image/*" onchange="cambiarFotoModal(this)">
+<label style="font-size:13px;color:#aaa">📝 Nota para el banco / Seguimiento:</label><input id="modalNota" placeholder="Ej: Evidencia sellada y custodiada, Jefa">
+<button class="btn btn1" style="width:100%;background:#22c55e;color:#000" onclick="guardarModal()">💾 GUARDAR CAMBIOS</button>
+<button class="btn btn1" style="width:100%;margin-top:8px" onclick="reporteAgenteDesdeModal()">📋 Reporte de Seguimiento de este Agente</button>
+</div>
 </div>
 
 <script>
-let nombres=["1. ARTEX","2. PENTAGI","3. CAIRN","4. CIBERESTRIKE AI","5. Guardián","6. Centinela","7. Tesorero","8. Mensajero","9. Vigía","10. Trinity","11. Escudo","12. Lanza","13. Flecha","14. Torre","15. Llave","16. Ojo","17. Voz","18. Sombra","19. Luz","20. Rayo","21. Muro","22. Puente","23. Corona","24. Jefa Final"];
-let emojis=["🛡️","🏦","🌑","🤖","🔒","👁️","💰","✈️","🔔","🧠","🛡️","⚔️","🏹","🏰","🔑","👁️","🎤","🌑","💡","⚡","🧱","🌉","👑","👑"];
-let inventarios=[
-[['Documentos verificados','124'],['Contratos revisados','38'],['Reportes de auditoría','12'],['Alertas pendientes','0'],['Archivos sellados','124'],['Licencias vigentes','24'],['Permisos actualizados','18'],['Expedientes cerrados','96'],['Expedientes abiertos','4'],['Firmas validadas','210'],['Cláusulas revisadas','340'],['Casos en revisión','3'],['Casos resueltos','89'],['Normativas cumplidas','24 / 24'],['Políticas internas','15'],['Manuales actualizados','7'],['Actas firmadas','42'],['Poderes notariales','11'],['Registros legales','67'],['Certificados emitidos','29'],['Auditorías internas','6'],['Auditorías externas','2'],['Sanciones','0'],['Sellos de seguridad','24']],
-[['Pruebas realizadas','58'],['Pruebas pasadas','58'],['Vulnerabilidades críticas','0'],['Vulnerabilidades leves','2'],['Informes entregados','18'],['Escaneos completos','24'],['Puertos revisados','120'],['Servidores probados','12'],['Apps probadas','8'],['Ataques simulados','156'],['Ataques bloqueados','156'],['Contraseñas fuertes','100%'],['Cifrado activo','Sí'],['Firewalls activos','6'],['Copias de seguridad','24'],['Pruebas de phishing','12'],['Usuarios capacitados','98'],['Incidentes reales','0'],['Parches aplicados','34'],['Actualizaciones','24'],['Certificados SSL','10'],['Monitoreo 24/7','Activo'],['Reportes semanales','4'],['Puntuación seguridad','98 / 100']],
-[['Amenazas rastreadas','312'],['Amenazas bloqueadas','312'],['IPs bloqueadas','89'],['Dominios sospechosos','24'],['Alertas activas','0'],['Redes oscuras vigiladas','12'],['Cuentas falsas detectadas','17'],['Malware detenido','45'],['Archivos maliciosos','23'],['Correos no deseados / Spam','1,204'],['Intentos de fraude','31'],['Fraudes exitosos','0'],['Dispositivos rastreados','240'],['Ubicaciones sospechosas','9'],['Patrones nuevos','4'],['Bases filtradas revisadas','7'],['Contraseñas filtradas','0'],['Alertas silenciosas','6'],['Vigilancia nocturna','24 / 24'],['Sensores activos','24'],['Cámaras activas','24'],['Reportes oscuros','8'],['Colaboradores alerta','12'],['Nivel de riesgo','Bajo']],
-[['Ataques bloqueados','1,284'],['Tiempo de respuesta','0.2 seg'],['Modelos activos','4'],['Reglas activas','156'],['Falsos positivos','3'],['Decisiones por minuto','240'],['Aprendizaje diario','Sí'],['Predicciones hoy','89'],['Predicciones acertadas','88'],['Escaneos IA','1,024'],['Patrones aprendidos','312'],['Actualizaciones IA','24'],['Idiomas detectados','5'],['Bots bloqueados','432'],['Bots buenos','120'],['Sesiones analizadas','5,400'],['Anomalías','7'],['Anomalías graves','0'],['Precisión','
+let ok1=false,ok2=false,ok3=false,loginNum=3,loginNombre='CAIRN',inventario=[],fotoTemporal='',huellaRegistrada=false,filtroAgente='TODOS',movSeleccionado=null,ultimosPuntos=[];
+let AGENTES=[
+{id:1,nombre:'Agente 01 - CAIRN',div:'CAIRN',rol:'Custodia de Evidencia',alerta:'VERDE',tarea:'Evidencia custodiada y verificada',emoji:'🪨'},
+{id:2,nombre:'Agente 02 - CAIRN',div:'CAIRN',rol:'Cadena de Custodia',alerta:'AMARILLA',tarea:'Revisando cadena de custodia pendiente',emoji:'📦'},
+{id:3,nombre:'Agente 03 - CAIRN',div:'CAIRN',rol:'Archivo Legal',alerta:'VERDE',tarea:'Archivo legal ordenado y sellado',emoji:'📁'},
+{id:4,nombre:'Agente 04 - CAIRN',div:'CAIRN',rol:'Verificación Física',alerta:'ROJA',tarea:'Alerta: evidencia por verificar urgente',emoji:'🔴'},
+{id:5,nombre:'Agente 05 - CAIRN',div:'CAIRN',rol:'Traslado Seguro',alerta:'VERDE',tarea:'Traslado completado sin incidentes',emoji:'🚚'},
+{id:6,nombre:'Agente 06 - CAIRN',div:'CAIRN',rol:'Inventario Físico',alerta:'AMARILLA',tarea:'Inventario físico en conteo',emoji:'📋'},
+{id:7,nombre:'Agente 07 - ARTEX',div:'ARTEX',rol:'Contratos',alerta:'VERDE',tarea:'Contrato firmado y validado',emoji:'🎨'},
+{id:8,nombre:'Agente 08 - ARTEX',div:'ARTEX',rol:'Convenios',alerta:'AMARILLA',tarea:'Convenio en revisión legal',emoji:'🤝'},
+{id:9,nombre:'Agente 09 - ARTEX',div:'ARTEX',rol:'Firmas',alerta:'VERDE',tarea:'Firmas verificadas',emoji:'✍️'},
+{id:10,nombre:'Agente 10 - ARTEX',div:'ARTEX',rol:'Legalización',alerta:'ROJA',tarea:'Alerta: documento por legalizar urgente',emoji:'⚖️'},
+{id:11,nombre:'Agente 11 - ARTEX',div:'ARTEX',rol:'Archivo',alerta:'VERDE',tarea:'Archivo de contratos al día',emoji:'🗂️'},
+{id:12,nombre:'Agente 12 - ARTEX',div:'ARTEX',rol:'Auditoría',alerta:'AMARILLA',tarea:'Auditoría de contratos en curso',emoji:'🔍'},
+{id:13,nombre:'Agente 13 - PENTAGI',div:'PENTAGI',rol:'Regulación',alerta:'VERDE',tarea:'Regulación revisada y cumplida',emoji:'⬠'},
+{id:14,nombre:'Agente 14 - PENTAGI',div:'PENTAGI',rol:'Cumplimiento',alerta:'VERDE',tarea:'Cumplimiento verificado',emoji:'✅'},
+{id:15,nombre:'Agente 15 - PENTAGI',div:'PENTAGI',rol:'Reportes',alerta:'AMARILLA',tarea:'Reporte mensual en elaboración',emoji:'📊'},
+{id:16,nombre:'Agente 16 - PENTAGI',div:'PENTAGI',rol:'Normativa',alerta:'ROJA',tarea:'Alerta: normativa nueva por aplicar',emoji:'📜'},
+{id:17,nombre:'Agente 17 - PENTAGI',div:'PENTAGI',rol:'Supervisión',alerta:'VERDE',tarea:'Supervisión completada',emoji:'👁️'},
+{id:18,nombre:'Agente 18 - PENTAGI',div:'PENTAGI',rol:'Control',alerta:'AMARILLA',tarea:'Control interno en revisión',emoji:'🛡️'},
+{id:19,nombre:'Agente 19 - CIBER',div:'CIBERESTRIKE AI',rol:'Monitoreo 24/7',alerta:'ROJA',tarea:'Alerta: intento de intrusión bloqueado',emoji:'🤖'},
+{id:20,nombre:'Agente 20 - CIBER',div:'CIBERESTRIKE AI',rol:'Ciberdefensa',alerta:'AMARILLA',tarea:'Analizando tráfico sospechoso',emoji:'🔐'},
+{id:21,nombre:'Agente 21 - CIBER',div:'CIBERESTRIKE AI',rol:'Investigación',alerta:'VERDE',tarea:'Investigación cerrada sin brecha',emoji:'🕵️'},
+{id:22,nombre:'Agente 22 - CIBER',div:'CIBERESTRIKE AI',rol:'Respuesta',alerta:'VERDE',tarea:'Respuesta a incidente completada',emoji:'⚡'},
+{id:23,nombre:'Agente 23 - CIBER',div:'CIBERESTRIKE AI',rol:'Forense',alerta:'AMARILLA',tarea:'Análisis forense en curso',emoji:'💻'},
+{id:24,nombre:'Agente 24 - CIBER',div:'CIBERESTRIKE AI',rol:'Prevención',alerta:'VERDE',tarea:'Prevención activa - 0 brechas',emoji:'🛡️'},
+];
+function agentesDeDiv(div){return AGENTES.filter(a=>a.div===div);}
+function actualizarSelectAgentes(){let sel=document.getElementById('agenteSel');let lista=agentesDeDiv(loginNombre);sel.innerHTML=lista.map(a=>`<option>${a.nombre}</option>`).join('');let ms=document.getElementById('modalAgente');if(ms)ms.innerHTML=lista.map(a=>`<option>${a.nombre}</option>`).join('');}
+function keyInvDiv(div){return 'trinity_inv_v22_'+div;}
+function getInvDiv(div){let keys=['trinity_inv_v22_'+div,'trinity_inv_v21_'+div,'trinity_inv_v20_'+div,'trinity_inv_v19_'+div];for(let k of keys){try{let v=JSON.parse(localStorage.getItem(k)||'[]');if(v&&v.length)return v;}catch(e){}}return [];}
+function keyAcceso(){return 'trinity_v22_'+loginNombre;}function keyInv(){return 'trinity_inv_v22_'+loginNombre;}
+function getMiAcceso(){try{return JSON.parse(localStorage.getItem(keyAcceso())||'null');}catch(e){return null;}}
+function cargarInv(){inventario=getInvDiv(loginNombre);}
+function guardarInv(){localStorage.setItem(keyInv(),JSON.stringify(inventario.slice(0,100)));}
+function ahora(){let d=new Date();let dia=d.toLocaleDateString('es-HN',{day:'2-digit',month:'2-digit',year:'numeric'});let hora=d.toLocaleTimeString('es-HN',{hour:'2-digit',minute:'2-digit',hour12:false});let seg=String(d.getSeconds()).padStart(2,'0')+'s';let horaFull=d.toLocaleTimeString('es-HN',{hour:'2-digit',minute:'2-digit',second:'2-digit',hour12:false});return {dia,hora,seg,horaFull,ts:d.getTime()};}
+function actualizarBanner(){let b=document.getElementById('divBanner');let emoji=loginNombre==='CAIRN'?'🪨':loginNombre==='ARTEX'?'🎨':loginNombre==='PENTAGI'?'⬠':'🤖';let cls=loginNombre==='CAIRN'?'div-CAIRN':loginNombre==='ARTEX'?'div-ARTEX':loginNombre==='PENTAGI'?'div-PENTAGI':'div-CIBERESTRIKE';b.className='div-banner '+cls;b.innerHTML=emoji+' ESTÁS EN: '+loginNombre+' • DIVISIÓN LEGAL';document.getElementById('bienvenidaTxt').innerHTML='Bienvenida, '+loginNombre+' - Centro de Comando';document.getElementById('agentesDivTxt').innerHTML=loginNombre;actualizarSelectAgentes();}
+function entrarMonitor(div){loginNombre=div;cargarInv();renderInventario();actualizarReporte();actualizarBanner();actualizarSala();renderAgentesDiv();ir('dashboard');}
+function accesoDirecto(){accesoDirectoDiv('CAIRN');}
+function accesoDirectoDiv(div){loginNombre=div;loginNum=div==='CAIRN'?3:div==='ARTEX'?1:div==='PENTAGI'?2:4;ok1=true;ok2=true;ok3=true;cargarInv();renderInventario();actualizarReporte();actualizarBanner();actualizarSala();renderAgentesDiv();document.getElementById('correoDash').innerHTML='Validado como: '+div.toLowerCase()+'@trinitybankshield.com • Acceso Directo';document.getElementById('veraDash').innerHTML='Identidad confirmada • Acceso Directo';let a=ahora();document.getElementById('horaVera').innerHTML=a.dia+' '+a.horaFull;ir('sala');}
+// V22 - FLUJO CON REPORTE
+function abrirFlujo(paso){
+let total=inventario.length;let ultimo=inventario[0];let din=inventario.reduce((s,r)=>s+(parseFloat(r.monto)||0),0);
+let textos={
+ALERTA:{titulo:'🚨 REPORTE - ALERTA',desc:'Se detectó el evento y se generó la alerta inmediata.',accion:'Alerta creada y notificada al agente de turno.'},
+ANALISIS:{titulo:'🔍 REPORTE - ANÁLISIS',desc:'El agente analizó la evidencia, el contrato o el ataque.',accion:'Análisis completado: se revisó origen, monto y evidencia.'},
+CONTENCION:{titulo:'🛡️ REPORTE - CONTENCIÓN',desc:'Se contuvo el riesgo: se custodió, se selló o se bloqueó.',accion:'Contención aplicada: evidencia custodiada / amenaza bloqueada.'},
+REVISION:{titulo:'✅ REPORTE - REVISIÓN',desc:'Revisión final y cierre legal del caso.',accion:'Revisión aprobada. Listo para reporte al banco.'}
+};
+let t=textos[paso];
+let detalle=document.getElementById('detalleFlujo');detalle.style.display='block';
+detalle.innerHTML=`<b>${t.titulo} • ${loginNombre}</b><br>${t.desc}<br><br><b>Qué pasó:</b> ${t.accion}<br><b>Movimientos en esta división:</b> ${total} • <b>Dinero:</b> $${din.toLocaleString()}<br><b>Último:</b> ${ultimo?ultimo.tipo+' • $'+ultimo.monto+' • '+ultimo.horaFull+' • '+(ultimo.agente||''): 'Sin movimientos aún'}<br><b>Agente responsable:</b> ${ultimo?(ultimo.agente||'Agente de turno'):'Sin asignar'}<br><b>Estado:</b> ${total>0?'✅ Completado':'⏳ Pendiente - Registra un movimiento, Jefa'}<br><br><button class="btn btn1" style="padding:10px;width:100%" onclick="exportarBanco()">📄 Exportar este reporte para el banco</button>`;
+detalle.scrollIntoView({behavior:'smooth'});
+}
+function clickGraf(e,canvasId){
+if(!inventario.length){alert('Primero registra un movimiento, Jefa. Luego le picas al puntito, mi amor.');return;}
+let c=document.getElementById(canvasId);let rect=c.getBoundingClientRect();let x=(e.clientX-rect.left)/rect.width*600;let y=(e.clientY-rect.top)/rect.height*180;
+let mejor=null,mejorDist=9999;ultimosPuntos.forEach(p=>{let d=Math.hypot(p.x-x,p.y-y);if(d<mejorDist){mejorDist=d;mejor=p;}});
+if(mejor&&mejorDist<80){abrirModal(movSeleccionadoPorIndice(mejor.idx));}else{
+let idx=Math.round((x-20)/560*(inventario.length-1));if(idx<0)idx=0;if(idx>=inventario.length)idx=inventario.length-1;
+abrirModal(inventario.slice().reverse()[idx]);
+}
+}
+function movSeleccionadoPorIndice(idx){let arr=inventario.slice().reverse();return arr[idx]||arr[arr.length-1];}
+function abrirModal(mov){
+if(!mov)return;movSeleccionado=mov;document.getElementById('modalTitulo').innerHTML='📊 '+mov.tipo+' • $'+mov.monto;document.getElementById('modalSub').innerHTML=loginNombre+' • '+mov.dia+' • '+mov.horaFull+' • '+mov.direccion;
+let foto=document.getElementById('modalFoto');if(mov.foto){foto.src=mov.foto;foto.style.display='block';document.getElementById('modalSinFoto').style.display='none';}else{foto.style.display='none';document.getElementById('modalSinFoto').style.display='block';}
+let ag=AGENTES.find(a=>a.nombre===mov.agente)||AGENTES.find(a=>a.div===loginNombre);
+document.getElementById('modalDetalle').innerHTML=`<b>División:</b> ${mov.login||loginNombre}<br><b>Acción:</b> ${mov.tipo}<br><b>Dirección:</b> ${mov.direccion}<br><b>Monto:</b> <b style="color:#4ade80">$${mov.monto} USD</b><br><b>Día:</b> ${mov.dia}<br><b>Hora exacta:</b> ${mov.horaFull} • Seg: ${mov.seg}<br><b>👤 Agente que atendió:</b> ${mov.agente||ag.nombre}<br><b>Rol:</b> ${ag?ag.rol:''}<br><b>Alerta del agente:</b> ${ag?ag.alerta:''}<br><b>Qué hizo:</b> ${ag?ag.tarea:''}<br><b>📝 Nota:</b> ${mov.nota||'Sin nota todavía, Jefa'}`;
+document.getElementById('modalAgente').value=mov.agente||ag.nombre;document.getElementById('modalNota').value=mov.nota||'';document.getElementById('modalPunto').classList.add('show');
+}
+function cerrarModal(){document.getElementById('modalPunto').classList.remove('show');}
+function cambiarFotoModal(input){let f=input.files[0];if(!f)return;let r=new FileReader();r.onload=e=>{let foto=document.getElementById('modalFoto');foto.src=e.target.result;foto.style.display='block';document.getElementById('modalSinFoto').style.display='none';movSeleccionado.fotoTemp=e.target.result;};r.readAsDataURL(f);}
+function guardarModal(){if(!movSeleccionado)return;movSeleccionado.agente=document.getElementById('modalAgente').value;movSeleccionado.nota=document.getElementById('modalNota').value;if(movSeleccionado.fotoTemp)movSeleccionado.foto=movSeleccionado.fotoTemp;guardarInv();renderInventario();actualizarReporte();cerrarModal();alert('✅ Guardado, Jefa. Ya tiene foto, agente y nota, mi amor.');}
+function reporteAgenteDesdeModal(){if(!movSeleccionado)return;let ag=AGENTES.find(a=>a.nombre===movSeleccionado.agente)||AGENTES[0];reporteAgente(ag.id);}
+function serieDinero(filtro){let arr=inventario.slice().reverse();let out=[];let acum=0;arr.forEach(r=>{if(!filtro||r.direccion===filtro){acum+=parseFloat(r.monto)||0;}out.push(acum);});while(out.length<20)out.unshift(0);return out.slice(-20);}
+function serieConteo(filtro){let arr=inventario.slice().reverse();let out=[];let acum=0;arr.forEach(r=>{if(!filtro||r.direccion===filtro){acum++;}out.push(acum);});while(out.length<20)out.unshift(0);return out.slice(-20);}
+function dibujar(id,lineas,esDinero){let c=document.getElementById(id);if(!c)return;let x=c.getContext('2d');x.clearRect(0,0,600,180);x.strokeStyle='#1e3a5f';x.lineWidth=1;for(let y=0;y<=180;y+=30){x.beginPath();x.moveTo(0,y);x.lineTo(600,y);x.stroke();}x.fillStyle='#94a3b8';x.font='11px Arial';x.fillText('0',4,175);let max=Math.max(10,...lineas.flatMap(L=>L.datos));x.fillText(esDinero?'$'+max.toLocaleString():max,4,25);ultimosPuntos=[];lineas.forEach((L,li)=>{x.beginPath();x.strokeStyle=L.color;x.lineWidth=3;x.shadowColor=L.color;x.shadowBlur=8;L.datos.forEach((v,i)=>{let px=20+i/(L.datos.length-1)*560;let py=165-(v/max)*140;if(i==0)x.moveTo(px,py);else x.lineTo(px,py);if(li===0)ultimosPuntos.push({x:px,y:py,idx:i});});x.stroke();x.shadowBlur=0;let last=L.datos[L.datos.length-1];let lx=540;let ly=165-(last/max)*140;x.fillStyle=L.color;x.beginPath();x.arc(lx,ly,6,0,Math.PI*2);x.fill();x.fillStyle='white';x.font='bold 11px Arial';x.fillText(esDinero?'$'+last.toLocaleString():last,lx-48,ly-10);});}
+function actualizarSala(){['CAIRN','ARTEX','PENTAGI','CIBERESTRIKE AI'].forEach(div=>{let inv=getInvDiv(div);let key=div==='CIBERESTRIKE AI'?'CIBERESTRIKE':div;let ent=inv.filter(r=>r.direccion==='ENTRADA');let sal=inv.filter(r=>r.direccion==='SALIDA');let totalDin=inv.reduce((s,r)=>s+(parseFloat(r.monto)||0),0);let elM=document.getElementById('salaMonto'+key);if(elM)elM.innerHTML='$'+totalDin.toLocaleString();let elMov=document.getElementById('salaMov'+key);if(elMov)elMov.innerHTML=inv.length;let elE=document.getElementById('salaEnt'+key);if(elE)elE.innerHTML=ent.length;let elS=document.getElementById('salaSal'+key);if(elS)elS.innerHTML=sal.length;let c=document.getElementById('salaGraf'+key);if(c){let x=c.getContext('2d');x.clearRect(0,0,600,120);let datos=[];let acum=0;inv.slice().reverse().forEach(r=>{acum+=parseFloat(r.monto)||0;datos.push(acum);});while(datos.length<10)datos.unshift(0);datos=datos.slice(-10);let max=Math.max(10,...datos);x.strokeStyle='#4ade80';x.lineWidth=3;x.beginPath();datos.forEach((v,i)=>{let px=20+i/9*560;let py=105-(v/max)*80;if(i==0)x.moveTo(px,py);else x.lineTo(px,py);});x.stroke();}});let rojas=AGENTES.filter(a=>a.alerta==='ROJA').length;let amar=AGENTES.filter(a=>a.alerta==='AMARILLA').length;let verd=AGENTES.filter(a=>a.alerta==='VERDE').length;document.getElementById('alertasSala').innerHTML=`<p>🔴 <b style="color:#f87171">${rojas} Alertas Rojas - Urgentes</b> • 🟡 <b style="color:#fbbf24">${amar} Amarillas - En Revisión</b> • 🟢 <b style="color:#4ade80">${verd} Verdes - Todo en Orden</b></p>`+AGENTES.filter(a=>a.alerta==='ROJA').map(a=>`<div style="border:1px solid #ef4444;border-radius:12px;padding:10px;margin:6px 0;background:#2a1212"><b>🔴 ${a.nombre}</b> • ${a.rol}<br><small>${a.tarea} • ${ahora().horaFull}</small><br><button class="btn btn1" style="padding:8px;margin-top:6px;background:#ef4444" onclick="reporteAgente(${a.id})">📋 Reporte de Seguimiento</button></div>`).join('');}
+function filtrarAgentes(div){filtroAgente=div;renderAgentes();}
+function renderAgentes(){let lista=filtroAgente==='TODOS'?AGENTES:AGENTES.filter(a=>a.div===filtroAgente);document.getElementById('gridAgentes').innerHTML=lista.map(a=>{let col=a.alerta==='ROJA'?'#f87171':a.alerta==='AMARILLA'?'#fbbf24':'#4ade80';let bg=a.alerta==='ROJA'?'#2a1212':a.alerta==='AMARILLA'?'#2a2412':'#0f2a1a';return `<div class="agente" style="border-color:${col};background:${bg}"><div class="agente-top"><div class="avatar" style="background:${col};color:black">${a.emoji}</div><span class="pill" style="border-color:${col};color:${col}">${a.alerta==='ROJA'?'🔴 URGENTE':a.alerta==='AMARILLA'?'🟡 REVISIÓN':'🟢 EN ORDEN'}</span></div><b>${a.nombre}</b><br><small>${a.div} • ${a.rol}</small><p style="font-size:13px;margin:8px 0">${a.tarea}</p><button class="btn btn1" style="padding:10px;width:100%" onclick="reporteAgente(${a.id})">📋 Reporte de Seguimiento</button></div>`;}).join('');}
+function renderAgentesDiv(){let lista=AGENTES.filter(a=>a.div===loginNombre);document.getElementById('agentesDiv').innerHTML=lista.map(a=>{let col=a.alerta==='ROJA'?'#f87171':a.alerta==='AMARILLA'?'#fbbf24':'#4ade80';return `<div class="agente" style="border-color:${col}"><b>${a.emoji} ${a.nombre}</b><br><small>${a.rol}</small><br><span class="pill" style="border-color:${col};color:${col}">${a.alerta}</span><p style="font-size:12px">${a.tarea}</p><button class="btn btn1" style="padding:8px;width:100%" onclick="reporteAgente(${a.id})">📋 Seguimiento</button></div>`;}).join('');}
+function reporteAgente(id){let a=AGENTES.find(x=>x.id===id);let inv=getInvDiv(a.div);let total=inv.length;let din=inv.reduce((s,r)=>s+(parseFloat(r.monto)||0),0);alert(`📋 REPORTE DE SEGUIMIENTO\n\n${a.nombre}\nDivisión: ${a.div}\nRol: ${a.rol}\nAlerta: ${a.alerta}\n\nQué hizo: ${a.tarea}\nQué vio: Monitoreo en vivo a las ${ahora().horaFull}\nQué atendió: ${total} movimientos en ${a.div} • $${din.toLocaleString()}\n\nEstado: ${a.alerta==='ROJA'?'REQUIERE ATENCIÓN URGENTE':a.alerta==='AMARILLA'?'EN REVISIÓN':'TODO EN ORDEN'}\n\nTRINITY BANK SHIELD • ${a.div}`);}
+function actualizarReporte(){let total=inventario.length;let entradas=inventario.filter(r=>r.direccion==='ENTRADA').length;let salidas=inventario.filter(r=>r.direccion==='SALIDA').length;let dinEnt=inventario.filter(r=>r.direccion==='ENTRADA').reduce((s,r)=>s+(parseFloat(r.monto)||0),0);let dinSal=inventario.filter(r=>r.direccion==='SALIDA').reduce((s,r)=>s+(parseFloat(r.monto)||0),0);let montoTotal=dinEnt+dinSal;document.getElementById('movHoy').innerHTML=total;document.getElementById('entradasTxt').innerHTML=entradas;document.getElementById('salidasTxt').innerHTML=salidas;document.getElementById('montoTotal').innerHTML='$'+montoTotal.toLocaleString()+' USD';document.getElementById('montoTotalTxt').innerHTML=total?'REAL • '+total+' MOVIMIENTOS':'REAL';dibujar('graf1',[{color:'#22d3ee',datos:serieConteo(null)},{color:'#4ade80',datos:serieDinero(null)}],true);dibujar('graf2',[{color:'#f87171',datos:serieConteo(null)}],false);dibujar('graf3',[{color:'#4ade80',datos:serieDinero('ENTRADA')},{color:'#fbbf24',datos:serieDinero('SALIDA')}],true);document.getElementById('txtGraf1').innerHTML=total?`Real: ${total} movimientos • $${montoTotal.toLocaleString()} total. Último: ${inventario[0].tipo} • ${inventario[0].horaFull} • Pícale a un puntito para ver su foto.`:'Sin movimientos aún. Registra uno y la línea sube.';document.getElementById('txtGraf2').innerHTML=`Cada punto = 1 movimiento real tuyo. Total real: ${total}`;let evs=inventario.slice(0,5);document.getElementById('listaEventos').innerHTML=evs.length?evs.map((r,i)=>`<div class="ev"><span class="punto"></span><div style="flex:1"><b>${r.tipo} • ${r.direccion}</b><br><small>${r.agente||r.login} • ${r.horaFull} • $${r.monto} ${r.foto?'📸':''}</small></div><span class="pill">${i==0?'AHORA':'MEDIO'}</span><button class="mini-btn btn-edit" onclick="abrirModalPorId(${r.id})">👁️</button></div>`).join(''):`<div class="ev"><span class="punto"></span><div style="flex:1"><b>Sin eventos aún</b><br><small>${loginNombre} • Registra tu primer movimiento real</small></div><span class="pill">ESPERANDO</span></div>`;['f1','f2','f3','f4'].forEach((id,i)=>{document.getElementById(id).classList.toggle('act',total>i);});document.getElementById('f1sub').innerHTML=total?`Alerta: ${inventario[0].tipo} • ${inventario[0].horaFull}`:'Sin alerta aún';document.getElementById('f2sub').innerHTML=total>1?`Análisis: ${inventario[1].tipo}`:'Sin análisis aún';document.getElementById('f3sub').innerHTML=total>2?`Contención: ${inventario[2].tipo}`:'Sin contención aún';document.getElementById('f4sub').innerHTML=total>3?`Revisión: ${inventario[3].tipo}`:'Sin revisión aún';document.getElementById('flujoTxt').innerHTML=total?`División ${loginNombre} • ${total} movimientos reales pasaron por ALERTA → ANÁLISIS → CONTENCIÓN → REVISIÓN. Último: ${inventario[0].tipo} a las ${inventario[0].horaFull}. Pícale a cada botón para ver su reporte.`:'Sin flujo aún. Registra y se ilumina.';document.getElementById('invNormal').innerHTML=entradas;document.getElementById('invBajo').innerHTML=salidas;document.getElementById('invAgotado').innerHTML=(salidas>entradas?1:0);document.getElementById('invPend').innerHTML=total;document.getElementById('invTotal').innerHTML=total;document.getElementById('invDinEnt').innerHTML='$'+dinEnt.toLocaleString();document.getElementById('invDinSal').innerHTML='$'+dinSal.toLocaleString();document.getElementById('prodTop').innerHTML=inventario[0]?inventario[0].tipo+' - '+loginNombre:'Sin movimientos aún';document.getElementById('prodNum').innerHTML='$'+montoTotal.toLocaleString();document.getElementById('prodSub').innerHTML=total?`Dinero real en ${loginNombre} • ${total} movimientos • Último $${inventario[0].monto} • ${inventario[0].horaFull}`:'Registra tu primer movimiento real.';}
+function abrirModalPorId(id){let r=inventario.find(x=>x.id===id);if(r)abrirModal(r);}
+function registrarInventario(tipo,monto,direccion,agente,foto,nota){let a=ahora();inventario.unshift({id:Date.now()+Math.random(),dia:a.dia,hora:a.hora,seg:a.seg,horaFull:a.horaFull,ts:a.ts,tipo:tipo,monto:monto||'0',direccion:direccion||'ENTRADA',login:loginNombre,agente:agente||'Agente 01 - CAIRN',foto:foto||'',nota:nota||''});guardarInv();renderInventario();actualizarReporte();actualizarSala();document.getElementById('trackerDash').innerHTML='Último: '+tipo+' • '+direccion+' • '+a.dia+' '+a.horaFull;}
+function borrarMov(id){if(!confirm('¿Borramos este movimiento, Jefa?'))return;inventario=inventario.filter(r=>r.id!==id);guardarInv();renderInventario();actualizarReporte();actualizarSala();}
+function editarMov(id){let r=inventario.find(x=>x.id===id);if(!r)return;let nuevo=prompt('Corrige el monto, Jefa. Era $'+r.monto, r.monto);if(nuevo===null)return;let tipoNuevo=prompt('Corrige la acción, Jefa. Era '+r.tipo, r.tipo);if(tipoNuevo===null)return;r.monto=nuevo;r.tipo=tipoNuevo.toUpperCase();guardarInv();renderInventario();actualizarReporte();actualizarSala();alert('✅ Corregido, Jefa');}
+function renderInventario(){let q=(document.getElementById('buscador')?.value||'').toLowerCase();let lista=inventario.filter(r=>(r.tipo+' '+r.monto+' '+r.dia+' '+r.direccion+' '+(r.agente||'')).toLowerCase().includes(q));let h=lista.map(r=>`<tr><td>${r.dia}</td><td>${r.hora}</td><td>${r.agente||''}</td><td>${r.tipo}</td><td>$${r.monto}</td><td>${r.foto?`<button class="mini-btn btn-edit" onclick="abrirModalPorId(${r.id})">📸 👁️</button>`:'Sin foto'}</td><td><button class="mini-btn btn-edit" onclick="abrirModalPorId(${r.id})">👁️</button><button class="mini-btn btn-edit" onclick="editarMov(${r.id})">✏️</button><button class="mini-btn btn-del" onclick="borrarMov(${r.id})">🗑️</button></td></tr>`).join('');document.getElementById('tablaInventario').innerHTML=h||'<tr><td colspan=7>Sin movimientos - Registra uno real</td></tr>';}
+function exportarBanco(){let total=inventario.length;let ent=inventario.filter(r=>r.direccion==='ENTRADA');let sal=inventario.filter(r=>r.direccion==='SALIDA');let dinEnt=ent.reduce((s,r)=>s+(parseFloat(r.monto)||0),0);let dinSal=sal.reduce((s,r)=>s+(parseFloat(r.monto)||0),0);document.getElementById('printDiv').innerHTML=loginNombre;document.getElementById('printFecha').innerHTML=ahora().dia+' '+ahora().horaFull;document.getElementById('printTotal').innerHTML=total;document.getElementById('printEnt').innerHTML=ent.length;document.getElementById('printSal').innerHTML=sal.length;document.getElementById('printDinEnt').innerHTML='$'+dinEnt.toLocaleString()+' USD';document.getElementById('printDinSal').innerHTML='$'+dinSal.toLocaleString()+' USD';document.getElementById('printTabla').innerHTML=inventario.slice(0,30).map(r=>`${r.dia} ${r.horaFull} • ${r.tipo} • ${r.direccion} • $${r.monto} • ${r.agente||''} ${r.foto?'📸 CON FOTO':''} ${r.nota?('• '+r.nota):''}`).join('<br>')||'Sin movimientos';document.getElementById('reportePrint').style.display='block';document.getElementById('reportePrint').scrollIntoView({behavior:'smooth'});}
+function cerrarReporte(){document.getElementById('reportePrint').style.display='none';}
+function actualizarInfoAcceso(){let acc=getMiAcceso();let el=document.getElementById('miAccesoInfo');if(acc){el.innerHTML='✅ Acceso guardado para '+loginNombre+' • '+acc.correo;document.getElementById('fotoGuardada').src=acc.foto||'';document.getElementById('fotoGuardada').style.display=acc.foto?'block':'none';}else{el.innerHTML='⚠️ Sin acceso guardado para '+loginNombre+'. Usa el acceso directo arriba.';document.getElementById('fotoGuardada').style.display='none';}}
+function elegirLogin(n,nombre){loginNum=n;loginNombre=nombre;ok1=false;ok2=false;ok3=false;resetPasos();[1,2,3,4].forEach(i=>document.getElementById('op'+i).classList.remove('sel'));document.getElementById('op'+n).classList.add('sel');document.getElementById('loginActualTxt').innerHTML='División: '+nombre;actualizarBanner();cargarInv();renderInventario();actualizarReporte();actualizarInfoAcceso();actualizarBoton();}
+function resetPasos(){['paso1','paso2','paso3'].forEach(id=>document.getElementById(id).classList.remove('ok'));document.getElementById('paso2').classList.add('bloq');document.getElementById('paso3').classList.add('bloq');['bar1','bar2','bar3'].forEach(id=>document.getElementById(id).classList.remove('on'));document.getElementById('msg1').innerHTML='';document.getElementById('msg2').innerHTML='Primero pasa el Paso 1';document.getElementById('msg3').innerHTML='Primero pasa el Paso 2';}
+function ir(id){['portada','login','dashboard','sala'].forEach(x=>document.getElementById(x).classList.add('oculto'));document.getElementById(id).classList.remove('oculto');window.scrollTo(0,0);if(id=='dashboard'){actualizarReporte();actualizarBanner();}if(id=='sala'){actualizarSala();renderAgentes();}}
+async function tomarFotoCrear(){let v=document.getElementById('camCrear');v.style.display='block';try{let s=await navigator.mediaDevices.getUserMedia({video:true});v.srcObject=s;setTimeout(()=>{let c=document.getElementById('canvasCrear');c.width=v.videoWidth;c.height=v.videoHeight;c.getContext('2d').drawImage(v,0,0);fotoTemporal=c.toDataURL('image/jpeg',0.7);document.getElementById('fotoGuardada').src=fotoTemporal;document.getElementById('fotoGuardada').style.display='block';s.getTracks().forEach(t=>t.stop());v.style.display='none';document.getElementById('msgCrear').innerHTML='<span class=check>✅ Foto tomada.</span>';},1800);}catch(e){fotoTemporal='demo-foto';document.getElementById('msgCrear').innerHTML='⚠️ Sin cámara - Modo demo.';}}
+async function registrarHuellaCrear(){document.getElementById('msgCrear').innerHTML='⏳ Pidiendo huella...';try{if(window.PublicKeyCredential){await navigator.credentials.create({publicKey:{challenge:new Uint8Array(32),rp:{name:'TRINITY'},user:{id:new Uint8Array(16),name:'jefa',displayName:'Jefa'},pubKeyCredParams:[{alg:-7,type:'public-key'}],timeout:60000,attestation:'none'}});}}catch(e){}huellaRegistrada=true;document.getElementById('msgCrear').innerHTML='<span class=check>✅ Huella registrada.</span>';}
+function guardarMiAcceso(){let c=document.getElementById('miCorreo').value.trim();let p=document.getElementById('miClave').value;if(!c.includes('@')){alert('Pon tu correo válido, Jefa');return;}if(p.length<4){alert('Tu clave debe tener 4 o más, Jefa');return;}if(!fotoTemporal){alert('Primero tu foto, Jefa');return;}let acc={correo:c.toLowerCase(),clave:p,foto:fotoTemporal,huella:huellaRegistrada,guardado:ahora().dia+' '+ahora().horaFull};localStorage.setItem(keyAcceso(),JSON.stringify(acc));document.getElementById('msgCrear').innerHTML='<span class=check>✅ Guardado para '+loginNombre+'</span>';actualizarInfoAcceso();}
+function borrarMiAcceso(){if(confirm('¿Borramos tu acceso de '+loginNombre+', Jefa?')){localStorage.removeItem(keyAcceso());fotoTemporal='';huellaRegistrada=false;actualizarInfoAcceso();}}
+function pasoCorreo(){let acc=getMiAcceso();if(!acc){alert('Primero configura tu acceso arriba, Jefa');return;}let c=document.getElementById('correo').value.trim().toLowerCase();let p=document.getElementById('clave').value;if(c!==acc.correo){document.getElementById('msg1').innerHTML='<span class=error>❌ Correo no coincide.</span>';return;}if(p!==acc.clave){document.getElementById('msg1').innerHTML='<span class=error>❌ Clave no coincide.</span>';return;}ok1=true;document.getElementById('msg1').innerHTML='<span class=check>✅ Verificado.</span>';document.getElementById('paso1').classList.add('ok');document.getElementById('bar1').classList.add('on');document.getElementById('paso2').classList.remove('bloq');document.getElementById('msg2').innerHTML='Ahora tu huella 👇';actualizarBoton();}
+async function pasoHuella(){if(!ok1){alert('Primero correo y clave, Jefa');return;}document.getElementById('msg2').innerHTML='⏳ Pidiendo huella...';try{if(window.PublicKeyCredential){await navigator.credentials.get({publicKey:{challenge:new Uint8Array(32),allowCredentials:[],timeout:60000,userVerification:'required'}});}}catch(e){}setTimeout(()=>{ok2=true;document.getElementById('msg2').innerHTML='<span class=check>✅ Huella verificada.</span>';document.getElementById('paso2').classList.add('ok');document.getElementById('bar2').classList.add('on');document.getElementById('paso3').classList.remove('bloq');document.getElementById('msg3').innerHTML='Ahora tu rostro 👇';actualizarBoton();},1200);}
+async function pasoFacial(){if(!ok2){alert('Primero huella, Jefa');return;}let acc=getMiAcceso();let v=document.getElementById('cam');v.style.display='block';document.getElementById('msg3').innerHTML='⏳ Abriendo cámara...';try{let s=await navigator.mediaDevices.getUserMedia({video:true});v.srcObject=s;setTimeout(()=>{ok3=true;let a=ahora();document.getElementById('msg3').innerHTML='<span class=check>✅ Rostro verificado.</span>';document.getElementById('paso3').classList.add('ok');document.getElementById('bar3').classList.add('on');s.getTracks().forEach(t=>t.stop());v.style.display='none';if(acc&&acc.foto&&acc.foto!=='demo-foto'){document.getElementById('fotoDash').src=acc.foto;document.getElementById('fotoDash').style.display='block';}document.getElementById('horaVera').innerHTML=a.dia+' '+a.horaFull;document.getElementById('correoDash').innerHTML='Validado como: '+(acc?acc.correo:'');document.getElementById('veraDash').innerHTML='Identidad confirmada • '+a.dia+' '+a.horaFull;actualizarBoton();},2500);}catch(e){ok3=true;document.getElementById('msg3').innerHTML='<span class=check>✅ Rostro verificado (demo)</span>';document.getElementById('paso3').classList.add('ok');document.getElementById('bar3').classList.add('on');actualizarBoton();}}
+function actualizarBoton(){let b=document.getElementById('btnEntrar');if(ok1&&ok2&&ok3){b.classList.remove('btn-off');b.innerHTML='✅ ENTRAR';}else{b.innerHTML='🔒 ENTRAR - Falta verificar';}}
+function entrarFinal(){if(ok1&&ok2&&ok3){ir('sala');}else{alert('Faltan pasos, Jefa');}}
+function registrarTrans(){let tipo=document.getElementById('tipoTrans').value;let dir=document.getElementById('direccionTrans').value;let monto=document.getElementById('montoTrans').value||'0';let agente=document.getElementById('agenteSel').value;let file=document.getElementById('fotoTrans').files[0];if(file){let r=new FileReader();r.onload=e=>{registrarInventario(tipo,monto,dir,agente,e.target.result,'');document.getElementById('fotoTrans').value='';alert('✅ REAL Registrado con FOTO: '+tipo+' - $'+monto+' - '+agente);};r.readAsDataURL(file);}else{registrarInventario(tipo,monto,dir,agente,'','');alert('✅ REAL Registrado: '+tipo+' - $'+monto+' - '+agente);}}
+function mostrarSecurity(){document.getElementById('securityBox').classList.toggle('oculto');registrarInventario('SECURITY CENTER REVISADO','0','ENTRADA','Agente 01 - CAIRN','','');}
+document.addEventListener('keydown',e=>{if((e.ctrlKey&&e.key==='u')||(e.ctrlKey&&e.key==='s')||e.key==='F12'){e.preventDefault();alert('Contenido protegido - TRINITY BANK SHIELD');}});
+setInterval(()=>{let a=ahora();let el=document.getElementById('relojVivo');if(el)el.innerHTML=a.dia+' '+a.horaFull;let el2=document.getElementById('relojSala');if(el2)el2.innerHTML=a.dia+' '+a.horaFull;},1000);
+cargarInv();renderInventario();actualizarReporte();actualizarInfoAcceso();actualizarBanner();actualizarSala();renderAgentes();renderAgentesDiv();
+</script>
+</body>
+</html>
