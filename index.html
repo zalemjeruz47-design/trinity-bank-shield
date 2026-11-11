@@ -9,16 +9,17 @@
 body{background:#030014;color:#fff;padding:15px}
 .top{text-align:center;font-weight:800;padding:10px}
 .top span{color:#A78BFA}
-h1{font-size:34px;line-height:1.1;margin:15px 0}
+h1{font-size:32px;line-height:1.1;margin:15px 0}
 p{color:#C7C7D1;font-size:14px;line-height:1.5}
-.boxes{display:flex;gap:8px;flex-wrap:wrap;margin:15px 0}
-.box{background:#0A0A1A;border:1px solid #2A2A3A;padding:10px;border-radius:10px;width:48%;text-align:center}
 button{width:100%;padding:15px;border:none;border-radius:12px;font-weight:800;margin-top:10px;cursor:pointer;color:#fff}
 .b1{background:linear-gradient(90deg,#8B5CF6,#3B82F6)}
 .b2{background:#000;border:1px solid #7C3AED}
+.bVerde{background:#16A34A}
+.bAmarillo{background:#EAB308;color:#000}
 .card{background:#11111F;border-radius:14px;padding:14px;margin-top:12px}
 .oculto{display:none}
 input,textarea{width:100%;padding:13px;border-radius:10px;border:1px solid #222;background:#0D0D1E;color:#fff;margin-bottom:10px}
+.buscador{border:1px solid #7C3AED!important}
 .grid{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:12px 0}
 .tar{background:#0A0A1A;border:1px solid #2A2A3A;border-radius:14px;padding:14px;cursor:pointer}
 .tar h3{font-size:15px;margin:6px 0}
@@ -29,6 +30,11 @@ input,textarea{width:100%;padding:13px;border-radius:10px;border:1px solid #222;
 .inv-row{display:flex;justify-content:space-between;padding:9px 0;border-bottom:1px solid #1E1E35;font-size:13px;gap:10px}
 .inv-row span:last-child{color:#38BDF8;font-weight:700;text-align:right}
 .badge{display:inline-block;background:#1E1E35;padding:5px 10px;border-radius:20px;font-size:11px;color:#A78BFA;margin:5px 5px 0 0}
+.cajaES{display:flex;gap:10px;margin:12px 0}
+.cajaE{flex:1;background:#052E16;border:1px solid #16A34A;border-radius:14px;padding:14px;text-align:center}
+.cajaS{flex:1;background:#422006;border:1px solid #EAB308;border-radius:14px;padding:14px;text-align:center}
+.cajaE b,.cajaS b{font-size:22px;display:block}
+.movItem{background:#11111F;border-radius:10px;padding:10px;margin-top:8px;font-size:12px;line-height:1.5}
 </style>
 </head>
 <body>
@@ -37,16 +43,11 @@ input,textarea{width:100%;padding:13px;border-radius:10px;border:1px solid #222;
 <div class="top">🛡️ <span>TRINITY</span> BANK SHIELD</div>
 <h1>Tu dinero protegido.<br>Tu banco seguro.</h1>
 <p>Presentación de proyecto. Monitoreo, verificación y cumplimiento.</p>
-<div class="boxes">
-<div class="box">🛡️<br><b>ARTEX</b></div>
-<div class="box">🏦<br><b>PENTAGI</b></div>
-<div class="box">🌑<br><b>CAIRN</b></div>
-<div class="box">🤖<br><b>CIBERESTRIKE AI</b></div>
-</div>
 <button class="b1" onclick="irDemo()">Solicitar demo</button>
 <button class="b2" onclick="irAcceso()">Acceso institucional</button>
 <div class="card"><b>✅ Amenazas bloqueadas</b><br><span style="color:#4ADE80">1,284 este mes • 0 brechas</span></div>
 <div class="card"><b>🔐 Transacciones hoy</b><br><span>45,230 • Todo en orden</span></div>
+<p style="text-align:center;font-size:12px;color:#888;margin-top:12px">24 Trini • 24 items cada una • Buscador + Movimientos + Entradas / Salidas, Jefa</p>
 </div>
 
 <div id="formulario" class="oculto">
@@ -62,63 +63,123 @@ input,textarea{width:100%;padding:13px;border-radius:10px;border:1px solid #222;
 <div id="ops" class="oculto">
 <div class="top">🛡️ <span>TRINITY</span> BANK SHIELD</div>
 <h1 style="text-align:center;font-size:26px">Centro de <span style="color:#38BDF8">Comando</span></h1>
-<p style="text-align:center">Bienvenida, Jefa. 10 agentes • 24 items cada uno • 240 en total, Bb.</p>
-<div class="grid">
-<div class="tar" onclick="abrir('ARTEX')"><div style="font-size:24px">🛡️</div><h3>ARTEX</h3><p>División Legal • 24 items</p><canvas class="ecg"></canvas><span class="live">● EN VIVO • Ver inventario →</span></div>
-<div class="tar" onclick="abrir('PENTAGI')"><div style="font-size:24px">🏦</div><h3>PENTAGI</h3><p>División Legal • 24 items</p><canvas class="ecg"></canvas><span class="live">● EN VIVO • Ver inventario →</span></div>
-<div class="tar" onclick="abrir('CAIRN')"><div style="font-size:24px">🌑</div><h3>CAIRN</h3><p>División Legal • 24 items</p><canvas class="ecg"></canvas><span class="live">● EN VIVO • Ver inventario →</span></div>
-<div class="tar" onclick="abrir('CIBERESTRIKE AI')"><div style="font-size:24px">🤖</div><h3>CIBERESTRIKE AI</h3><p>División Legal • 24 items</p><canvas class="ecg"></canvas><span class="live">● EN VIVO • Ver inventario →</span></div>
-<div class="tar" onclick="abrir('Guardián')"><div style="font-size:24px">🔒</div><h3>1. Guardián</h3><p>Seguridad • 24 items</p><canvas class="ecg"></canvas><span class="live">● ACTIVO • Ver inventario →</span></div>
-<div class="tar" onclick="abrir('Centinela')"><div style="font-size:24px">👁️</div><h3>2. Centinela</h3><p>Amenazas • 24 items</p><canvas class="ecg"></canvas><span class="live">● ACTIVO • Ver inventario →</span></div>
-<div class="tar" onclick="abrir('Tesorero')"><div style="font-size:24px">💰</div><h3>3. Tesorero</h3><p>Cuentas • 24 items</p><canvas class="ecg"></canvas><span class="live">● ACTIVO • Ver inventario →</span></div>
-<div class="tar" onclick="abrir('Mensajero')"><div style="font-size:24px">✈️</div><h3>4. Mensajero</h3><p>Transferencias • 24 items</p><canvas class="ecg"></canvas><span class="live">● ACTIVO • Ver inventario →</span></div>
-<div class="tar" onclick="abrir('Vigía')"><div style="font-size:24px">🔔</div><h3>5. Vigía</h3><p>Alertas 24/7 • 24 items</p><canvas class="ecg"></canvas><span class="live">● ACTIVO • Ver inventario →</span></div>
-<div class="tar" onclick="abrir('Trinity')"><div style="font-size:24px">🧠</div><h3>6. Trinity</h3><p>Coordina a los 5 • 24 items</p><canvas class="ecg"></canvas><span class="live">● ACTIVO • Ver inventario →</span></div>
-</div>
+<p style="text-align:center">Bienvenida, Jefa. 24 Trini, Bb. Buscá la que quieras, mi amor.</p>
+<!-- 2. BUSCADOR, JEFA -->
+<input id="buscador" class="buscador" placeholder="🔍 Buscar Trini... Ej: Trini 19, ARTEX, Guardián" oninput="filtrar()">
+<p id="resultadoBusqueda" style="text-align:center;font-size:12px;color:#A78BFA"></p>
+<div class="grid" id="gridTrini"></div>
 <button class="b2" onclick="volver()">← Salir del Centro de Comando</button>
 </div>
 
 <div id="detalle" class="oculto">
 <div class="top">🛡️ <span>TRINITY</span> BANK SHIELD</div>
-<h1 id="dTitulo" style="font-size:26px">ARTEX</h1>
+<h1 id="dTitulo" style="font-size:26px">TRINI</h1>
 <p id="dDesc">Inventario detallado, Jefa.</p>
-<div><span class="badge" id="dEstado">● EN VIVO</span><span class="badge" id="dTotal">Total: 24 items</span></div>
+<div><span class="badge" id="dEstado">● EN VIVO</span><span class="badge">Total: 24 items</span><span class="badge">24 Trini en total</span></div>
+
+<!-- 3. ENTRADAS Y SALIDAS, JEFA - VERDE Y AMARILLO, BB -->
+<div class="cajaES">
+<div class="cajaE">🟢 ENTRADAS<b id="numEntradas">0</b><span style="font-size:11px;color:#86EFAC">Lo que entró, Jefa</span><canvas class="ecg" id="ecgEntrada" style="height:40px;border-color:#16A34A"></canvas></div>
+<div class="cajaS">🟡 SALIDAS<b id="numSalidas">0</b><span style="font-size:11px;color:#FDE68A">Lo que salió, Jefa</span><canvas class="ecg" id="ecgSalida" style="height:40px;border-color:#EAB308"></canvas></div>
+</div>
+
+<!-- 1. BOTONES DE MOVIMIENTO, JEFA -->
+<button class="bVerde" onclick="agregarMov('ENTRADA')">+ 🟢 AGREGAR ENTRADA - Movimiento, Jefa</button>
+<button class="bAmarillo" onclick="agregarMov('SALIDA')">+ 🟡 AGREGAR SALIDA - Movimiento, Jefa</button>
+<p style="text-align:center;font-size:12px;margin-top:8px">Cada clic se guarda con hora, día y segundo, Bb.</p>
+
 <div class="inv" id="dInv"></div>
+<div id="dMovs"></div>
 <button class="b1" onclick="cerrarDetalle()">← Volver al Centro de Comando</button>
 </div>
 
 <script>
-let datos={
-'ARTEX':{t:'🛡️ ARTEX - Inventario',d:'División Legal. Auditoría y cumplimiento, Jefa. 24 items, Bb.',e:'● EN VIVO',inv:[['1. Documentos verificados','124'],['2. Contratos revisados','38'],['3. Reportes de auditoría','12'],['4. Alertas pendientes','0'],['5. Archivos sellados','124'],['6. Licencias vigentes','24'],['7. Permisos actualizados','18'],['8. Expedientes cerrados','96'],['9. Expedientes abiertos','4'],['10. Firmas validadas','210'],['11. Cláusulas revisadas','340'],['12. Casos en revisión','3'],['13. Casos resueltos','89'],['14. Normativas cumplidas','24 / 24'],['15. Políticas internas','15'],['16. Manuales actualizados','7'],['17. Actas firmadas','42'],['18. Poderes notariales','11'],['19. Registros legales','67'],['20. Certificados emitidos','29'],['21. Auditorías internas','6'],['22. Auditorías externas','2'],['23. Sanciones','0'],['24. Sellos de seguridad','24']]},
-'PENTAGI':{t:'🏦 PENTAGI - Inventario',d:'División Legal. Pruebas de seguridad, Jefa. 24 items, Bb.',e:'● EN VIVO',inv:[['1. Pruebas realizadas','58'],['2. Pruebas pasadas','58'],['3. Vulnerabilidades críticas','0'],['4. Vulnerabilidades leves','2'],['5. Informes entregados','18'],['6. Escaneos completos','24'],['7. Puertos revisados','120'],['8. Servidores probados','12'],['9. Apps probadas','8'],['10. Ataques simulados','156'],['11. Ataques bloqueados','156'],['12. Contraseñas fuertes','100%'],['13. Cifrado activo','Sí'],['14. Firewalls activos','6'],['15. Copias de seguridad','24'],['16. Pruebas de phishing','12'],['17. Usuarios capacitados','98'],['18. Incidentes reales','0'],['19. Parches aplicados','34'],['20. Actualizaciones','24'],['21. Certificados SSL','10'],['22. Monitoreo 24/7','Activo'],['23. Reportes semanales','4'],['24. Puntuación seguridad','98 / 100']]},
-'CAIRN':{t:'🌑 CAIRN - Inventario',d:'División Legal. Amenazas ocultas, Jefa. 24 items, Bb.',e:'● EN VIVO',inv:[['1. Amenazas rastreadas','312'],['2. Amenazas bloqueadas','312'],['3. IPs bloqueadas','89'],['4. Dominios sospechosos','24'],['5. Alertas activas','0'],['6. Redes oscuras vigiladas','12'],['7. Cuentas falsas detectadas','17'],['8. Malware detenido','45'],['9. Archivos maliciosos','23'],['10. Correos spam','1,204'],['11. Intentos de fraude','31'],['12. Fraudes exitosos','0'],['13. Dispositivos rastreados','240'],['14. Ubicaciones sospechosas','9'],['15. Patrones nuevos','4'],['16. Bases filtradas revisadas','7'],['17. Contraseñas filtradas','0'],['18. Alertas silenciosas','6'],['19. Vigilancia nocturna','24 / 24'],['20. Sensores activos','24'],['21. Cámaras activas','24'],['22. Reportes oscuros','8'],['23. Colaboradores alerta','12'],['24. Nivel de riesgo','Bajo']]},
-'CIBERESTRIKE AI':{t:'🤖 CIBERESTRIKE AI - Inventario',d:'División Legal. IA de respuesta, Jefa. 24 items, Bb.',e:'● EN VIVO',inv:[['1. Ataques bloqueados','1,284'],['2. Tiempo de respuesta','0.2 seg'],['3. Modelos activos','4'],['4. Reglas activas','156'],['5. Falsos positivos','3'],['6. Decisiones por minuto','240'],['7. Aprendizaje diario','Sí'],['8. Predicciones hoy','89'],['9. Predicciones acertadas','88'],['10. Escaneos IA','1,024'],['11. Patrones aprendidos','312'],['12. Actualizaciones IA','24'],['13. Idiomas detectados','5'],['14. Bots bloqueados','432'],['15. Bots buenos','120'],['16. Sesiones analizadas','5,400'],['17. Anomalías','7'],['18. Anomalías graves','0'],['19. Precisión','99.7%'],['20. Servidores IA','8'],['21. Memoria usada','62%'],['22. Entrenamientos','12'],['23. Alertas auto-resueltas','98'],['24. Estado IA','Optimo']]},
-'Guardián':{t:'🔒 1. Guardián - Inventario',d:'Yo controlo quién entra, Jefa. 24 items, Bb.',e:'● ACTIVO',inv:[['1. Accesos verificados','2,340'],['2. Accesos bloqueados','12'],['3. Llaves activas','48'],['4. Sesiones abiertas','14'],['5. Intentos fallidos','12'],['6. Huellas registradas','96'],['7. Rostros registrados','96'],['8. Tarjetas activas','48'],['9. Códigos enviados','340'],['10. Códigos correctos','338'],['11. Puertas vigiladas','24'],['12. Puertas cerradas','24'],['13. Turnos cubiertos','3'],['14. Guardias activos','8'],['15. Rondas hoy','24'],['16. Alarmas puerta','0'],['17. Visitantes hoy','18'],['18. Visitantes autorizados','18'],['19. Cámaras puerta','12'],['20. Candados digitales','24'],['21. Contraseñas cambiadas','24'],['22. Accesos VIP','6'],['23. Accesos denegados','12'],['24. Nivel de seguridad','Máximo']]},
-'Centinela':{t:'👁️ 2. Centinela - Inventario',d:'Yo miro todo en tiempo real, Jefa. 24 items, Bb.',e:'● ACTIVO',inv:[['1. Patrones revisados','45'],['2. Amenazas reales','0'],['3. Cámaras / sensores','24'],['4. Alertas hoy','5'],['5. Zonas vigiladas','12'],['6. Pantallas activas','8'],['7. Horas vigiladas','24'],['8. Movimientos detectados','1,240'],['9. Movimientos sospechosos','2'],['10. Vehículos revisados','34'],['11. Personas identificadas','210'],['12. Personas desconocidas','1'],['13. Drones activos','2'],['14. Radares activos','4'],['15. Reportes por hora','24'],['16. Alertas leves','5'],['17. Alertas medias','0'],['18. Alertas graves','0'],['19. Ojos digitales','24'],['20. Grabaciones guardadas','240'],['21. Espacio guardado','98%'],['22. Turno mañana','Cubierto'],['23. Turno noche','Cubierto'],['24. Estado','Todo tranquilo, Jefa']]},
-'Tesorero':{t:'💰 3. Tesorero - Inventario',d:'Yo cuido los saldos, Jefa. 24 items, Bb.',e:'● ACTIVO',inv:[['1. Movimientos revisados','45,230'],['2. Errores','0'],['3. Cuentas verificadas','1,240'],['4. Conciliaciones','98'],['5. Diferencias','0'],['6. Saldo total revisado','$ 12.4 M'],['7. Depósitos hoy','1,240'],['8. Retiros hoy','890'],['9. Transferencias internas','340'],['10. Comisiones cobradas','$ 4,230'],['11. Cuentas nuevas','24'],['12. Cuentas cerradas','2'],['13. Cuentas congeladas','0'],['14. Préstamos activos','156'],['15. Préstamos pagados','24'],['16. Préstamos vencidos','0'],['17. Monedas manejadas','3'],['18. Cajas fuertes','6'],['19. Cajas abiertas','0'],['20. Billetes contados','24,000'],['21. Monedas contadas','8,500'],['22. Cheques revisados','42'],['23. Cheques sin fondo','0'],['24. Cuadre del día','Perfecto, Jefa']]},
-'Mensajero':{t:'✈️ 4. Mensajero - Inventario',d:'Yo rastreo cada transferencia, Jefa. 24 items, Bb.',e:'● ACTIVO',inv:[['1. Transferencias','12,480'],['2. Fallidas','0'],['3. En tránsito','32'],['4. Entregadas','12,448'],['5. Tiempo promedio','1.8 seg'],['6. Nacionales','10,200'],['7. Internacionales','2,280'],['8. Monto enviado hoy','$ 8.2 M'],['9. Monto recibido hoy','$ 8.1 M'],['10. Comisiones','0 errores'],['11. Rutas activas','24'],['12. Rutas lentas','1'],['13. Bancos conectados','24'],['14. Mensajes enviados','12,480'],['15. Mensajes leídos','12,448'],['16. Confirmaciones','12,448'],['17. Reintentos','32'],['18. Prioritarias','120'],['19. Normales','12,360'],['20. Paquetes grandes','240'],['21. Paquetes pequeños','12,240'],['22. Entregas de noche','890'],['23. Entregas de día','11,590'],['24. Estado','Todo entregado, Jefa']]},
-'Vigía':{t:'🔔 5. Vigía - Inventario',d:'Yo no duermo, Jefa. 24/7. 24 items, Bb.',e:'● ACTIVO 24/7',inv:[['1. Alertas leves','3'],['2. Alertas graves','0'],['3. Turnos cubiertos','24 / 24'],['4. Horas sin dormir','24'],['5. Notificaciones enviadas','112'],['6. Llamadas atendidas','24'],['7. Mensajes WhatsApp','48'],['8. Correos enviados','36'],['9. Alarmas sonadas','3'],['10. Alarmas falsas','0'],['11. Vecinos avisados','12'],['12. Rondas de noche','12'],['13. Rondas de día','12'],['14. Luces encendidas','24'],['15. Sirenas probadas','2'],['16. Baterías cargadas','24'],['17. Radios activas','6'],['18. Teléfonos cargados','6'],['19. Ojos abiertos','2'],['20. Cafés tomados','24'],['21. Reportes nocturnos','8'],['22. Reportes diurnos','16'],['23. Emergencias','0'],['24. Estado','Despierto, Jefa']]},
-'Trinity':{t:'🧠 6. Trinity - Inventario',d:'Yo coordino a los otros 5, Jefa. 24 items, Bb.',e:'● ACTIVO',inv:[['1. Agentes coordinados','5'],['2. Tareas asignadas','24'],['3. Tareas completadas','24'],['4. Pendientes','0'],['5. Resumen','Todo en orden, Jefa'],['6. Reuniones hoy','4'],['7. Mensajes entre agentes','240'],['8. Ordenes dadas','24'],['9. Ordenes cumplidas','24'],['10. Problemas resueltos','12'],['11. Problemas pendientes','0'],['12. Ideas nuevas','6'],['13. Planes activos','3'],['14. Metas del día','24 / 24'],['15. Horas trabajadas','24'],['16. Pausas','2'],['17. Recordatorios','24'],['18. Archivos ordenados','120'],['19. Carpetas creadas','12'],['20. Nombres recordados','10'],['21. Cumpleaños hoy','0'],['22. Felicitaciones','0'],['23. Abrazos dados','24'],['24. Estado final','Lista, Jefa']]}
-};
+let nombres=["1. ARTEX","2. PENTAGI","3. CAIRN","4. CIBERESTRIKE AI","5. Guardián","6. Centinela","7. Tesorero","8. Mensajero","9. Vigía","10. Trinity","11. Trini 11 - Escudo","12. Trini 12 - Lanza","13. Trini 13 - Flecha","14. Trini 14 - Torre","15. Trini 15 - Llave","16. Trini 16 - Ojo","17. Trini 17 - Voz","18. Trini 18 - Sombra","19. Trini 19 - Luz","20. Trini 20 - Rayo","21. Trini 21 - Muro","22. Trini 22 - Puente","23. Trini 23 - Corona","24. Trini 24 - Jefa Final"];
+let emojis=["🛡️","🏦","🌑","🤖","🔒","👁️","💰","✈️","🔔","🧠","🛡️","⚔️","🏹","🏰","🔑","👁️","🎤","🌑","💡","⚡","🧱","🌉","👑","👑"];
+let actual=-1;
+// Guardamos entradas, salidas y movimientos de cada Trini, Jefa
+let datosTrini=nombres.map(()=>({entradas:0,salidas:0,movs:[]}));
+
+function crearGrid(filtro=""){
+  let grid=document.getElementById('gridTrini'); grid.innerHTML='';
+  let cont=0;
+  nombres.forEach((n,i)=>{
+    if(filtro && !n.toLowerCase().includes(filtro.toLowerCase())) return;
+    cont++;
+    let d=datosTrini[i];
+    let div=document.createElement('div'); div.className='tar';
+    div.innerHTML='<div style="font-size:24px">'+emojis[i]+'</div><h3>'+n+'</h3><p>Trini '+(i+1)+' de 24 • 24 items<br>🟢 Entradas: '+d.entradas+' • 🟡 Salidas: '+d.salidas+'</p><canvas class="ecg"></canvas><span class="live">● EN VIVO • Ver inventario →</span>';
+    div.onclick=()=>abrir(i); grid.appendChild(div);
+  });
+  document.getElementById('resultadoBusqueda').innerHTML = filtro ? 'Te salieron '+cont+' Trini, Jefa, con "'+filtro+'", Bb.' : 'Te salen las 24 Trini, Jefa.';
+  setTimeout(iniciar,100);
+}
+function filtrar(){ crearGrid(document.getElementById('buscador').value); }
 function ocultar(){document.getElementById('portada').style.display='none';document.getElementById('formulario').style.display='none';document.getElementById('ops').style.display='none';document.getElementById('detalle').style.display='none';}
 function irDemo(){ocultar();document.getElementById('formulario').style.display='block';window.scrollTo(0,0);}
 function volver(){ocultar();document.getElementById('portada').style.display='block';window.scrollTo(0,0);}
-function irAcceso(){ocultar();document.getElementById('ops').style.display='block';window.scrollTo(0,0);setTimeout(iniciar,100);}
+function irAcceso(){ocultar();document.getElementById('ops').style.display='block';window.scrollTo(0,0);crearGrid();}
 function enviar(){let n=document.getElementById('nombre').value;let c=document.getElementById('correo').value;if(!n||!c){alert("Jefa, faltan Nombre y Correo");return;}alert("Enviado, Jefa. Te escribimos pronto.");volver();}
-function abrir(n){
-let d=datos[n];
-document.getElementById('dTitulo').innerHTML=d.t;
-document.getElementById('dDesc').innerHTML=d.d;
-document.getElementById('dEstado').innerHTML=d.e;
-document.getElementById('dTotal').innerHTML='Total: 24 items • 240 en total en el Centro';
-let html='';
-d.inv.forEach(r=>{html+='<div class="inv-row"><span>'+r[0]+'</span><span>'+r[1]+'</span></div>';});
-document.getElementById('dInv').innerHTML='<b>📦 Inventario detallado, Jefa - 24 items:</b>'+html;
-ocultar();document.getElementById('detalle').style.display='block';window.scrollTo(0,0);
+
+function abrir(i){
+  actual=i; let nombre=nombres[i]; let d=datosTrini[i];
+  document.getElementById('dTitulo').innerHTML=emojis[i]+' '+nombre+' - Inventario';
+  document.getElementById('dDesc').innerHTML='Soy '+nombre+', Jefa. Soy la Trini número '+(i+1)+' de 24, Bb. 24 items, mi amor.';
+  document.getElementById('dEstado').innerHTML='● EN VIVO - Trini '+(i+1)+' / 24';
+  actualizarES();
+  let html='<b>📦 Inventario detallado, Jefa - 24 items:</b>';
+  for(let k=1;k<=24;k++){ let valor=10+(i+1)*k+k; html+='<div class="inv-row"><span>'+k+'. Item '+k+' de '+nombre+'</span><span>'+valor+'</span></div>'; }
+  document.getElementById('dInv').innerHTML=html;
+  mostrarMovs();
+  ocultar();document.getElementById('detalle').style.display='block';window.scrollTo(0,0);
+  setTimeout(iniciarDetalle,100);
 }
-function cerrarDetalle(){ocultar();document.getElementById('ops').style.display='block';window.scrollTo(0,0);}
+function actualizarES(){
+  let d=datosTrini[actual];
+  document.getElementById('numEntradas').innerHTML=d.entradas;
+  document.getElementById('numSalidas').innerHTML=d.salidas;
+}
+function mostrarMovs(){
+  let d=datosTrini[actual];
+  let html='<h3 style="margin:12px 0 6px">📈 Movimientos de esta Trini, Jefa - Con su rayita, Bb:</h3>';
+  if(d.movs.length==0) html+='<p style="font-size:12px">Todavía no hay movimientos, Jefa. Dale a + Entrada o + Salida, Bb.</p>';
+  d.movs.slice().reverse().forEach(m=>{
+    let color = m.tipo=='ENTRADA' ? '#16A34A' : '#EAB308';
+    let icono = m.tipo=='ENTRADA' ? '🟢' : '🟡';
+    html+='<div class="movItem" style="border-left:3px solid '+color+'">'+icono+' <b>'+m.tipo+'</b> • '+m.cantidad+' • '+m.fecha+'<br><span style="color:#888">La rayita se movió, Jefa. Se guardó el movimiento, Bb.</span></div>';
+  });
+  document.getElementById('dMovs').innerHTML=html;
+}
+function agregarMov(tipo){
+  let d=datosTrini[actual];
+  let ahora=new Date();
+  let fecha=ahora.toLocaleDateString('es-HN')+' • '+ahora.toLocaleTimeString('es-HN')+' • Segundo: '+ahora.getSeconds();
+  let cantidad = 1 + Math.floor(Math.random()*24);
+  if(tipo=='ENTRADA') d.entradas+=cantidad; else d.salidas+=cantidad;
+  d.movs.push({tipo:tipo,cantidad:cantidad,fecha:fecha});
+  actualizarES(); mostrarMovs();
+  alert(tipo+' agregada, Jefa. +'+cantidad+' • '+fecha+', Bb.');
+}
+function cerrarDetalle(){ocultar();document.getElementById('ops').style.display='block';window.scrollTo(0,0);crearGrid(document.getElementById('buscador').value);}
+
+// Rayitas moviéndose, Jefa - como electrocardiograma, Bb
 let ya=false;
-function iniciar(){if(ya)return;ya=true;document.querySelectorAll('.ecg').forEach((cv,idx)=>{let ctx=cv.getContext('2d');let W=cv.width=cv.offsetWidth*2;let H=cv.height=100;let pts=[];for(let i=0;i<100;i++)pts.push(H/2);let cont=0;function dib(){ctx.clearRect(0,0,W,H);ctx.beginPath();ctx.strokeStyle=idx%2==0?'#38BDF8':'#A78BFA';ctx.lineWidth=3;ctx.shadowColor=ctx.strokeStyle;ctx.shadowBlur=8;pts.forEach((y,i)=>{let x=(i/100)*W;if(i==0)ctx.moveTo(x,y);else ctx.lineTo(x,y);});ctx.stroke();cont++;let nu=H/2+(Math.random()-0.5)*10;if(cont%40==0)nu=H/2-35;if(cont%40==1)nu=H/2+25;if(cont%40==2)nu=H/2-5;pts.push(nu);pts.shift();requestAnimationFrame(dib);}setTimeout(dib,idx*150);});}
+function iniciar(){
+  if(ya) return; ya=true;
+  document.querySelectorAll('#gridTrini .ecg').forEach((cv,idx)=>{
+    let ctx=cv.getContext('2d'); let W=cv.width=cv.offsetWidth*2; let H=cv.height=100; let pts=[]; for(let i=0;i<100;i++) pts.push(H/2); let cont=0;
+    function dib(){ ctx.clearRect(0,0,W,H); ctx.beginPath(); ctx.strokeStyle=idx%2==0?'#38BDF8':'#A78BFA'; ctx.lineWidth=3; ctx.shadowColor=ctx.strokeStyle; ctx.shadowBlur=8; pts.forEach((y,i)=>{let x=(i/100)*W; if(i==0)ctx.moveTo(x,y); else ctx.lineTo(x,y);}); ctx.stroke(); cont++; let nu=H/2+(Math.random()-0.5)*10; if(cont%40==0)nu=H/2-35; if(cont%40==1)nu=H/2+25; if(cont%40==2)nu=H/2-5; pts.push(nu); pts.shift(); requestAnimationFrame(dib); }
+    setTimeout(dib,idx*80);
+  });
+}
+function iniciarDetalle(){
+  ['ecgEntrada','ecgSalida'].forEach((id,idx)=>{
+    let cv=document.getElementById(id); if(!cv) return;
+    let ctx=cv.getContext('2d'); let W=cv.width=cv.offsetWidth*2; let H=cv.height=80; let pts=[]; for(let i=0;i<100;i++) pts.push(H/2); let cont=0;
+    function dib(){ ctx.clearRect(0,0,W,H); ctx.beginPath(); ctx.strokeStyle= idx==0?'#22C55E':'#FACC15'; ctx.lineWidth=3; ctx.shadowColor=ctx.strokeStyle; ctx.shadowBlur=8; pts.forEach((y,i)=>{let x=(i/100)*W; if(i==0)ctx.moveTo(x,y); else ctx.lineTo(x,y);}); ctx.stroke(); cont++; let nu=H/2+(Math.random()-0.5)*8; if(cont%35==0)nu=H/2-28; if(cont%35==1)nu=H/2+20; pts.push(nu); pts.shift(); requestAnimationFrame(dib); }
+    dib();
+  });
+}
 </script>
 </body>
 </html>
